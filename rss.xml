@@ -3,8 +3,8 @@
     <channel>
         <title>CygneNoir</title>
         <subtitle></subtitle>
-        <icon>http://example.com/assets/favicon.ico</icon>
-        <link>http://example.com</link>
+        <icon>http://zielonanoir.github.io/project/assets/favicon.ico</icon>
+        <link>http://zielonanoir.github.io/project</link>
         <author>
           <name>CygneNoir</name>
         </author>
@@ -13,9 +13,9 @@
         <pubDate>Mon, 22 Jul 2024 12:10:57 +0800</pubDate>
         <lastBuildDate>Mon, 22 Jul 2024 12:10:57 +0800</lastBuildDate>
         <item>
-            <guid isPermalink="true">http://example.com/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/</guid>
+            <guid isPermalink="true">http://zielonanoir.github.io/project/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/</guid>
             <title></title>
-            <link>http://example.com/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/</link>
+            <link>http://zielonanoir.github.io/project/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/</link>
             <pubDate>Mon, 22 Jul 2024 12:10:57 +0800</pubDate>
             <description><![CDATA[ &lt;pre&gt;&lt;code&gt;# Ubuntu 基线指导手册
 &lt;/code&gt;&lt;/pre&gt;
@@ -326,9 +326,9 @@ sudo systemctl start apparmor&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/07/22/Noir710InteriorUbuntu2004Baseline/</guid>
+            <guid isPermalink="true">http://zielonanoir.github.io/project/2024/07/22/Noir710InteriorUbuntu2004Baseline/</guid>
             <title></title>
-            <link>http://example.com/2024/07/22/Noir710InteriorUbuntu2004Baseline/</link>
+            <link>http://zielonanoir.github.io/project/2024/07/22/Noir710InteriorUbuntu2004Baseline/</link>
             <pubDate>Mon, 22 Jul 2024 12:07:21 +0800</pubDate>
             <description><![CDATA[ &lt;pre&gt;&lt;code&gt;# Ubuntu 基线指导手册
 &lt;/code&gt;&lt;/pre&gt;
@@ -639,9 +639,9 @@ sudo systemctl start apparmor&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/07/22/internet/hello-world/</guid>
+            <guid isPermalink="true">http://zielonanoir.github.io/project/2024/07/22/hello-world/</guid>
             <title>Hello World</title>
-            <link>http://example.com/2024/07/22/internet/hello-world/</link>
+            <link>http://zielonanoir.github.io/project/2024/07/22/hello-world/</link>
             <pubDate>Mon, 22 Jul 2024 11:05:28 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;

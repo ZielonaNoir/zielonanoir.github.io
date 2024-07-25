@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://zielonanoir.github.io/project</id>
     <title>CygneNoir</title>
     <subtitle></subtitle>
-    <icon>http://example.com/assets/favicon.ico</icon>
-    <link href="http://example.com" />
+    <icon>http://zielonanoir.github.io/project/assets/favicon.ico</icon>
+    <link href="http://zielonanoir.github.io/project" />
     <author>
       <name>CygneNoir</name>
     </author>
     <updated>2024-07-22T04:10:57.446Z</updated>
     <entry>
-        <id>http://example.com/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/</id>
+        <id>http://zielonanoir.github.io/project/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/</id>
         <title></title>
-        <link rel="alternate" href="http://example.com/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/"/>
+        <link rel="alternate" href="http://zielonanoir.github.io/project/2024/07/22/Iweqije%20-%20%E5%89%AF%E6%9C%AC/"/>
         <content type="html">&lt;pre&gt;&lt;code&gt;# Ubuntu 基线指导手册
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;1-身份鉴别策略组检测&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-身份鉴别策略组检测&#34;&gt;#&lt;/a&gt; 1.   身份鉴别策略组检测&lt;/h1&gt;
@@ -323,9 +323,9 @@ sudo systemctl start apparmor&lt;/p&gt;
         <updated>2024-07-22T04:10:57.446Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/07/22/Noir710InteriorUbuntu2004Baseline/</id>
+        <id>http://zielonanoir.github.io/project/2024/07/22/Noir710InteriorUbuntu2004Baseline/</id>
         <title></title>
-        <link rel="alternate" href="http://example.com/2024/07/22/Noir710InteriorUbuntu2004Baseline/"/>
+        <link rel="alternate" href="http://zielonanoir.github.io/project/2024/07/22/Noir710InteriorUbuntu2004Baseline/"/>
         <content type="html">&lt;pre&gt;&lt;code&gt;# Ubuntu 基线指导手册
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;1-身份鉴别策略组检测&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-身份鉴别策略组检测&#34;&gt;#&lt;/a&gt; 1.   身份鉴别策略组检测&lt;/h1&gt;
@@ -636,9 +636,9 @@ sudo systemctl start apparmor&lt;/p&gt;
         <updated>2024-07-22T04:07:21.706Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/07/22/internet/hello-world/</id>
+        <id>http://zielonanoir.github.io/project/2024/07/22/hello-world/</id>
         <title>Hello World</title>
-        <link rel="alternate" href="http://example.com/2024/07/22/internet/hello-world/"/>
+        <link rel="alternate" href="http://zielonanoir.github.io/project/2024/07/22/hello-world/"/>
         <content type="html">&lt;p&gt;Welcome to &lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&#34;https://hexo.io/docs/&#34;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&#34;https://hexo.io/docs/troubleshooting.html&#34;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&#34;https://github.com/hexojs/hexo/issues&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
 &lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
