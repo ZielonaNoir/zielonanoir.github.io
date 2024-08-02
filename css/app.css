@@ -2963,6 +2963,12 @@ use.stop-animation {
 .social .item.email i {
   color: #55acd5;
 }
+.social .item.youtube::before {
+  background-color: #e60026;
+}
+.social .item.youtube i {
+  color: #e60026;
+}
 .social .item:focus i,
 .social .item:hover i {
   color: var(--grey-0);

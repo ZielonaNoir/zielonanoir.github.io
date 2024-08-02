@@ -8,7 +8,31 @@
     <author>
       <name>CygneNoir</name>
     </author>
-    <updated>2024-07-31T14:16:49.535Z</updated>
+    <updated>2024-08-01T07:23:54.248Z</updated>
+    <entry>
+        <id>http://example.com/2024/08/01/Internet%20Security/24.8.1/</id>
+        <title></title>
+        <link rel="alternate" href="http://example.com/2024/08/01/Internet%20Security/24.8.1/"/>
+        <content type="html">&lt;p&gt;YAMAHA domain == 4&lt;br /&gt;
+ANHENG WAF03 不用选 02 LOG SOURSE IP&lt;br /&gt;
+ 周四前交&lt;br /&gt;
+南大&lt;br /&gt;
+设备信息找一线要&lt;br /&gt;
+设备概要&lt;br /&gt;
+ cpu 利用率内存利用率 设备科大绿&lt;/p&gt;
+&lt;p&gt;时间数量统计 前 21&lt;br /&gt;
+ 工单号 remark 在最后 jun2 开始分开建议 登录失败就写内部人员。。。&lt;br /&gt;
+vpn 时间改一下 2024-7&lt;br /&gt;
+ 堡垒机 event name [index] 填 id&lt;br /&gt;
+ 赛门铁克 log source index NATA high level catgory&lt;br /&gt;
+ 渗透测试	&amp;quot; 链接: &lt;a href=&#34;https://pan.baidu.com/s/1EXIaH6mV3n6_xtQ9_5PYdg&#34;&gt;https://pan.baidu.com/s/1EXIaH6mV3n6_xtQ9_5PYdg&lt;/a&gt;&lt;br /&gt;
+ 提取码: bxnn 复制这段内容后打开百度网盘手机 App，操作更方便哦&lt;br /&gt;
+ -- 来自百度网盘超级会员 v5 的分享 &amp;quot;&lt;/p&gt;
+&lt;p&gt;确认该次登录是否为内部人员登录。&lt;/p&gt;
+&lt;p&gt;mklink /J C:\Users\a4061\Desktop\Obsidian.github.io\Github.io\ 新建文件夹 D:\CygneNoir\cygnenoir.github.io\source&lt;/p&gt;
+</content>
+        <updated>2024-08-01T07:23:54.248Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</id>
         <title>选择排序</title>
@@ -957,49 +981,5 @@ int main()&amp;#123;
         <category term="语法基础课" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" />
         <category term="1.8STL、常用库函数、位运算" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1-8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/" />
         <updated>2024-07-31T14:16:49.344Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/07/31/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1.8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%94%AF%E6%8C%81%E6%93%8D%E4%BD%9C/</id>
-        <title>循环队列支持操作</title>
-        <link rel="alternate" href="http://example.com/2024/07/31/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1.8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%94%AF%E6%8C%81%E6%93%8D%E4%BD%9C/"/>
-        <content type="html">&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;queue&amp;gt;
-
-using namespace std;
-
-
-int main()&amp;#123;
-    queue&amp;lt;int&amp;gt; q;
-    // 队列支持操作
-    q.push(1);//插入一个元素 指在队头插入一个元素
-    q.pop();//弹出队尾元素
-    q.front();//返回队头
-    cout &amp;lt;&amp;lt; q.back() &amp;lt;&amp;lt; endl;//返回队尾
-    
-    priority_queue&amp;lt;int&amp;gt; a;//大根堆 也就是优先队列
-    //优先队列支持操作
-    a.push(1);//插入一个数
-    a.top();//取最大值
-    a.pop();//删除最大值
-    
-    
-    //！！！注意： 队列是没有clear函数的
-    //！！！除了队列 优先队列 栈其他所有的stl容器都是有clear函数的 唯独这三个容器没有clear函数
-    // q.clear();//这玩意儿会报错
-    
-    //那么没有clear如何清空队列呢？ 只要重新初始化就可以了
-
-    q = queue&amp;lt;int&amp;gt;();//重新初始化
-    
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-        <category term="Note" scheme="http://example.com/categories/Algorithm/Note/" />
-        <category term="语法基础课" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" />
-        <category term="1.8STL、常用库函数、位运算" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1-8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/" />
-        <updated>2024-07-31T14:16:49.338Z</updated>
     </entry>
 </feed>
