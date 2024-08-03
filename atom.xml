@@ -8,30 +8,189 @@
     <author>
       <name>CygneNoir</name>
     </author>
-    <updated>2024-08-01T07:23:54.248Z</updated>
+    <updated>2024-08-03T08:09:34.473Z</updated>
     <entry>
-        <id>http://example.com/2024/08/01/Internet%20Security/24.8.1/</id>
-        <title></title>
-        <link rel="alternate" href="http://example.com/2024/08/01/Internet%20Security/24.8.1/"/>
-        <content type="html">&lt;p&gt;YAMAHA domain == 4&lt;br /&gt;
-ANHENG WAF03 不用选 02 LOG SOURSE IP&lt;br /&gt;
- 周四前交&lt;br /&gt;
-南大&lt;br /&gt;
-设备信息找一线要&lt;br /&gt;
-设备概要&lt;br /&gt;
- cpu 利用率内存利用率 设备科大绿&lt;/p&gt;
-&lt;p&gt;时间数量统计 前 21&lt;br /&gt;
- 工单号 remark 在最后 jun2 开始分开建议 登录失败就写内部人员。。。&lt;br /&gt;
-vpn 时间改一下 2024-7&lt;br /&gt;
- 堡垒机 event name [index] 填 id&lt;br /&gt;
- 赛门铁克 log source index NATA high level catgory&lt;br /&gt;
- 渗透测试	&amp;quot; 链接: &lt;a href=&#34;https://pan.baidu.com/s/1EXIaH6mV3n6_xtQ9_5PYdg&#34;&gt;https://pan.baidu.com/s/1EXIaH6mV3n6_xtQ9_5PYdg&lt;/a&gt;&lt;br /&gt;
- 提取码: bxnn 复制这段内容后打开百度网盘手机 App，操作更方便哦&lt;br /&gt;
- -- 来自百度网盘超级会员 v5 的分享 &amp;quot;&lt;/p&gt;
-&lt;p&gt;确认该次登录是否为内部人员登录。&lt;/p&gt;
-&lt;p&gt;mklink /J C:\Users\a4061\Desktop\Obsidian.github.io\Github.io\ 新建文件夹 D:\CygneNoir\cygnenoir.github.io\source&lt;/p&gt;
+        <id>http://example.com/2024/08/03/Typescript/Typescript/</id>
+        <title>Typescript Learning</title>
+        <link rel="alternate" href="http://example.com/2024/08/03/Typescript/Typescript/"/>
+        <content type="html">&lt;h1 id=&#34;typescript-learning&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#typescript-learning&#34;&gt;#&lt;/a&gt; Typescript Learning&lt;/h1&gt;
+&lt;h3 id=&#34;在-vscode-终端中无法直接-npm-ls-g-很有可能是权限不够-以管理员身份启动-vscode-解决&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-vscode-终端中无法直接-npm-ls-g-很有可能是权限不够-以管理员身份启动-vscode-解决&#34;&gt;#&lt;/a&gt; 在 VSCODE 终端中无法直接 npm ls -g 很有可能是权限不够 以管理员身份启动 VSCODE 解决&lt;/h3&gt;
+&lt;h3 id=&#34;npm-常用命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#npm-常用命令&#34;&gt;#&lt;/a&gt; npm 常用命令&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;npm ls -g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样只会查到包 不会查到依赖&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;npm ls -g --depth 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;只显示生产环境依赖的包&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;npm ls --depth 0 --prod
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;只显示开发环境依赖的包&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;npm ls --depth 0 --dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们安装完成 &lt;a href=&#34;https://so.csdn.net/so/search?q=node&amp;amp;spm=1001.2101.3001.7020&#34;&gt;node&lt;/a&gt; 环境后，默认使用的 &lt;a href=&#34;https://so.csdn.net/so/search?q=%E9%95%9C%E5%83%8F%E6%BA%90&amp;amp;spm=1001.2101.3001.7020&#34;&gt;镜像源&lt;/a&gt; 是 npm，但是有时候，需要切换到其他的镜像源安装依赖，这时候我们需要用 nrm（npm registry manager ）进行源的快速切换。&lt;/p&gt;
+&lt;h1 id=&#34;node-使用-nrm-切换镜像源-更快安装依赖&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#node-使用-nrm-切换镜像源-更快安装依赖&#34;&gt;#&lt;/a&gt; node 使用 nrm 切换镜像源 - 更快安装依赖&lt;/h1&gt;
+&lt;h2 id=&#34;1安装-nrm&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1安装-nrm&#34;&gt;#&lt;/a&gt; 1. 安装 &lt;a href=&#34;https://so.csdn.net/so/search?q=nrm&amp;amp;spm=1001.2101.3001.7020&#34;&gt;nrm&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;安装 nrm 很简单，使用  &lt;code&gt;npm install -g nrm&lt;/code&gt;  可以直接就全局安装&lt;/p&gt;
+&lt;p&gt;安装完成后，我们可以使用  &lt;code&gt;nrm ls&lt;/code&gt;  查看所有的可用源，展示的源前有 * 的表示目前正在使用的源。&lt;/p&gt;
+&lt;h2 id=&#34;2切换源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2切换源&#34;&gt;#&lt;/a&gt; 2. 切换源&lt;/h2&gt;
+&lt;p&gt;我们通过  &lt;code&gt;nrm ls&lt;/code&gt;  查看目前可用的源后，需要切换到某个源，直接使用  &lt;code&gt;nrm use &amp;lt;源名&amp;gt;&lt;/code&gt;  即可完成切换。比如我们需要切换到 taobao 的源直接使用  &lt;code&gt;nrm use taobao&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3增加源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3增加源&#34;&gt;#&lt;/a&gt; 3. 增加源&lt;/h2&gt;
+&lt;p&gt;有时我们需要增加一些定制的源，如公司内部自己的私有源，我们使用  &lt;code&gt;nrm add &amp;lt;源名&amp;gt; &amp;lt;源 url&amp;gt;&lt;/code&gt;  进行添加。&lt;/p&gt;
+&lt;h2 id=&#34;4删除源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4删除源&#34;&gt;#&lt;/a&gt; 4. 删除源&lt;/h2&gt;
+&lt;p&gt;删除不需要的源使用  &lt;code&gt;nrm del &amp;lt;源名&amp;gt;&lt;/code&gt;  进行删除&lt;/p&gt;
+&lt;p&gt;我们也可以使用  &lt;code&gt;nrm test &amp;lt;源名&amp;gt;&lt;/code&gt;  去测试速度，以方便我们选择使用哪个源&lt;/p&gt;
+&lt;h3 id=&#34;因为在此系统上禁止运行脚本解决办法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#因为在此系统上禁止运行脚本解决办法&#34;&gt;#&lt;/a&gt; “因为在此系统上禁止运行脚本” 解决办法&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/493496089&#34;&gt;原地址&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;set-ExecutionPolicy RemoteSigned&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;改回去&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;set-ExecutionPolicy Default&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;安装-typescript-并检测-tsc短端口类型脚本编译器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装-typescript-并检测-tsc短端口类型脚本编译器&#34;&gt;#&lt;/a&gt; 安装 typescript 并检测 tsc（短端口类型脚本编译器）&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;npm i -g typescript
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tsc -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;常用-terminal-命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#常用-terminal-命令&#34;&gt;#&lt;/a&gt; 常用 terminal 命令&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;cd ~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Sh&#34;&gt;mkdir #新文件夹名字
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 vscode 中打开现在的目录文件夹&lt;/p&gt;
+&lt;figure class=&#34;highlight d&#34;&gt;&lt;figcaption data-lang=&#34;d&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;code &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;linux-创建新文件的命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#linux-创建新文件的命令&#34;&gt;#&lt;/a&gt; linux 创建新文件的命令&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;vi 或 vim&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[root@localhost ~]# vi file1.txt// 直接创建并打开一个文件 file1.txt&lt;/p&gt;
+&lt;p&gt;用 vi 编辑器编辑文本后，如果是新创建的文件，默认保存在当前目录下，如果想保存到指定目录下，可以在 vi 编辑器中，按 Esc 键切换到命令模式，然后用 w 命令写到指定目录下的指定新建文件，如写到 /tmp/test.txt 文件，则在 vi 命令模式下输入: w /tmp/test.txt 写好后，在 /tmp 目录下新的文件 test.txt 就被创建了。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;touch&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[root@localhost ~]# touch file2.txt// 创建新的空文件 file2.txt&lt;/p&gt;
+&lt;p&gt;touch 的另一个作用是更改一个文件或目录的时间。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;echo&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[root@localhost ~]# echo &amp;quot;this is a new file&amp;quot; &amp;gt; file3.txt// 创建文件 file3.txt 并将 this is a new file 写入&lt;/p&gt;
+&lt;p&gt;(说明：使用&amp;gt; 指令覆盖文件原内容并重新输入内容，若文件不存在则创建文件。)&lt;/p&gt;
+&lt;p&gt;[root@localhost ~]# echo &amp;quot;add contents&amp;quot; &amp;gt;&amp;gt;file3.txt// 在已存在的文件补充写入新内容 add contents&lt;/p&gt;
+&lt;p&gt;(说明：使用&amp;gt;&amp;gt; 指令向文件追加内容，原内容将保存。)&lt;/p&gt;
+&lt;p&gt;拓展： Linux 中输出重定向 &amp;gt; 和 &amp;gt;&amp;gt; 的区别，&amp;gt; 是覆盖，&amp;gt;&amp;gt; 是追加&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;会重写文件，如果文件里面有内容会覆盖。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;追加文件。也就是如果文件里面有内容会把新内容追加到文件尾&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;less 、more 、cat&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;三者都是将文件内容输出到标准输出，其中 less 和 more 可以分页显示，cat 是显示全部。&lt;/p&gt;
+&lt;p&gt;三者可以根据已经存在的文件创建新的文件。假设已经存在文件 1.txt。&lt;/p&gt;
+&lt;p&gt;cat 1.txt &amp;gt; 2.txt&lt;/p&gt;
+&lt;p&gt;less 1.txt &amp;gt; 3.txt&lt;/p&gt;
+&lt;p&gt;more 1.txt &amp;gt; 4.txt&lt;/p&gt;
+&lt;p&gt;此时创建的文件内容都和 1.txt 中文件内容相同。&lt;/p&gt;
+&lt;p&gt;cat 命令可以一次显示整个文件，如果文件比较大，使用不是很方便；适用于文件内容少的情况。&lt;/p&gt;
+&lt;p&gt;cat 主要有三大功能：&lt;/p&gt;
+&lt;p&gt;1) 一次显示整个文件: cat filename&lt;/p&gt;
+&lt;p&gt;2) 从键盘创建一个文件: cat &amp;gt; filename 只能创建新文件，不能编辑已有文件.&lt;/p&gt;
+&lt;p&gt;3) 将几个文件合并为一个文件: cat file1 file2 &amp;gt; file&lt;/p&gt;
+&lt;p&gt;more 命令可以让屏幕在显示满一屏幕时暂停，此时可按空格健继续显示下一个画面，或按 Q 键停止显示。&lt;/p&gt;
+&lt;p&gt;less 命令也可以分页显示文件，和 more 命令的区别就在于它支持上下键卷动屏幕，当结束浏览时，只要在 less 命令的提示符 “:” 下按 Q 键即可。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;cd&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[root@localhost ~]# cd &amp;gt; file3.txt// 创建新的空文件 file3.txt&lt;/p&gt;
+&lt;p&gt;[root@localhost ~]# cd &amp;gt;&amp;gt; file4.txt// 创建新的空文件 file3.txt&lt;/p&gt;
+&lt;p&gt;cd 最主要的作用是切换目录，在 cd 后面跟 &amp;gt; 或 &amp;gt;&amp;gt; 再加上文件名就可以创建一个内容为空的文件。它和 echo 的区别之处在于 echo 可写文件内容，而 cd 并不能。&lt;br /&gt;
+————————————————&lt;br /&gt;
+ 版权声明：本文为 CSDN 博主「csdnlzy」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。&lt;/p&gt;
+&lt;h3 id=&#34;删除文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除文件&#34;&gt;#&lt;/a&gt; 删除文件&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://t.zoukankan.com/macrored-p-11415741.html&#34;&gt;原文地址&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用-typesript-编译器使得我们可以编译-indexts&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用-typesript-编译器使得我们可以编译-indexts&#34;&gt;#&lt;/a&gt; 使用 typesript 编译器使得我们可以编译 index.ts&lt;/h3&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption data-lang=&#34;Bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;tsc index.ts&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;会出现一个 index.js 就编译好了&lt;/p&gt;
+&lt;h2 id=&#34;创建-typescript-配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建-typescript-配置文件&#34;&gt;#&lt;/a&gt; 创建 Typescript 配置文件&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;tsc --init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;在-vscode-中搜索文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-vscode-中搜索文件&#34;&gt;#&lt;/a&gt; 在 VSCODE 中搜索文件&lt;/h3&gt;
+&lt;p&gt;ctrl + p&lt;/p&gt;
+&lt;h3 id=&#34;创建类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#创建类&#34;&gt;#&lt;/a&gt; 创建类&lt;/h3&gt;
+&lt;p&gt;这是 Typescript 的初始化属性方法&lt;/p&gt;
+&lt;p&gt;这是 Javascript 的&lt;br /&gt;
+声明 id/owner/balance 的类型 在 JavaScript 中不存在&lt;/p&gt;
+&lt;h3 id=&#34;报错-throw-new-error&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#报错-throw-new-error&#34;&gt;#&lt;/a&gt; 报错: throw new Error&lt;/h3&gt;
+&lt;h2 id=&#34;一步编译并运行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一步编译并运行&#34;&gt;#&lt;/a&gt; 一步编译并运行&lt;/h2&gt;
+&lt;p&gt;mac 下的&lt;/p&gt;
+&lt;p&gt;Linux 下的&lt;/p&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;tsc &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;node&lt;/span&gt; ~&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;Windows 下的&lt;/p&gt;
+&lt;h3 id=&#34;只读修饰符-在类型声明的时候-加上-readonly-只能在构造函数内设置它&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#只读修饰符-在类型声明的时候-加上-readonly-只能在构造函数内设置它&#34;&gt;#&lt;/a&gt; 只读修饰符 在类型声明的时候 加上 readonly (只能在构造函数内设置它)&lt;/h3&gt;
+&lt;h3 id=&#34;继承&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#继承&#34;&gt;#&lt;/a&gt; 继承&lt;/h3&gt;
+&lt;figure class=&#34;highlight ts&#34;&gt;&lt;figcaption data-lang=&#34;TypeScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 继承 inheritance 即类中共同的属性 防止重复&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; firstName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; lastName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 注意这里不能 return 任何 因为要返回一个实例对象 object 类型&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;fullName&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;firstName &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39; &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lastName&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;walk&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Walking&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; studentId&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; firstName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lastName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 这里使用访问修饰符时：public /private 我们本质上是在创建一个参数属性 所以类型脚本编译器将创建此名称的属性并为我们初始化它 这里我们不想用公共修饰符 public 因为之前已经在 Person 里声明且初始化过了&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;firstName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lastName&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 在 ts 中 有一个特殊的关键字 super 去让我们来参考 reference 基础的类 basic class&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;takeTest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Taking a test&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; student &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;John&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;john@gmail.com&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;折叠代码块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#折叠代码块&#34;&gt;#&lt;/a&gt; 折叠代码块&lt;/h3&gt;
+&lt;p&gt;ctrl + k + 0 折叠全部&lt;br /&gt;
+ ctrl + k + j 展开全部&lt;/p&gt;
+&lt;p&gt;ctrl + shift + [ 折叠选中&lt;br /&gt;
+ \ 反义符号&lt;br /&gt;
+ ctrl + shift + ] 展开选中&lt;/p&gt;
+&lt;h3 id=&#34;属性-properties-运算符-operator&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#属性-properties-运算符-operator&#34;&gt;#&lt;/a&gt; 属性 Properties 运算符 Operator&lt;/h3&gt;
+&lt;h3 id=&#34;这些东西非常有用-且内置在-typescript-中&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#这些东西非常有用-且内置在-typescript-中&#34;&gt;#&lt;/a&gt; 这些东西非常有用 且内置在 Typescript 中&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;typescriptlang.org/docs/handbook/utility-types.html&#34;&gt;原链接&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;65-至-68-需复习记得写笔记-78-属性装饰器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#65-至-68-需复习记得写笔记-78-属性装饰器&#34;&gt;#&lt;/a&gt; 6.5 至 6.8 需复习记得写笔记 7.8 属性装饰器&lt;/h3&gt;
+&lt;h3 id=&#34;展开运算符&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#展开运算符&#34;&gt;#&lt;/a&gt; 展开运算符 ...&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/a432a9e78949&#34;&gt;展开运算符&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ctrl-移动到新文件或者删除模块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ctrl-移动到新文件或者删除模块&#34;&gt;#&lt;/a&gt; ctrl + . 移动到新文件或者删除模块&lt;/h3&gt;
+&lt;h3 id=&#34;lodash-流行的应用程序&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lodash-流行的应用程序&#34;&gt;#&lt;/a&gt; lodash 流行的应用程序&lt;/h3&gt;
+&lt;p&gt;因为 lodash 纯纯 JS 所以需要类型注释 使得构建应用程序更快&lt;br /&gt;
+所以再装一个类型注释库 @types 是很流行的 JS 类型注释库 里面有所有 JS 包的类型注释&lt;/p&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; i &lt;span class=&#34;token parameter variable&#34;&gt;-D&lt;/span&gt; @types/lodash&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;-D 开发环境安装 也就是不会出现在上线环境&lt;br /&gt;
+ @types/ + 上 JS 包&lt;/p&gt;
+&lt;p&gt;这样就可以出现提示了&lt;/p&gt;
+&lt;p&gt;包和声明文件一般不会分开&lt;/p&gt;
+&lt;h2 id=&#34;react&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#react&#34;&gt;#&lt;/a&gt; React&lt;/h2&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;npx create-react-app reminders-app &lt;span class=&#34;token parameter variable&#34;&gt;--template&lt;/span&gt; typescript&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;创建一个叫 reminders-app 的 react 且使用 typescript&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;button.btn.btn-primary
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;创建一个 button className 为 btn btn-primary&lt;/p&gt;
+&lt;p&gt;还是一样的 ctrl + .&lt;/p&gt;
+&lt;p&gt;就会自动创建了&lt;/p&gt;
 </content>
-        <updated>2024-08-01T07:23:54.248Z</updated>
+        <category term="Typescript" scheme="http://example.com/categories/Typescript/" />
+        <updated>2024-08-03T08:09:34.473Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/08/03/%E5%8F%8B%E9%93%BE%E6%B7%BB%E5%8A%A0/</id>
+        <title>友链添加</title>
+        <link rel="alternate" href="http://example.com/2024/08/03/%E5%8F%8B%E9%93%BE%E6%B7%BB%E5%8A%A0/"/>
+        <content type="html">&lt;h1 id=&#34;查看友链&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看友链&#34;&gt;#&lt;/a&gt; 查看友链&lt;/h1&gt;
+&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Noir&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;a href=&#34;/friends/&#34; class=&#34;image&#34; data-background-image=&#34;https://2.gravatar.com/avatar/6f9c7742c6e97f0e83534c95c4088a2fec3aade410c8b72622137a876e488644&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;/friends/&#34; class=&#34;title&#34;&gt;查看友链&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Noir&#39;s Blog &amp; Computer Notes&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;申请方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#申请方法&#34;&gt;#&lt;/a&gt; 申请方法&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;添加本站后，在下方 Post 处留言，格式如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;site&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#网站的名字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;owner&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#您的名字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#您的网址&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#简短描述&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#一张图片&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#方块颜色&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="FriendChainAdd" scheme="http://example.com/categories/FriendChainAdd/" />
+        <category term="FriendChainAdd" scheme="http://example.com/tags/FriendChainAdd/" />
+        <updated>2024-08-03T05:56:15.391Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/08/02/Web3/Solidity/</id>
+        <title>Solidity</title>
+        <link rel="alternate" href="http://example.com/2024/08/02/Web3/Solidity/"/>
+        <content type="html">&lt;h1 id=&#34;solidity&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solidity&#34;&gt;#&lt;/a&gt; Solidity&lt;/h1&gt;
+&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Solidity Academy&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;a href=&#34;https://www.wtf.academy/&#34; class=&#34;image&#34; data-background-image=&#34;https://www.wtf.academy/img/logo.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://www.wtf.academy/&#34; class=&#34;title&#34;&gt;Solidity Academy&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Web3 Academy&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;Remix&#34; style=&#34;--block-color:#9d5b8b;&#34;&gt;&lt;a href=&#34;https://remix.ethereum.org/&#34; class=&#34;image&#34; data-background-image=&#34;/assets/404.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://remix.ethereum.org/&#34; class=&#34;title&#34;&gt;Remix&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;以太链上的合约开发 IDE&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+</content>
+        <category term="Web3" scheme="http://example.com/categories/Web3/" />
+        <category term="Web3" scheme="http://example.com/tags/Web3/" />
+        <category term="Solidity" scheme="http://example.com/tags/Solidity/" />
+        <updated>2024-08-02T06:56:14.159Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</id>
@@ -888,98 +1047,5 @@ int main()&amp;#123;
         <category term="语法基础课" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" />
         <category term="1.8STL、常用库函数、位运算" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1-8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/" />
         <updated>2024-07-31T14:16:49.355Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/07/31/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1.8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/%E6%A0%88/</id>
-        <title>栈</title>
-        <link rel="alternate" href="http://example.com/2024/07/31/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1.8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/%E6%A0%88/"/>
-        <content type="html">&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;queue&amp;gt;
-#include &amp;lt;stack&amp;gt;
-
-
-using namespace std;
-
-
-int main()&amp;#123;
-    //栈 先进后出 也就是 弹出的元素 是最后一个插入的元素 123 321 队列就像是管道 栈就像是池子
-    
-    stack&amp;lt;int&amp;gt; stk;//栈的定义
-    stk.push(1);//栈 插入一个元素
-    stk.top();//返回栈顶元素
-    stk.pop();//删除栈顶元素 也就是删除最后一个插入的元素
-    
-    //双端队列没有限制 可以从队头弹出也可以从队尾弹出
-    
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-        <category term="Note" scheme="http://example.com/categories/Algorithm/Note/" />
-        <category term="语法基础课" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" />
-        <category term="1.8STL、常用库函数、位运算" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1-8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/" />
-        <updated>2024-07-31T14:16:49.350Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/07/31/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1.8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88set%E6%9C%89%E5%BA%8F%E5%A4%9A%E9%87%8D%E9%9B%86%E5%90%88multiset/</id>
-        <title>有序集合set有序多重集合multiset</title>
-        <link rel="alternate" href="http://example.com/2024/07/31/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1.8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88set%E6%9C%89%E5%BA%8F%E5%A4%9A%E9%87%8D%E9%9B%86%E5%90%88multiset/"/>
-        <content type="html">&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;set&amp;gt;//set底层实现是红黑树 set和multiset 内部实现都是相同的
-
-using namespace std;
-
-int main()&amp;#123;
-    // set头文件里有两种不同的容器
-    set&amp;lt;int&amp;gt; a;//set里不能包含重复元素 元素不能重复 如果插入重复元素的话 就会忽略掉这个操作
-    multiset&amp;lt;int&amp;gt; b;//元素可以重复 这里面可以插入两个1 三个1 都是可以的
-    
-    
-    
-    
-    set&amp;lt;int&amp;gt;::iterator it = a.begin();
-    // it++;//++指有序序列里的下一个元素 --指有序序列里的前一个元素 --it和++it也是有的
-    
-    //和vector一样有end迭代器 表示迭代器最后元素的后一个位置
-    a.end();
-    
-    a.insert(x);//表示插入一个x
-    a.find(x);//指查找一个x 他会返回值等于x的一个迭代器 如果没找到x的话 他的值会返回a.end();
-    //所以我们可以根据这个判断x是否在a里面存在
-    
-    // if(a.find(x) == a.end())//判断x在a中是否存在 但是一般判断不这么写 会用后面一个函数
-    
-    a.lower_bound(x);
-    //找到大于等于x的最小的元素迭代器
-    a.upper_bound(x);
-    //找到大于x的最小的元素迭代器 注意！！！是大于 不是小于 不要用字面意思理解
-    
-    a.erase(it);//指把it的所有迭代器全部删掉
-    
-    a.count(x);//表示的是x在a里面的个数//因为set里面不能重复 如果重复会忽略所以如果x存在返回1 如果x不存在返回0 返回个数草泥马小伙子误人子弟啊
-    
-    //当然也可以定义一个结构体 用结构体定义一个set
-    //因为set里面是需要做比较的，所以我们也是需要去重载一个小于号的
-    struct Rec&amp;#123;
-        int x, y;
-        bool operator&amp;lt; (const Rec&amp;amp; t) const&amp;#123;
-            return x &amp;lt; t.x;
-        &amp;#125;
-    &amp;#125;;
-    
-    set&amp;lt;Rec&amp;gt; c;//定义结构体
-    //size/empty/clear 和vector类似
-    //set支持迭代器 也是支持++ --两个宇算数相关的操作 set里的++--比较复杂 其实是找有序序列的下一个元素 在一个alpha树里他是找当前点的前驱或者后继 也可以理解为找有序序列的前一个元素或者后一个元素
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-        <category term="Note" scheme="http://example.com/categories/Algorithm/Note/" />
-        <category term="语法基础课" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/" />
-        <category term="1.8STL、常用库函数、位运算" scheme="http://example.com/categories/Algorithm/Note/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/1-8STL%E3%80%81%E5%B8%B8%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%8D%E8%BF%90%E7%AE%97/" />
-        <updated>2024-07-31T14:16:49.344Z</updated>
     </entry>
 </feed>
