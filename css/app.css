@@ -2854,14 +2854,11 @@ use.stop-animation {
   0% {
     transform: scale(1);
   }
-  10%, 20% {
-    transform: scale(0.9) rotate(3deg);
+  40% {
+    transform: scale(1.2) rotate(-390deg);
   }
-  30%, 50%, 70%, 90% {
-    transform: scale(1.1) rotate(-3deg);
-  }
-  40%, 60%, 80% {
-    transform: scale(1.1) rotate(3deg);
+  70% {
+    transform: scale(1.1) rotate(30deg);
   }
   100% {
     transform: scale(1);
@@ -2871,14 +2868,11 @@ use.stop-animation {
   0% {
     transform: scale(1);
   }
-  10%, 20% {
-    transform: scale(0.9) rotate(3deg);
+  40% {
+    transform: scale(1.2) rotate(-390deg);
   }
-  30%, 50%, 70%, 90% {
-    transform: scale(1.1) rotate(-3deg);
-  }
-  40%, 60%, 80% {
-    transform: scale(1.1) rotate(3deg);
+  70% {
+    transform: scale(1.1) rotate(30deg);
   }
   100% {
     transform: scale(1);
@@ -2888,14 +2882,11 @@ use.stop-animation {
   0% {
     transform: scale(1);
   }
-  10%, 20% {
-    transform: scale(0.9) rotate(3deg);
+  40% {
+    transform: scale(1.2) rotate(-390deg);
   }
-  30%, 50%, 70%, 90% {
-    transform: scale(1.1) rotate(-3deg);
-  }
-  40%, 60%, 80% {
-    transform: scale(1.1) rotate(3deg);
+  70% {
+    transform: scale(1.1) rotate(30deg);
   }
   100% {
     transform: scale(1);
@@ -2905,14 +2896,11 @@ use.stop-animation {
   0% {
     transform: scale(1);
   }
-  10%, 20% {
-    transform: scale(0.9) rotate(3deg);
+  40% {
+    transform: scale(1.2) rotate(-390deg);
   }
-  30%, 50%, 70%, 90% {
-    transform: scale(1.1) rotate(-3deg);
-  }
-  40%, 60%, 80% {
-    transform: scale(1.1) rotate(3deg);
+  70% {
+    transform: scale(1.1) rotate(30deg);
   }
   100% {
     transform: scale(1);
