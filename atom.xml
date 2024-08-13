@@ -154,7 +154,7 @@ Microsoft Exchange Server 2019&lt;/p&gt;
     </entry>
     <entry>
         <id>http://example.com/2024/08/13/CVE/Apache/Apache%20HTTP%20Server%20mod_rewrite%20%E8%BE%93%E5%87%BA%E4%B8%8D%E5%BD%93%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%20CVE-2024-38475/</id>
-        <title>Apache HTTP Server mod_rewrite输出不当逃逸漏洞 CVE-2024-38475</title>
+        <title>Apache HTTP Server mod_rewrite 输出不当逃逸漏洞 CVE-2024-38475</title>
         <link rel="alternate" href="http://example.com/2024/08/13/CVE/Apache/Apache%20HTTP%20Server%20mod_rewrite%20%E8%BE%93%E5%87%BA%E4%B8%8D%E5%BD%93%E9%80%83%E9%80%B8%E6%BC%8F%E6%B4%9E%20CVE-2024-38475/"/>
         <content type="html">&lt;p&gt;2024 年 7 月 1 日，网上公开披露了一个 Apache HTTP Server mod_rewrite 输出不当逃逸漏洞 (CVE-2024-38475)，Apache HTTP Server 是美国阿帕奇（Apache）基金会的一款开源网页服务器，请各位用户尽快安装漏洞补丁。&lt;/p&gt;
 &lt;p&gt;** 漏洞风险：**Apache HTTP Server 2.4.59 及更早版本中 mod_rewrite 模块在处理 URL 重写时，如果使用反向引用或变量作为替换的第一部分，可能会导致输出转义不当，攻击者可借助此漏洞将 URL 映射到不应该被用户访问的文件系统位置，从而导致代码执行或源代码泄露。修复版本中通过默认禁用掉不安全的重写规则，增加 UnsafePrefixStat 选项来修复该漏洞。&lt;/p&gt;
@@ -552,7 +552,9 @@ pangu -f [文件路径] &amp;gt; [写入路径] // 检查指定文件并将结�
 &lt;p&gt;不多说了，下面我们进入主题。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id=&#34;流量卡推荐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#流量卡推荐&#34;&gt;#&lt;/a&gt;  &lt;code&gt;流量卡推荐：&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;① &lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;电信沧节卡 - 长期有效套餐 | 每月 29 元包 155G 通用流量＋ 30G 定向流量 + 通话 0.1 + 首月送 30 元话费&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;电信沧节卡 - 长期有效套餐 | 每月 29 元包 155G 通用流量＋ 30G 定向流量 + 通话 0.1 + 首月送 30 元话费&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;我把沧节卡放在第一个的主要原因是它的优惠期长达 20 年，而且有着极高的审核通过率，对于追求全面性价比的朋友们来说，选择这个是最好的选择。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;电信沧节套餐专属申请地址:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&lt;/a&gt;&lt;/p&gt;
@@ -572,7 +574,9 @@ pangu -f [文件路径] &amp;gt; [写入路径] // 检查指定文件并将结�
 &lt;p&gt;&lt;strong&gt;申请限制年龄&lt;/strong&gt;：18~65 岁，其他年龄会审核失败。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;快递方式:&lt;/strong&gt; 京东或顺丰快递（到货后 7 天内激活，逾期未激活号码自动回收，激活后请立即插入手机并立即拨打一次电话否则无法正常使用需二次实名认证。）&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;② &lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;电信海锦卡【29 元 200G+20 年长期套餐】(本人正在使用)&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;电信海锦卡【29 元 200G+20 年长期套餐】(本人正在使用)&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;专属申请地址:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;套餐详情:&lt;/strong&gt;&lt;/p&gt;
@@ -589,7 +593,9 @@ pangu -f [文件路径] &amp;gt; [写入路径] // 检查指定文件并将结�
 &lt;p&gt;&lt;strong&gt;申请限制年龄&lt;/strong&gt;：22-55 岁&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;快递方式：京东&lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;③ &lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;联通海锅卡【长期】29 元 183G+100 分钟&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;span class=&#34;rainbow&#34;&gt;&lt;strong&gt;联通海锅卡【长期】29 元 183G+100 分钟&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;专属申请地址:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&#34;&gt;https://172.lot-ml.com/h5orderEn/index?pudID=78a072a74e11bbd5&amp;amp;userid=ea35dca6f9135e7d&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;套餐详情:&lt;/strong&gt;&lt;/p&gt;
