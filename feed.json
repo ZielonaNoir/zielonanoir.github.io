@@ -7,6 +7,20 @@
     "home_page_url": "http://example.com",
     "items": [
         {
+            "id": "http://example.com/2024/08/14/CVE/Microsoft%20Windows/Microsoft%20Windows%20Remote%20Desktop%20Services%20Remote%20Code%20Execution%20Vulnerability%20CVE-2019-0708/",
+            "url": "http://example.com/2024/08/14/CVE/Microsoft%20Windows/Microsoft%20Windows%20Remote%20Desktop%20Services%20Remote%20Code%20Execution%20Vulnerability%20CVE-2019-0708/",
+            "title": "Microsoft Windows Remote Desktop Services Remote Code Execution Vulnerability CVE-2019-0708",
+            "date_published": "2024-08-14T07:55:24.547Z",
+            "content_html": "<p><div class=\"links\"><div class=\"item\" title=\"夏荷影\" style=\"--block-color:#616fac;\"><a href=\"https://blog.csdn.net/qq_44465615/article/details/109690573\" class=\"image\" data-background-image=\"https://s2.loli.net/2024/08/14/Cam9VBr85pAo6fx.png\"></a>\n        <div class=\"info\">\n        <a href=\"https://blog.csdn.net/qq_44465615/article/details/109690573\" class=\"title\">CVE-2019-0708 漏洞分析</a>\n        <p class=\"desc\">CVE-2019-0708 漏洞分析</p>\n        </div></div><div class=\"item\" title=\"eastmount\" style=\"--block-color:#fdde85;\"><a href=\"https://zhuanlan.zhihu.com/p/478215398\" class=\"image\" data-background-image=\"https://s2.loli.net/2024/08/14/ENFS1Gd4Q7Iwoaj.png\"></a>\n        <div class=\"info\">\n        <a href=\"https://zhuanlan.zhihu.com/p/478215398\" class=\"title\">Windows 漏洞利用之 CVE-2019-0708 复现及防御详解</a>\n        <p class=\"desc\">Windows 漏洞利用之 CVE-2019-0708 复现及防御详解</p>\n        </div></div></div></p>\n<h1 id=\"x00-漏洞概述\"><a class=\"anchor\" href=\"#x00-漏洞概述\">#</a> x00 漏洞概述</h1>\n<p>2019 年 5 月 14 日微软官方发布安全补丁，修复了 Windows 远程桌面服务的远程代码执行漏洞（CVE-2019-0708），该高危漏洞利用方式是通过远程桌面端口 3389，RDP 协议进行攻击的，堪比 WannaCry。<br />\n2019 年 09 月 07 日，黑客大佬 Rapid7 在 Github 公开发布了 CVE-2019-0708（Windows 远程桌面服务漏洞）的 EXP，基于该模块的漏洞利用工具开始扩散，已经构成了蠕虫级的攻击威胁。</p>\n<p>据 360Center 分析，该漏洞是预身份验证且无需用户交互，这意味着这个漏洞可以通过网络蠕虫的方式被利用。利用此漏洞的任何恶意软件都可能从被感染的计算机传播到其他易受攻击的计算机，其方式与 2017 年 WannaCry 恶意软件的传播方式类似。成功利用此漏洞的攻击者可以在目标系统完成安装应用程序，查看、更改或删除数据，创建完全访问权限的新账户等操作。</p>\n<p>CVE-2019-0708 已公开的漏洞利用工具可以极易的被普通攻击者使用，脚本化 / 批量化 / 自动化攻击将接踵而至。经研判，360CERT 确认漏洞等级严重，影响面广，建议相关单位、企业内部立即进行安全排查，给在漏洞影响范围内的服务器、主机及时更新安全补丁。</p>\n<h1 id=\"x01-影响范围\"><a class=\"anchor\" href=\"#x01-影响范围\">#</a> x01 影响范围</h1>\n<p>它影响了某些旧版本的 Windows 系统，包括：</p>\n<p>Windows 7 for 32-bit Systems Service Pack 1<br />\nWindows 7 for x64-based Systems Service Pack 1<br />\nWindows Server 2008 for 32-bit Systems Service Pack 2<br />\nWindows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)<br />\nWindows Server 2008 for Itanium-Based Systems Service Pack 2<br />\nWindows Server 2008 for x64-based Systems Service Pack 2<br />\nWindows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)<br />\nWindows Server 2008 R2 for Itanium-Based Systems Service Pack 1<br />\nWindows Server 2008 R2 for x64-based Systems Service Pack 1<br />\nWindows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)<br />\nWindows XP SP3 x86<br />\nWindows XP Professional x64 Edition SP2<br />\nWindows XP Embedded SP3 x86<br />\nWindows Server 2003 SP2 x86<br />\nWindows Server 2003 x64 Edition SP2<br />\nWindows 8 和 Windows 10 及之后版本的用户不受此漏洞影响</p>\n<h1 id=\"x02-复现\"><a class=\"anchor\" href=\"#x02-复现\">#</a> x02 复现</h1>\n<h1 id=\"x03-漏洞背景\"><a class=\"anchor\" href=\"#x03-漏洞背景\">#</a> x03 漏洞背景</h1>\n<p>2019 年 5 月 14 日微软官方发布安全补丁，修复了 Windows 远程桌面服务的远程代码执行漏洞 CVE-2019-0708<br />\n<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708\">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708</a><br />\n 此漏洞是预身份验证且无需用户交互（无需验证系统账户密码），这就意味着这个漏洞可以通过网络蠕虫的方式被利用。</p>\n<p>CVE-2019-0708 远程桌面服务远程代码执行漏洞 - 爱尖刀</p>\n<h1 id=\"x04-漏洞原理\"><a class=\"anchor\" href=\"#x04-漏洞原理\">#</a> x04 漏洞原理</h1>\n<h1 id=\"x05-修复方案\"><a class=\"anchor\" href=\"#x05-修复方案\">#</a> x05 修复方案</h1>\n<p>1、尽快安装此漏洞的补丁（即使已经禁用远程桌面服务）。<br />\n2、如果不需要使用远程桌面服务，建议禁用该服务。<br />\n3、在受影响版本的系统上启用网络级身份验证（NLA）；启用 NLA 后，攻击者需要使用目标系统上的有效账户对远程桌面服务进行身份验证，才能成功利用该漏洞。<br />\n4、在企业外围或边界防火墙上部署安全策略，阻止 TCP 端口 3389。</p>\n<p><strong>一是</strong>及时更新 Windows 操作系统补丁，补丁地址为：<a href=\"https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0708\">https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0708</a>；<br />\n<strong>二是</strong>如无明确需求，可禁用远程桌面服务；<br />\n<strong>三是</strong>在受影响的系统上启用网络级身份验证（NLA）；<br />\n<strong>四是</strong>在边界防火墙上部署安全策略，阻断 TCP 端口 3389 的连接。</p>\n<p><strong>2003 补丁下载地址：</strong></p>\n<p><a href=\"http://download.windowsupdate.com/d/csa/csa/secu/2019/04/windowsserver2003-kb4500331-x86-custom-chs_4892823f525d9d532ed3ae36fc440338d2b46a72.exe\">http://download.windowsupdate.com/d/csa/csa/secu/2019/04/windowsserver2003-kb4500331-x86-custom-chs_4892823f525d9d532ed3ae36fc440338d2b46a72.exe</a></p>\n<p><strong>2008 R2 补丁下载地址：</strong></p>\n<p><a href=\"http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/05/windows6.1-kb4499175-x64_3704acfff45ddf163d8049683d5a3b75e49b58cb.msu\">http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/05/windows6.1-kb4499175-x64_3704acfff45ddf163d8049683d5a3b75e49b58cb.msu</a></p>\n",
+            "tags": [
+                "CVE",
+                "Windows",
+                "CVE",
+                "Windows",
+                "Microsoft Server"
+            ]
+        },
+        {
             "id": "http://example.com/2024/08/14/TradingView/PineScript/",
             "url": "http://example.com/2024/08/14/TradingView/PineScript/",
             "title": "PineScript",
@@ -54,6 +68,7 @@
                 "CVE",
                 "Exchange",
                 "CVE",
+                "Microsoft Server",
                 "Exchange"
             ]
         },
@@ -223,17 +238,6 @@
             "title": "插入排序",
             "date_published": "2024-07-31T14:16:49.518Z",
             "content_html": "<pre><code class=\"language-c++\">void insert_sort()\n&#123;\n    for (int i = 1; i &lt; n; i ++ )\n    &#123;\n        int x = a[i];\n        int j = i-1;\n\n        while (j &gt;= 0 &amp;&amp; x &lt; a[j])\n        &#123;\n            a[j+1] = a[j];\n            j -- ;\n        &#125;\n        a[j+1] = x;\n    &#125;\n&#125;\n</code></pre>\n",
-            "tags": [
-                "Algorithm",
-                "Algorithm, Top 10 Sorting Algorithm"
-            ]
-        },
-        {
-            "id": "http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E6%9C%80%E5%BF%AB%EF%BC%89/",
-            "url": "http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E6%9C%80%E5%BF%AB%EF%BC%89/",
-            "title": "快速排序（最快）",
-            "date_published": "2024-07-31T14:16:49.512Z",
-            "content_html": "<pre><code class=\"language-c++\">void quick_sort(int l, int r)\n&#123;\n    if (l &gt;= r) return ;\n\n    int x = a[l+r&gt;&gt;1], i = l-1, j = r+1;\n    while (i &lt; j)\n    &#123;\n        while (a[++ i] &lt; x);\n        while (a[-- j] &gt; x);\n        if (i &lt; j) swap(a[i], a[j]);\n    &#125;\n    sort(l, j), sort(j+1, r);\n&#125;\n</code></pre>\n",
             "tags": [
                 "Algorithm",
                 "Algorithm, Top 10 Sorting Algorithm"

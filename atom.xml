@@ -8,8 +8,72 @@
     <author>
       <name>CygneNoir</name>
     </author>
-    <updated>2024-08-14T06:35:21.674Z</updated>
+    <updated>2024-08-14T07:55:24.547Z</updated>
     <category term="CygneNoir" />
+    <entry>
+        <id>http://example.com/2024/08/14/CVE/Microsoft%20Windows/Microsoft%20Windows%20Remote%20Desktop%20Services%20Remote%20Code%20Execution%20Vulnerability%20CVE-2019-0708/</id>
+        <title>Microsoft Windows Remote Desktop Services Remote Code Execution Vulnerability CVE-2019-0708</title>
+        <link rel="alternate" href="http://example.com/2024/08/14/CVE/Microsoft%20Windows/Microsoft%20Windows%20Remote%20Desktop%20Services%20Remote%20Code%20Execution%20Vulnerability%20CVE-2019-0708/"/>
+        <content type="html">&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;夏荷影&#34; style=&#34;--block-color:#616fac;&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/qq_44465615/article/details/109690573&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/14/Cam9VBr85pAo6fx.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://blog.csdn.net/qq_44465615/article/details/109690573&#34; class=&#34;title&#34;&gt;CVE-2019-0708 漏洞分析&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;CVE-2019-0708 漏洞分析&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;eastmount&#34; style=&#34;--block-color:#fdde85;&#34;&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/478215398&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/14/ENFS1Gd4Q7Iwoaj.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://zhuanlan.zhihu.com/p/478215398&#34; class=&#34;title&#34;&gt;Windows 漏洞利用之 CVE-2019-0708 复现及防御详解&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Windows 漏洞利用之 CVE-2019-0708 复现及防御详解&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;x00-漏洞概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x00-漏洞概述&#34;&gt;#&lt;/a&gt; x00 漏洞概述&lt;/h1&gt;
+&lt;p&gt;2019 年 5 月 14 日微软官方发布安全补丁，修复了 Windows 远程桌面服务的远程代码执行漏洞（CVE-2019-0708），该高危漏洞利用方式是通过远程桌面端口 3389，RDP 协议进行攻击的，堪比 WannaCry。&lt;br /&gt;
+2019 年 09 月 07 日，黑客大佬 Rapid7 在 Github 公开发布了 CVE-2019-0708（Windows 远程桌面服务漏洞）的 EXP，基于该模块的漏洞利用工具开始扩散，已经构成了蠕虫级的攻击威胁。&lt;/p&gt;
+&lt;p&gt;据 360Center 分析，该漏洞是预身份验证且无需用户交互，这意味着这个漏洞可以通过网络蠕虫的方式被利用。利用此漏洞的任何恶意软件都可能从被感染的计算机传播到其他易受攻击的计算机，其方式与 2017 年 WannaCry 恶意软件的传播方式类似。成功利用此漏洞的攻击者可以在目标系统完成安装应用程序，查看、更改或删除数据，创建完全访问权限的新账户等操作。&lt;/p&gt;
+&lt;p&gt;CVE-2019-0708 已公开的漏洞利用工具可以极易的被普通攻击者使用，脚本化 / 批量化 / 自动化攻击将接踵而至。经研判，360CERT 确认漏洞等级严重，影响面广，建议相关单位、企业内部立即进行安全排查，给在漏洞影响范围内的服务器、主机及时更新安全补丁。&lt;/p&gt;
+&lt;h1 id=&#34;x01-影响范围&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x01-影响范围&#34;&gt;#&lt;/a&gt; x01 影响范围&lt;/h1&gt;
+&lt;p&gt;它影响了某些旧版本的 Windows 系统，包括：&lt;/p&gt;
+&lt;p&gt;Windows 7 for 32-bit Systems Service Pack 1&lt;br /&gt;
+Windows 7 for x64-based Systems Service Pack 1&lt;br /&gt;
+Windows Server 2008 for 32-bit Systems Service Pack 2&lt;br /&gt;
+Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)&lt;br /&gt;
+Windows Server 2008 for Itanium-Based Systems Service Pack 2&lt;br /&gt;
+Windows Server 2008 for x64-based Systems Service Pack 2&lt;br /&gt;
+Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)&lt;br /&gt;
+Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1&lt;br /&gt;
+Windows Server 2008 R2 for x64-based Systems Service Pack 1&lt;br /&gt;
+Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)&lt;br /&gt;
+Windows XP SP3 x86&lt;br /&gt;
+Windows XP Professional x64 Edition SP2&lt;br /&gt;
+Windows XP Embedded SP3 x86&lt;br /&gt;
+Windows Server 2003 SP2 x86&lt;br /&gt;
+Windows Server 2003 x64 Edition SP2&lt;br /&gt;
+Windows 8 和 Windows 10 及之后版本的用户不受此漏洞影响&lt;/p&gt;
+&lt;h1 id=&#34;x02-复现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x02-复现&#34;&gt;#&lt;/a&gt; x02 复现&lt;/h1&gt;
+&lt;h1 id=&#34;x03-漏洞背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x03-漏洞背景&#34;&gt;#&lt;/a&gt; x03 漏洞背景&lt;/h1&gt;
+&lt;p&gt;2019 年 5 月 14 日微软官方发布安全补丁，修复了 Windows 远程桌面服务的远程代码执行漏洞 CVE-2019-0708&lt;br /&gt;
+&lt;a href=&#34;https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708&#34;&gt;https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708&lt;/a&gt;&lt;br /&gt;
+ 此漏洞是预身份验证且无需用户交互（无需验证系统账户密码），这就意味着这个漏洞可以通过网络蠕虫的方式被利用。&lt;/p&gt;
+&lt;p&gt;CVE-2019-0708 远程桌面服务远程代码执行漏洞 - 爱尖刀&lt;/p&gt;
+&lt;h1 id=&#34;x04-漏洞原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x04-漏洞原理&#34;&gt;#&lt;/a&gt; x04 漏洞原理&lt;/h1&gt;
+&lt;h1 id=&#34;x05-修复方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x05-修复方案&#34;&gt;#&lt;/a&gt; x05 修复方案&lt;/h1&gt;
+&lt;p&gt;1、尽快安装此漏洞的补丁（即使已经禁用远程桌面服务）。&lt;br /&gt;
+2、如果不需要使用远程桌面服务，建议禁用该服务。&lt;br /&gt;
+3、在受影响版本的系统上启用网络级身份验证（NLA）；启用 NLA 后，攻击者需要使用目标系统上的有效账户对远程桌面服务进行身份验证，才能成功利用该漏洞。&lt;br /&gt;
+4、在企业外围或边界防火墙上部署安全策略，阻止 TCP 端口 3389。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一是&lt;/strong&gt;及时更新 Windows 操作系统补丁，补丁地址为：&lt;a href=&#34;https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0708&#34;&gt;https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2019-0708&lt;/a&gt;；&lt;br /&gt;
+&lt;strong&gt;二是&lt;/strong&gt;如无明确需求，可禁用远程桌面服务；&lt;br /&gt;
+&lt;strong&gt;三是&lt;/strong&gt;在受影响的系统上启用网络级身份验证（NLA）；&lt;br /&gt;
+&lt;strong&gt;四是&lt;/strong&gt;在边界防火墙上部署安全策略，阻断 TCP 端口 3389 的连接。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2003 补丁下载地址：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://download.windowsupdate.com/d/csa/csa/secu/2019/04/windowsserver2003-kb4500331-x86-custom-chs_4892823f525d9d532ed3ae36fc440338d2b46a72.exe&#34;&gt;http://download.windowsupdate.com/d/csa/csa/secu/2019/04/windowsserver2003-kb4500331-x86-custom-chs_4892823f525d9d532ed3ae36fc440338d2b46a72.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2008 R2 补丁下载地址：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/05/windows6.1-kb4499175-x64_3704acfff45ddf163d8049683d5a3b75e49b58cb.msu&#34;&gt;http://download.windowsupdate.com/d/msdownload/update/software/secu/2019/05/windows6.1-kb4499175-x64_3704acfff45ddf163d8049683d5a3b75e49b58cb.msu&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="CVE" scheme="http://example.com/categories/CVE/" />
+        <category term="Windows" scheme="http://example.com/categories/CVE/Windows/" />
+        <category term="CVE" scheme="http://example.com/tags/CVE/" />
+        <category term="Windows" scheme="http://example.com/tags/Windows/" />
+        <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
+        <updated>2024-08-14T07:55:24.547Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2024/08/14/TradingView/PineScript/</id>
         <title>PineScript</title>
@@ -299,6 +363,7 @@ Microsoft Exchange Server 2019&lt;/p&gt;
         <category term="CVE" scheme="http://example.com/categories/CVE/" />
         <category term="Exchange" scheme="http://example.com/categories/CVE/Exchange/" />
         <category term="CVE" scheme="http://example.com/tags/CVE/" />
+        <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
         <category term="Exchange" scheme="http://example.com/tags/Exchange/" />
         <updated>2024-08-13T06:32:37.755Z</updated>
     </entry>
@@ -1231,28 +1296,5 @@ mac 下的&lt;br /&gt;
         <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
         <category term="Algorithm, Top 10 Sorting Algorithm" scheme="http://example.com/categories/Algorithm/Algorithm-Top-10-Sorting-Algorithm/" />
         <updated>2024-07-31T14:16:49.518Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E6%9C%80%E5%BF%AB%EF%BC%89/</id>
-        <title>快速排序（最快）</title>
-        <link rel="alternate" href="http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E6%9C%80%E5%BF%AB%EF%BC%89/"/>
-        <content type="html">&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void quick_sort(int l, int r)
-&amp;#123;
-    if (l &amp;gt;= r) return ;
-
-    int x = a[l+r&amp;gt;&amp;gt;1], i = l-1, j = r+1;
-    while (i &amp;lt; j)
-    &amp;#123;
-        while (a[++ i] &amp;lt; x);
-        while (a[-- j] &amp;gt; x);
-        if (i &amp;lt; j) swap(a[i], a[j]);
-    &amp;#125;
-    sort(l, j), sort(j+1, r);
-&amp;#125;
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-        <category term="Algorithm, Top 10 Sorting Algorithm" scheme="http://example.com/categories/Algorithm/Algorithm-Top-10-Sorting-Algorithm/" />
-        <updated>2024-07-31T14:16:49.512Z</updated>
     </entry>
 </feed>
