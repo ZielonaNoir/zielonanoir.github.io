@@ -2486,7 +2486,7 @@ main >.inner {
 }
 #brand .artboard {
   font-family: 'Fredericka the Great', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 3.5em;
+  font-size: 2.5em;
   line-height: 1.2;
 }
 #brand h1 {
@@ -3017,17 +3017,17 @@ use.stop-animation {
 .social .item.qqyinle i {
   color: #10be72;
 }
-.social .item.twitter::before {
-  background-color: #00aff0;
-}
-.social .item.twitter i {
-  color: #00aff0;
-}
 .social .item.music::before {
   background-color: #e60026;
 }
 .social .item.music i {
   color: #e60026;
+}
+.social .item.twitter::before {
+  background-color: #00aff0;
+}
+.social .item.twitter i {
+  color: #00aff0;
 }
 .social .item.youtube::before {
   background-color: #e60026;
