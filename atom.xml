@@ -53,8 +53,8 @@
         <category term="CVE" scheme="http://example.com/categories/CVE/" />
         <category term="Exchange" scheme="http://example.com/categories/CVE/Exchange/" />
         <category term="CVE" scheme="http://example.com/tags/CVE/" />
-        <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
         <category term="Exchange" scheme="http://example.com/tags/Exchange/" />
+        <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
         <updated>2024-08-20T02:22:46.232Z</updated>
     </entry>
     <entry>
@@ -962,8 +962,8 @@ Microsoft Exchange Server 2019&lt;/p&gt;
         <category term="CVE" scheme="http://example.com/categories/CVE/" />
         <category term="Exchange" scheme="http://example.com/categories/CVE/Exchange/" />
         <category term="CVE" scheme="http://example.com/tags/CVE/" />
-        <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
         <category term="Exchange" scheme="http://example.com/tags/Exchange/" />
+        <category term="Microsoft Server" scheme="http://example.com/tags/Microsoft-Server/" />
         <updated>2024-08-13T06:32:37.755Z</updated>
     </entry>
     <entry>
