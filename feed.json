@@ -16,8 +16,8 @@
                 "CVE",
                 "Exchange",
                 "CVE",
-                "Exchange",
-                "Microsoft Server"
+                "Microsoft Server",
+                "Exchange"
             ]
         },
         {
@@ -42,8 +42,8 @@
             "tags": [
                 "CVE",
                 "ASP.NET",
-                "CVE",
-                "Ajaxpro2"
+                "Ajaxpro2",
+                "CVE"
             ]
         },
         {
@@ -158,8 +158,8 @@
                 "CVE",
                 "Exchange",
                 "CVE",
-                "Exchange",
-                "Microsoft Server"
+                "Microsoft Server",
+                "Exchange"
             ]
         },
         {
